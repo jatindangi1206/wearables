@@ -1,0 +1,24 @@
+# GOQII Health Data EDA Requirements
+pandas>=1.5.0
+numpy>=1.24.0
+scipy>=1.10.0
+matplotlib>=3.6.0
+seaborn>=0.11.0
+plotly>=5.15.0
+jinja2>=3.1.0
+scikit-learn>=1.3.0
+pytz>=2023.3
+tqdm>=4.65.0
+weasyprint>=59.0
+
+# Optional: Try scikit-digital-health if available
+# scikit-digital-health>=0.17.0
+
+# For PDF generation
+reportlab>=4.0.0
+
+# For statistical analysis
+statsmodels>=0.14.0
+
+# For HTML/JS charts
+bokeh>=3.2.0
