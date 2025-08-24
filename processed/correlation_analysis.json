@@ -1,0 +1,481 @@
+{
+  "participant-1": {
+    "data_summary": {
+      "date_range": {
+        "start": "2024-12-13",
+        "end": "2025-05-29"
+      },
+      "total_days": 33,
+      "available_metrics": [
+        "temp",
+        "steps",
+        "bp",
+        "hr",
+        "sleep"
+      ]
+    },
+    "daily_correlations": {
+      "steps_vs_sleep": {
+        "n_days": 5,
+        "pearson": {
+          "r": 0.084,
+          "p_value": 0.8926,
+          "significant": "False"
+        },
+        "spearman": {
+          "r": 0.0,
+          "p_value": 1.0,
+          "significant": "False"
+        },
+        "confidence": "not confident",
+        "interpretation": "No significant relationship detected"
+      },
+      "steps_vs_hr": {
+        "n_days": 21,
+        "pearson": {
+          "r": -0.264,
+          "p_value": 0.2473,
+          "significant": "False"
+        },
+        "spearman": {
+          "r": -0.428,
+          "p_value": 0.0529,
+          "significant": "False"
+        },
+        "confidence": "pretty sure",
+        "interpretation": "No significant relationship detected"
+      },
+      "steps_vs_bp": {
+        "n_days": 7,
+        "pearson": {
+          "r": -0.195,
+          "p_value": 0.6759,
+          "significant": "False"
+        },
+        "spearman": {
+          "r": -0.179,
+          "p_value": 0.7017,
+          "significant": "False"
+        },
+        "confidence": "not confident",
+        "interpretation": "No significant relationship detected"
+      },
+      "steps_vs_temp": {
+        "n_days": 24,
+        "pearson": {
+          "r": 0.2,
+          "p_value": 0.3492,
+          "significant": "False"
+        },
+        "spearman": {
+          "r": 0.049,
+          "p_value": 0.8211,
+          "significant": "False"
+        },
+        "confidence": "not confident",
+        "interpretation": "No significant relationship detected"
+      },
+      "sleep_vs_hr": {
+        "n_days": 5,
+        "pearson": {
+          "r": -0.64,
+          "p_value": 0.245,
+          "significant": "False"
+        },
+        "spearman": {
+          "r": -0.577,
+          "p_value": 0.3081,
+          "significant": "False"
+        },
+        "confidence": "might be a thing",
+        "interpretation": "No significant relationship detected"
+      },
+      "sleep_vs_temp": {
+        "n_days": 5,
+        "pearson": {
+          "r": 0.245,
+          "p_value": 0.6916,
+          "significant": "False"
+        },
+        "spearman": {
+          "r": 0.148,
+          "p_value": 0.8121,
+          "significant": "False"
+        },
+        "confidence": "might be a thing",
+        "interpretation": "No significant relationship detected"
+      },
+      "hr_vs_temp": {
+        "n_days": 21,
+        "pearson": {
+          "r": -0.198,
+          "p_value": 0.3906,
+          "significant": "False"
+        },
+        "spearman": {
+          "r": -0.196,
+          "p_value": 0.3954,
+          "significant": "False"
+        },
+        "confidence": "not confident",
+        "interpretation": "No significant relationship detected"
+      },
+      "hr_vs_bp": {
+        "n_days": 7,
+        "pearson": {
+          "r": -0.103,
+          "p_value": 0.8256,
+          "significant": "False"
+        },
+        "spearman": {
+          "r": -0.25,
+          "p_value": 0.5887,
+          "significant": "False"
+        },
+        "confidence": "might be a thing",
+        "interpretation": "No significant relationship detected"
+      },
+      "temp_vs_bp": {
+        "n_days": 7,
+        "pearson": {
+          "r": 0.07,
+          "p_value": 0.8809,
+          "significant": "False"
+        },
+        "spearman": {
+          "r": 0.071,
+          "p_value": 0.879,
+          "significant": "False"
+        },
+        "confidence": "not confident",
+        "interpretation": "No significant relationship detected"
+      }
+    },
+    "lag_correlations": {
+      "steps_to_sleep_next_day": {
+        "n_days": 5,
+        "pearson": {
+          "r": -0.759,
+          "p_value": 0.1371,
+          "significant": "False"
+        },
+        "spearman": {
+          "r": -0.866,
+          "p_value": 0.0577,
+          "significant": "False"
+        },
+        "confidence": "might be a thing",
+        "interpretation": "No significant next-day effect of steps on sleep"
+      },
+      "steps_to_hr_next_day": {
+        "n_days": 21,
+        "pearson": {
+          "r": 0.292,
+          "p_value": 0.1996,
+          "significant": "False"
+        },
+        "spearman": {
+          "r": 0.118,
+          "p_value": 0.6099,
+          "significant": "False"
+        },
+        "confidence": "might be a thing",
+        "interpretation": "No significant next-day effect of steps on hr"
+      },
+      "steps_to_bp_next_day": {
+        "n_days": 7,
+        "pearson": {
+          "r": -0.424,
+          "p_value": 0.3425,
+          "significant": "False"
+        },
+        "spearman": {
+          "r": -0.179,
+          "p_value": 0.7017,
+          "significant": "False"
+        },
+        "confidence": "might be a thing",
+        "interpretation": "No significant next-day effect of steps on bp"
+      },
+      "steps_to_temp_next_day": {
+        "n_days": 23,
+        "pearson": {
+          "r": 0.069,
+          "p_value": 0.7533,
+          "significant": "False"
+        },
+        "spearman": {
+          "r": 0.087,
+          "p_value": 0.6929,
+          "significant": "False"
+        },
+        "confidence": "not confident",
+        "interpretation": "No significant next-day effect of steps on temp"
+      },
+      "hr_to_temp_next_day": {
+        "n_days": 19,
+        "pearson": {
+          "r": -0.011,
+          "p_value": 0.9655,
+          "significant": "False"
+        },
+        "spearman": {
+          "r": -0.036,
+          "p_value": 0.8836,
+          "significant": "False"
+        },
+        "confidence": "not confident",
+        "interpretation": "No significant next-day effect of hr on temp"
+      },
+      "hr_to_bp_next_day": {
+        "n_days": 6,
+        "pearson": {
+          "r": 0.235,
+          "p_value": 0.6534,
+          "significant": "False"
+        },
+        "spearman": {
+          "r": 0.086,
+          "p_value": 0.8717,
+          "significant": "False"
+        },
+        "confidence": "might be a thing",
+        "interpretation": "No significant next-day effect of hr on bp"
+      },
+      "temp_to_bp_next_day": {
+        "n_days": 7,
+        "pearson": {
+          "r": -0.314,
+          "p_value": 0.4927,
+          "significant": "False"
+        },
+        "spearman": {
+          "r": -0.571,
+          "p_value": 0.1802,
+          "significant": "False"
+        },
+        "confidence": "might be a thing",
+        "interpretation": "No significant next-day effect of temp on bp"
+      }
+    },
+    "rolling_correlations": {
+      "steps_vs_hr": {
+        "correlations": [
+          -0.171,
+          -0.206,
+          0.075,
+          -0.096,
+          -0.09,
+          -0.102,
+          -0.097,
+          -0.066,
+          -0.173,
+          -0.168,
+          -0.301,
+          -0.603,
+          -0.604,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "mean_correlation": -0.2,
+        "std_correlation": 0.191,
+        "trend_analysis": {
+          "trend": "weakening",
+          "slope": -0.0353,
+          "strength_change": -0.459
+        }
+      },
+      "steps_vs_bp": {
+        "correlations": [
+          null,
+          -0.195,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "mean_correlation": -0.195,
+        "std_correlation": 0.0,
+        "trend_analysis": {
+          "trend": "insufficient_data"
+        }
+      },
+      "steps_vs_temp": {
+        "correlations": [
+          0.211,
+          -0.161,
+          -0.35,
+          -0.339,
+          -0.313,
+          -0.279,
+          -0.286,
+          -0.276,
+          -0.275,
+          -0.434,
+          -0.406,
+          -0.287,
+          -0.589,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "mean_correlation": -0.291,
+        "std_correlation": 0.175,
+        "trend_analysis": {
+          "trend": "weakening",
+          "slope": -0.0322,
+          "strength_change": -0.418
+        }
+      },
+      "hr_vs_temp": {
+        "correlations": [
+          -0.11,
+          -0.123,
+          -0.1,
+          -0.109,
+          0.066,
+          0.021,
+          -0.103,
+          -0.145,
+          -0.135,
+          0.275,
+          0.292,
+          0.287,
+          0.437,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "mean_correlation": 0.042,
+        "std_correlation": 0.199,
+        "trend_analysis": {
+          "trend": "strengthening",
+          "slope": 0.0411,
+          "strength_change": 0.535
+        }
+      },
+      "hr_vs_bp": {
+        "correlations": [
+          null,
+          -0.103,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "mean_correlation": -0.103,
+        "std_correlation": 0.0,
+        "trend_analysis": {
+          "trend": "insufficient_data"
+        }
+      },
+      "temp_vs_bp": {
+        "correlations": [
+          null,
+          0.07,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "mean_correlation": 0.07,
+        "std_correlation": 0.0,
+        "trend_analysis": {
+          "trend": "insufficient_data"
+        }
+      }
+    },
+    "anomaly_analysis": {
+      "temp": {
+        "anomaly_dates": [
+          "2024-12-13"
+        ],
+        "anomaly_count": 1,
+        "anomaly_percentage": 4.2,
+        "normal_range": {
+          "lower": 96.16,
+          "upper": 98.62
+        },
+        "recovery_analysis": {
+          "mean_recovery_days": null,
+          "median_recovery_days": null,
+          "recovery_rate": 0.0
+        },
+        "insights": [
+          "Rare temp anomalies detected (4% of days)",
+          "Slow or incomplete recovery from anomalies"
+        ]
+      },
+      "hr": {
+        "anomaly_dates": [
+          "2025-02-02",
+          "2025-05-29"
+        ],
+        "anomaly_count": 2,
+        "anomaly_percentage": 9.5,
+        "normal_range": {
+          "lower": 65.5,
+          "upper": 86.33
+        },
+        "recovery_analysis": {
+          "mean_recovery_days": null,
+          "median_recovery_days": null,
+          "recovery_rate": 0.0
+        },
+        "insights": [
+          "Occasional hr anomalies detected (10% of days)",
+          "Slow or incomplete recovery from anomalies"
+        ]
+      }
+    }
+  }
+}
