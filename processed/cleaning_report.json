@@ -4,10 +4,10 @@
     "total_participants": 1,
     "total_metrics": 5,
     "quality_distribution": {
-      "good": 5745,
-      "outlier": 181,
       "invalid": 927,
-      "duplicate": 133
+      "good": 5745,
+      "duplicate": 133,
+      "outlier": 181
     },
     "good_data_percentage": 82.23590037217292
   },
@@ -15,33 +15,24 @@
     "participant-1": {
       "total_records": 6986,
       "quality_distribution": {
-        "good": 5745,
-        "outlier": 181,
         "invalid": 927,
-        "duplicate": 133
+        "good": 5745,
+        "duplicate": 133,
+        "outlier": 181
       },
       "good_data_percentage": 82.23590037217292,
       "metrics_available": 5
     }
   },
   "metric_stats": {
-    "temp": {
-      "total_records": 2159,
+    "sleep": {
+      "total_records": 198,
       "quality_distribution": {
-        "good": 1208,
-        "outlier": 93,
-        "invalid": 858
+        "invalid": 69,
+        "good": 5,
+        "duplicate": 124
       },
-      "good_data_percentage": 55.951829550717925,
-      "participants_with_data": 1
-    },
-    "bp": {
-      "total_records": 19,
-      "quality_distribution": {
-        "good": 11,
-        "duplicate": 8
-      },
-      "good_data_percentage": 57.89473684210527,
+      "good_data_percentage": 2.525252525252525,
       "participants_with_data": 1
     },
     "steps": {
@@ -54,6 +45,15 @@
       "good_data_percentage": 98.00173761946134,
       "participants_with_data": 1
     },
+    "bp": {
+      "total_records": 19,
+      "quality_distribution": {
+        "good": 11,
+        "duplicate": 8
+      },
+      "good_data_percentage": 57.89473684210527,
+      "participants_with_data": 1
+    },
     "hr": {
       "total_records": 3459,
       "quality_distribution": {
@@ -63,14 +63,14 @@
       "good_data_percentage": 98.09193408499567,
       "participants_with_data": 1
     },
-    "sleep": {
-      "total_records": 198,
+    "temp": {
+      "total_records": 2159,
       "quality_distribution": {
-        "invalid": 69,
-        "good": 5,
-        "duplicate": 124
+        "good": 1208,
+        "outlier": 93,
+        "invalid": 858
       },
-      "good_data_percentage": 2.525252525252525,
+      "good_data_percentage": 55.951829550717925,
       "participants_with_data": 1
     }
   },
@@ -81,14 +81,6 @@
       "days": 168
     },
     "daily_stats": {
-      "2024-12-13": {
-        "total": 2,
-        "good": 2
-      },
-      "2024-12-17": {
-        "total": 128,
-        "good": 121
-      },
       "2024-12-18": {
         "total": 611,
         "good": 598
@@ -157,30 +149,6 @@
         "total": 76,
         "good": 65
       },
-      "2025-01-09": {
-        "total": 126,
-        "good": 11
-      },
-      "2025-01-10": {
-        "total": 110,
-        "good": 15
-      },
-      "2025-01-12": {
-        "total": 143,
-        "good": 0
-      },
-      "2025-01-13": {
-        "total": 78,
-        "good": 12
-      },
-      "2025-01-14": {
-        "total": 93,
-        "good": 11
-      },
-      "2025-01-15": {
-        "total": 34,
-        "good": 7
-      },
       "2025-01-31": {
         "total": 147,
         "good": 113
@@ -193,13 +161,13 @@
         "total": 332,
         "good": 203
       },
-      "2025-02-03": {
-        "total": 175,
-        "good": 163
+      "2024-12-13": {
+        "total": 2,
+        "good": 2
       },
-      "2025-05-29": {
-        "total": 226,
-        "good": 176
+      "2024-12-17": {
+        "total": 128,
+        "good": 121
       },
       "2025-01-04": {
         "total": 8,
@@ -216,32 +184,64 @@
       "2025-01-08": {
         "total": 7,
         "good": 7
+      },
+      "2025-01-09": {
+        "total": 126,
+        "good": 11
+      },
+      "2025-01-10": {
+        "total": 110,
+        "good": 15
+      },
+      "2025-01-13": {
+        "total": 78,
+        "good": 12
+      },
+      "2025-01-14": {
+        "total": 93,
+        "good": 11
+      },
+      "2025-01-15": {
+        "total": 34,
+        "good": 7
+      },
+      "2025-02-03": {
+        "total": 175,
+        "good": 163
+      },
+      "2025-05-29": {
+        "total": 226,
+        "good": 176
+      },
+      "2025-01-12": {
+        "total": 143,
+        "good": 0
       }
     }
   },
   "quality_flags_distribution": {
-    "temp": {
-      "good": 1208,
-      "outlier": 93,
-      "invalid": 858
-    },
-    "bp": {
-      "good": 11,
-      "duplicate": 8
+    "sleep": {
+      "invalid": 69,
+      "good": 5,
+      "duplicate": 124
     },
     "steps": {
       "good": 1128,
       "duplicate": 1,
       "outlier": 22
     },
+    "bp": {
+      "good": 11,
+      "duplicate": 8
+    },
     "hr": {
       "good": 3393,
       "outlier": 66
     },
-    "sleep": {
-      "invalid": 69,
-      "good": 5,
-      "duplicate": 124
+    "temp": {
+      "good": 1208,
+      "outlier": 93,
+      "invalid": 858
     }
   }
 }

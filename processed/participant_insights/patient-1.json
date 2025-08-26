@@ -1,6 +1,6 @@
 {
   "participant_id": "participant-1",
-  "generated_at": "2025-08-24T16:49:30.480579",
+  "generated_at": "2025-08-26T17:04:04.246578",
   "data_period": {
     "date_range": {
       "start": "2024-12-13",
@@ -8,86 +8,36 @@
     },
     "total_days": 33,
     "available_metrics": [
-      "temp",
+      "sleep",
       "steps",
-      "bp",
       "hr",
-      "sleep"
+      "bp",
+      "temp"
     ]
   },
   "health_baselines": {
-    "temp": {
-      "count": 1208,
-      "mean": 97.2,
-      "median": 97.2,
-      "std": 0.58,
+    "sleep": {
+      "count": 5,
+      "mean": 2.0,
+      "median": 0.0,
+      "std": 2.45,
       "normal_range": {
-        "lower": 96.3,
-        "upper": 97.9
+        "lower": 0.0,
+        "upper": 5.0
       },
       "percentiles": {
-        "p25": 96.8,
-        "p75": 97.5
+        "p25": 0.0,
+        "p75": 5.0
       },
-      "interpretation": "Normal body temperature",
+      "interpretation": "Below recommended sleep duration",
       "temporal_patterns": {
         "hourly_patterns": {
-          "peak_hour": 4,
-          "peak_value": 97.7,
-          "low_hour": 11,
-          "low_value": 96.7
+          "peak_hour": null,
+          "peak_value": null,
+          "low_hour": null,
+          "low_value": null
         },
-        "weekly_patterns": {
-          "Friday": 97.38084112149532,
-          "Tuesday": 96.87499999999999,
-          "Wednesday": 97.05625,
-          "Thursday": 97.04305555555555,
-          "Saturday": 97.27910447761192,
-          "Sunday": 97.4540697674419,
-          "Monday": 97.2041958041958
-        }
-      }
-    },
-    "bp": {
-      "count": 11,
-      "mean": 122.9,
-      "median": 124.0,
-      "std": 4.7,
-      "normal_range": {
-        "lower": 117.0,
-        "upper": 128.0
-      },
-      "percentiles": {
-        "p25": 120.0,
-        "p75": 127.5
-      },
-      "interpretation": "Elevated blood pressure",
-      "secondary": {
-        "count": 11,
-        "mean": 74.6,
-        "median": 74.0,
-        "std": 3.91,
-        "normal_range": {
-          "lower": 70.0,
-          "upper": 79.0
-        },
-        "percentiles": {
-          "p25": 72.5,
-          "p75": 78.5
-        },
-        "interpretation": "Within measured range"
-      },
-      "temporal_patterns": {
-        "hourly_patterns": {
-          "peak_hour": 20,
-          "peak_value": 124.5,
-          "low_hour": 19,
-          "low_value": 124.0
-        },
-        "weekly_patterns": {
-          "Tuesday": 124.75,
-          "Friday": 117.5
-        }
+        "weekly_patterns": {}
       }
     },
     "steps": {
@@ -184,28 +134,78 @@
         }
       }
     },
-    "sleep": {
-      "count": 5,
-      "mean": 2.0,
-      "median": 0.0,
-      "std": 2.45,
+    "bp": {
+      "count": 11,
+      "mean": 122.9,
+      "median": 124.0,
+      "std": 4.7,
       "normal_range": {
-        "lower": 0.0,
-        "upper": 5.0
+        "lower": 117.0,
+        "upper": 128.0
       },
       "percentiles": {
-        "p25": 0.0,
-        "p75": 5.0
+        "p25": 120.0,
+        "p75": 127.5
       },
-      "interpretation": "Below recommended sleep duration",
+      "interpretation": "Elevated blood pressure",
+      "secondary": {
+        "count": 11,
+        "mean": 74.6,
+        "median": 74.0,
+        "std": 3.91,
+        "normal_range": {
+          "lower": 70.0,
+          "upper": 79.0
+        },
+        "percentiles": {
+          "p25": 72.5,
+          "p75": 78.5
+        },
+        "interpretation": "Within measured range"
+      },
       "temporal_patterns": {
         "hourly_patterns": {
-          "peak_hour": null,
-          "peak_value": null,
-          "low_hour": null,
-          "low_value": null
+          "peak_hour": 20,
+          "peak_value": 124.5,
+          "low_hour": 19,
+          "low_value": 124.0
         },
-        "weekly_patterns": {}
+        "weekly_patterns": {
+          "Tuesday": 124.75,
+          "Friday": 117.5
+        }
+      }
+    },
+    "temp": {
+      "count": 1208,
+      "mean": 97.2,
+      "median": 97.2,
+      "std": 0.58,
+      "normal_range": {
+        "lower": 96.3,
+        "upper": 97.9
+      },
+      "percentiles": {
+        "p25": 96.8,
+        "p75": 97.5
+      },
+      "interpretation": "Normal body temperature",
+      "temporal_patterns": {
+        "hourly_patterns": {
+          "peak_hour": 4,
+          "peak_value": 97.7,
+          "low_hour": 11,
+          "low_value": 96.7
+        },
+        "weekly_patterns": {
+          "Friday": 97.38084112149532,
+          "Tuesday": 96.87499999999999,
+          "Wednesday": 97.05625,
+          "Thursday": 97.04305555555555,
+          "Saturday": 97.27910447761192,
+          "Sunday": 97.4540697674419,
+          "Monday": 97.2041958041958
+        }
       }
     }
   },
@@ -632,26 +632,6 @@
     }
   },
   "anomalies": {
-    "temp": {
-      "anomaly_dates": [
-        "2024-12-13"
-      ],
-      "anomaly_count": 1,
-      "anomaly_percentage": 4.2,
-      "normal_range": {
-        "lower": 96.16,
-        "upper": 98.62
-      },
-      "recovery_analysis": {
-        "mean_recovery_days": null,
-        "median_recovery_days": null,
-        "recovery_rate": 0.0
-      },
-      "insights": [
-        "Rare temp anomalies detected (4% of days)",
-        "Slow or incomplete recovery from anomalies"
-      ]
-    },
     "hr": {
       "anomaly_dates": [
         "2025-02-02",
@@ -672,6 +652,26 @@
         "Occasional hr anomalies detected (10% of days)",
         "Slow or incomplete recovery from anomalies"
       ]
+    },
+    "temp": {
+      "anomaly_dates": [
+        "2024-12-13"
+      ],
+      "anomaly_count": 1,
+      "anomaly_percentage": 4.2,
+      "normal_range": {
+        "lower": 96.16,
+        "upper": 98.62
+      },
+      "recovery_analysis": {
+        "mean_recovery_days": null,
+        "median_recovery_days": null,
+        "recovery_rate": 0.0
+      },
+      "insights": [
+        "Rare temp anomalies detected (4% of days)",
+        "Slow or incomplete recovery from anomalies"
+      ]
     }
   },
   "personalized_insights": {
@@ -681,24 +681,24 @@
         "end": "2025-05-29"
       },
       "metrics_tracked": [
-        "temp",
-        "bp",
+        "sleep",
         "steps",
         "hr",
-        "sleep"
+        "bp",
+        "temp"
       ],
       "data_quality_score": 91,
       "health_metrics": [
-        "Average temperature: 97.2\u00b0F",
-        "Average blood pressure: 122.9/74.6 mmHg",
+        "Average sleep: 2.0 hours per night",
         "Average daily steps: 157",
         "Average heart rate: 76.1 bpm",
-        "Average sleep: 2.0 hours per night"
+        "Average blood pressure: 122.9/74.6 mmHg",
+        "Average temperature: 97.2\u00b0F"
       ]
     },
     "key_findings": [
-      "Your daily step count averages 157 steps, below the recommended 10,000 steps",
-      "You're getting 2.0 hours of sleep per night, below the recommended 7-9 hours"
+      "You're getting 2.0 hours of sleep per night, below the recommended 7-9 hours",
+      "Your daily step count averages 157 steps, below the recommended 10,000 steps"
     ],
     "behavioral_insights": [
       "Your heart rate is highest in the evening around 18:00 (81.7 bpm)",
@@ -732,9 +732,9 @@
       {
         "category": "Health Monitoring",
         "priority": "Medium",
-        "recommendation": "Improve temp recovery patterns",
+        "recommendation": "Improve hr recovery patterns",
         "action_items": [
-          "Monitor temp more closely during unusual periods",
+          "Monitor hr more closely during unusual periods",
           "Identify triggers for abnormal readings",
           "Develop strategies for faster recovery"
         ],
@@ -743,9 +743,9 @@
       {
         "category": "Health Monitoring",
         "priority": "Medium",
-        "recommendation": "Improve hr recovery patterns",
+        "recommendation": "Improve temp recovery patterns",
         "action_items": [
-          "Monitor hr more closely during unusual periods",
+          "Monitor temp more closely during unusual periods",
           "Identify triggers for abnormal readings",
           "Develop strategies for faster recovery"
         ],
@@ -764,8 +764,8 @@
       "concerning_trends": [
         "Relationship between steps and hr is weakening over time",
         "Relationship between steps and temp is weakening over time",
-        "1 recent temp anomalies",
-        "2 recent hr anomalies"
+        "2 recent hr anomalies",
+        "1 recent temp anomalies"
       ]
     }
   }

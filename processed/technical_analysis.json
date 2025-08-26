@@ -1,14 +1,14 @@
 {
   "report_metadata": {
-    "generated_at": "2025-08-24T16:49:30.296702",
+    "generated_at": "2025-08-26T17:04:04.065673",
     "total_records": 6986,
     "total_participants": 1,
     "metrics_analyzed": [
-      "temp",
-      "bp",
+      "sleep",
       "steps",
+      "bp",
       "hr",
-      "sleep"
+      "temp"
     ]
   },
   "missingness_analysis": {
@@ -6070,39 +6070,16 @@
     }
   },
   "noise_analysis": {
-    "temp": {
-      "total_records": 2159,
-      "good_records": 1208,
-      "outlier_records": 93,
-      "noise_ratio": 0.04307549791570171,
-      "good_data_stats": {
-        "mean": 97.19,
-        "std": 0.58,
-        "coefficient_of_variation": 0.006,
-        "range": 2.5
-      },
-      "outlier_stats": {
-        "mean": 95.52,
-        "std": 1.69,
-        "range": 9.0
-      },
-      "outlier_temporal_pattern": {
-        "clustering_detected": true,
-        "clustering_ratio": 0.957,
-        "mean_gap_hours": 42.6,
-        "median_gap_hours": 0.2
-      }
-    },
-    "bp": {
-      "total_records": 19,
-      "good_records": 11,
+    "sleep": {
+      "total_records": 198,
+      "good_records": 5,
       "outlier_records": 0,
       "noise_ratio": 0.0,
       "good_data_stats": {
-        "mean": 122.91,
-        "std": 4.7,
-        "coefficient_of_variation": 0.038,
-        "range": 15.0
+        "mean": 2.0,
+        "std": 2.45,
+        "coefficient_of_variation": 1.225,
+        "range": 5.0
       }
     },
     "steps": {
@@ -6128,6 +6105,18 @@
         "median_gap_hours": 12.6
       }
     },
+    "bp": {
+      "total_records": 19,
+      "good_records": 11,
+      "outlier_records": 0,
+      "noise_ratio": 0.0,
+      "good_data_stats": {
+        "mean": 122.91,
+        "std": 4.7,
+        "coefficient_of_variation": 0.038,
+        "range": 15.0
+      }
+    },
     "hr": {
       "total_records": 3459,
       "good_records": 3393,
@@ -6151,56 +6140,46 @@
         "median_gap_hours": 2.1
       }
     },
-    "sleep": {
-      "total_records": 198,
-      "good_records": 5,
-      "outlier_records": 0,
-      "noise_ratio": 0.0,
+    "temp": {
+      "total_records": 2159,
+      "good_records": 1208,
+      "outlier_records": 93,
+      "noise_ratio": 0.04307549791570171,
       "good_data_stats": {
-        "mean": 2.0,
-        "std": 2.45,
-        "coefficient_of_variation": 1.225,
-        "range": 5.0
+        "mean": 97.19,
+        "std": 0.58,
+        "coefficient_of_variation": 0.006,
+        "range": 2.5
+      },
+      "outlier_stats": {
+        "mean": 95.52,
+        "std": 1.69,
+        "range": 9.0
+      },
+      "outlier_temporal_pattern": {
+        "clustering_detected": true,
+        "clustering_ratio": 0.957,
+        "mean_gap_hours": 42.6,
+        "median_gap_hours": 0.2
       }
     }
   },
   "cohort_analysis": {
     "summary_statistics": {
-      "temp": {
-        "count": 1208,
-        "mean": 97.19,
-        "median": 97.2,
-        "std": 0.58,
-        "min": 95.9,
-        "max": 98.4,
-        "iqr": 0.7,
+      "sleep": {
+        "count": 5,
+        "mean": 2.0,
+        "median": 0.0,
+        "std": 2.45,
+        "min": 0.0,
+        "max": 5.0,
+        "iqr": 5.0,
         "percentiles": {
-          "p25": 96.8,
-          "p50": 97.2,
-          "p75": 97.5,
-          "p90": 97.9,
-          "p95": 98.1
-        }
-      },
-      "bp": {
-        "count": 11,
-        "mean": 122.91,
-        "median": 124.0,
-        "std": 4.7,
-        "min": 114.0,
-        "max": 129.0,
-        "iqr": 7.5,
-        "percentiles": {
-          "p25": 120.0,
-          "p50": 124.0,
-          "p75": 127.5,
-          "p90": 128.0,
-          "p95": 128.5
-        },
-        "secondary_value": {
-          "mean": 74.64,
-          "median": 74.0,
-          "std": 3.91
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 5.0,
+          "p90": 5.0,
+          "p95": 5.0
         }
       },
       "steps": {
@@ -6224,6 +6203,27 @@
           "std": 10.28
         }
       },
+      "bp": {
+        "count": 11,
+        "mean": 122.91,
+        "median": 124.0,
+        "std": 4.7,
+        "min": 114.0,
+        "max": 129.0,
+        "iqr": 7.5,
+        "percentiles": {
+          "p25": 120.0,
+          "p50": 124.0,
+          "p75": 127.5,
+          "p90": 128.0,
+          "p95": 128.5
+        },
+        "secondary_value": {
+          "mean": 74.64,
+          "median": 74.0,
+          "std": 3.91
+        }
+      },
       "hr": {
         "count": 3393,
         "mean": 76.06,
@@ -6245,54 +6245,36 @@
           "std": 13.52
         }
       },
-      "sleep": {
-        "count": 5,
-        "mean": 2.0,
-        "median": 0.0,
-        "std": 2.45,
-        "min": 0.0,
-        "max": 5.0,
-        "iqr": 5.0,
+      "temp": {
+        "count": 1208,
+        "mean": 97.19,
+        "median": 97.2,
+        "std": 0.58,
+        "min": 95.9,
+        "max": 98.4,
+        "iqr": 0.7,
         "percentiles": {
-          "p25": 0.0,
-          "p50": 0.0,
-          "p75": 5.0,
-          "p90": 5.0,
-          "p95": 5.0
+          "p25": 96.8,
+          "p50": 97.2,
+          "p75": 97.5,
+          "p90": 97.9,
+          "p95": 98.1
         }
       }
     },
     "cross_metric_correlations": {},
     "temporal_trends": {
-      "temp": {
+      "sleep": {
         "weekly_patterns": {
-          "Friday": 97.38084112149532,
-          "Tuesday": 96.87499999999999,
-          "Wednesday": 97.05625,
-          "Thursday": 97.04305555555555,
-          "Saturday": 97.27910447761192,
-          "Sunday": 97.4540697674419,
-          "Monday": 97.2041958041958
+          "Wednesday": 5.0,
+          "Tuesday": 0.0,
+          "Saturday": 0.0,
+          "Thursday": 0.0,
+          "Friday": 5.0
         },
         "monthly_patterns": {
-          "December": 97.04726224783862,
-          "January": 97.655,
-          "February": 97.32756756756756,
-          "May": 97.2090909090909
-        }
-      },
-      "bp": {
-        "weekly_patterns": {
-          "Tuesday": 124.75,
-          "Wednesday": 128.0,
-          "Thursday": 117.0,
-          "Friday": 117.5,
-          "Sunday": 124.0,
-          "Saturday": 129.0,
-          "Monday": 120.0
-        },
-        "monthly_patterns": {
-          "December": 122.9090909090909
+          "December": 1.6666666666666667,
+          "January": 2.5
         }
       },
       "steps": {
@@ -6312,6 +6294,20 @@
           "May": 182.8
         }
       },
+      "bp": {
+        "weekly_patterns": {
+          "Tuesday": 124.75,
+          "Wednesday": 128.0,
+          "Thursday": 117.0,
+          "Friday": 117.5,
+          "Sunday": 124.0,
+          "Saturday": 129.0,
+          "Monday": 120.0
+        },
+        "monthly_patterns": {
+          "December": 122.9090909090909
+        }
+      },
       "hr": {
         "weekly_patterns": {
           "Tuesday": 78.58759124087591,
@@ -6329,17 +6325,21 @@
           "May": 89.18032786885246
         }
       },
-      "sleep": {
+      "temp": {
         "weekly_patterns": {
-          "Wednesday": 5.0,
-          "Tuesday": 0.0,
-          "Saturday": 0.0,
-          "Thursday": 0.0,
-          "Friday": 5.0
+          "Friday": 97.38084112149532,
+          "Tuesday": 96.87499999999999,
+          "Wednesday": 97.05625,
+          "Thursday": 97.04305555555555,
+          "Saturday": 97.27910447761192,
+          "Sunday": 97.4540697674419,
+          "Monday": 97.2041958041958
         },
         "monthly_patterns": {
-          "December": 1.6666666666666667,
-          "January": 2.5
+          "December": 97.04726224783862,
+          "January": 97.655,
+          "February": 97.32756756756756,
+          "May": 97.2090909090909
         }
       }
     },

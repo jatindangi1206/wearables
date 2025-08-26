@@ -7,11 +7,11 @@
       },
       "total_days": 33,
       "available_metrics": [
-        "temp",
+        "sleep",
         "steps",
-        "bp",
         "hr",
-        "sleep"
+        "bp",
+        "temp"
       ]
     },
     "daily_correlations": {
@@ -435,26 +435,6 @@
       }
     },
     "anomaly_analysis": {
-      "temp": {
-        "anomaly_dates": [
-          "2024-12-13"
-        ],
-        "anomaly_count": 1,
-        "anomaly_percentage": 4.2,
-        "normal_range": {
-          "lower": 96.16,
-          "upper": 98.62
-        },
-        "recovery_analysis": {
-          "mean_recovery_days": null,
-          "median_recovery_days": null,
-          "recovery_rate": 0.0
-        },
-        "insights": [
-          "Rare temp anomalies detected (4% of days)",
-          "Slow or incomplete recovery from anomalies"
-        ]
-      },
       "hr": {
         "anomaly_dates": [
           "2025-02-02",
@@ -473,6 +453,26 @@
         },
         "insights": [
           "Occasional hr anomalies detected (10% of days)",
+          "Slow or incomplete recovery from anomalies"
+        ]
+      },
+      "temp": {
+        "anomaly_dates": [
+          "2024-12-13"
+        ],
+        "anomaly_count": 1,
+        "anomaly_percentage": 4.2,
+        "normal_range": {
+          "lower": 96.16,
+          "upper": 98.62
+        },
+        "recovery_analysis": {
+          "mean_recovery_days": null,
+          "median_recovery_days": null,
+          "recovery_rate": 0.0
+        },
+        "insights": [
+          "Rare temp anomalies detected (4% of days)",
           "Slow or incomplete recovery from anomalies"
         ]
       }

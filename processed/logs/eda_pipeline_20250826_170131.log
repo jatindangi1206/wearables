@@ -1,0 +1,77 @@
+2025-08-26 17:01:31,417 - goqii_eda - INFO - ================================================================================
+2025-08-26 17:01:31,417 - goqii_eda - INFO - GOQII HEALTH DATA EDA PROTOCOL - DUAL OUTPUT ANALYSIS
+2025-08-26 17:01:31,417 - goqii_eda - INFO - ================================================================================
+2025-08-26 17:01:31,417 - goqii_eda - INFO - Input Directory: ./input
+2025-08-26 17:01:31,417 - goqii_eda - INFO - Output Directory: ./processed
+2025-08-26 17:01:31,417 - goqii_eda - INFO - Pipeline Started: 2025-08-26 17:01:31
+2025-08-26 17:01:31,417 - goqii_eda - INFO - 
+📂 STEP 1: Data Loading and Discovery
+2025-08-26 17:01:31,417 - goqii_eda - INFO - --------------------------------------------------
+2025-08-26 17:01:32,743 - goqii_eda - INFO - ✅ Discovered data for 1 participants
+2025-08-26 17:01:32,743 - goqii_eda - INFO - 📊 Total records loaded: 6,986
+2025-08-26 17:01:32,743 - goqii_eda - INFO - 📁 Files processed: 0
+2025-08-26 17:01:32,743 - goqii_eda - INFO - 🗓️  Date range: 2024-12-17 to 2025-05-29
+2025-08-26 17:01:32,743 - goqii_eda - INFO - 
+🧹 STEP 2: Data Cleaning and Quality Control
+2025-08-26 17:01:32,743 - goqii_eda - INFO - --------------------------------------------------
+2025-08-26 17:01:32,775 - goqii_eda - INFO - ✅ Data cleaning completed
+2025-08-26 17:01:32,775 - goqii_eda - INFO - 📊 Clean records: 5,745 (82.2%)
+2025-08-26 17:01:32,775 - goqii_eda - INFO - ⚠️  Flagged records: 1,241
+2025-08-26 17:01:32,775 - goqii_eda - INFO - 
+🔬 STEP 3: Technical Analysis for Researchers
+2025-08-26 17:01:32,775 - goqii_eda - INFO - --------------------------------------------------
+2025-08-26 17:01:32,817 - goqii_eda - INFO - ✅ Technical analysis completed
+2025-08-26 17:01:32,818 - goqii_eda - INFO - 📊 Data Completeness by Metric:
+2025-08-26 17:01:32,818 - goqii_eda - INFO -    participant-1: 100.0% complete
+2025-08-26 17:01:32,818 - goqii_eda - INFO -    cohort_summary: 100.0% complete
+2025-08-26 17:01:32,818 - goqii_eda - INFO - 📈 Cohort average data quality: 0.0%
+2025-08-26 17:01:32,818 - goqii_eda - INFO - 📈 Cohort average compliance: 0.0%
+2025-08-26 17:01:32,823 - goqii_eda - INFO - 
+🔗 STEP 4: Correlation Analysis
+2025-08-26 17:01:32,823 - goqii_eda - INFO - --------------------------------------------------
+2025-08-26 17:01:32,890 - goqii_eda - INFO - ✅ Correlation analysis completed
+2025-08-26 17:01:32,890 - goqii_eda - INFO - 📊 Total correlations analyzed: 9
+2025-08-26 17:01:32,890 - goqii_eda - INFO - 📈 Significant correlations found: 0 (0.0%)
+2025-08-26 17:01:32,890 - goqii_eda - INFO - 
+👤 STEP 5: Participant Insights Generation
+2025-08-26 17:01:32,890 - goqii_eda - INFO - --------------------------------------------------
+2025-08-26 17:01:32,965 - goqii_eda - INFO - ✅ Participant insights generated
+2025-08-26 17:01:32,965 - goqii_eda - INFO - 👥 Participants analyzed: 1
+2025-08-26 17:01:32,965 - goqii_eda - INFO -    participant-1: 2 findings, 4 recommendations
+2025-08-26 17:01:32,965 - goqii_eda - INFO - 
+📊 STEP 6: HTML Dashboard Generation
+2025-08-26 17:01:32,965 - goqii_eda - INFO - --------------------------------------------------
+2025-08-26 17:01:32,966 - goqii_eda - INFO - ✅ Dashboard generation completed
+2025-08-26 17:01:32,966 - goqii_eda - INFO - 📈 Researcher dashboard created: processed/dashboards/researcher-dashboard.html
+2025-08-26 17:01:32,966 - goqii_eda - INFO - 👥 Participant dashboards created: 1
+2025-08-26 17:01:32,966 - goqii_eda - INFO - 
+📋 STEP 7: Results Compilation
+2025-08-26 17:01:32,966 - goqii_eda - INFO - --------------------------------------------------
+2025-08-26 17:01:32,973 - goqii_eda - INFO - Analysis results saved to: processed/analysis_results.json
+2025-08-26 17:01:32,974 - goqii_eda - INFO - 
+================================================================================
+2025-08-26 17:01:32,974 - goqii_eda - INFO - 🎉 PIPELINE COMPLETED SUCCESSFULLY
+2025-08-26 17:01:32,974 - goqii_eda - INFO - ================================================================================
+2025-08-26 17:01:32,974 - goqii_eda - INFO - 📊 RESEARCHER INSIGHTS:
+2025-08-26 17:01:32,974 - goqii_eda - INFO -    • Analyzed 1 participants
+2025-08-26 17:01:32,974 - goqii_eda - INFO -    • Processed 6,986 total records
+2025-08-26 17:01:32,974 - goqii_eda - INFO -    • Achieved 82.2% data quality
+2025-08-26 17:01:32,974 - goqii_eda - INFO -    • Found 0 significant correlations
+2025-08-26 17:01:32,974 - goqii_eda - INFO -    • Research dashboard: processed/dashboards/researcher-dashboard.html
+2025-08-26 17:01:32,974 - goqii_eda - INFO - 
+👥 PARTICIPANT INSIGHTS:
+2025-08-26 17:01:32,974 - goqii_eda - INFO -    • Generated personalized insights for 1 participants
+2025-08-26 17:01:32,974 - goqii_eda - INFO -    • Individual reports saved to: processed/participant_insights
+2025-08-26 17:01:32,974 - goqii_eda - INFO -    • Interactive dashboards saved to: processed/dashboards/participant-dashboards
+2025-08-26 17:01:32,974 - goqii_eda - INFO - 
+📁 OUTPUT STRUCTURE:
+2025-08-26 17:01:32,974 - goqii_eda - INFO -    📂 processed/
+2025-08-26 17:01:32,974 - goqii_eda - INFO -    ├── 📊 dashboards/
+2025-08-26 17:01:32,974 - goqii_eda - INFO -    │   ├── 🔬 researcher-dashboard.html
+2025-08-26 17:01:32,974 - goqii_eda - INFO -    │   └── 👥 participant-dashboards/
+2025-08-26 17:01:32,974 - goqii_eda - INFO -    ├── 👤 participant_insights/
+2025-08-26 17:01:32,974 - goqii_eda - INFO -    ├── 📋 analysis_results.json
+2025-08-26 17:01:32,974 - goqii_eda - INFO -    └── 📝 logs/
+2025-08-26 17:01:32,974 - goqii_eda - INFO - 
+⏱️  Pipeline completed in: 2025-08-26 17:01:32
+2025-08-26 17:01:32,974 - goqii_eda - INFO - ================================================================================

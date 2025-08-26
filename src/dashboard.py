@@ -262,192 +262,1047 @@ class ResearcherDashboard(BaseProcessor):
 </html>
 """
         return html
+        
+    def _get_research_css(self) -> str:
+            """Get CSS styles for researcher dashboard, inspired by shadcn/ui"""
+            return """
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+            :root {
+                --primary: 222.2 47.4% 11.2%;
+                --primary-foreground: 210 40% 98%;
+                --secondary: 210 40% 96.1%;
+                --secondary-foreground: 222.2 47.4% 11.2%;
+                --accent: 142.1 76.2% 36.3%;
+                --accent-foreground: 210 40% 98%;
+                --muted: 210 40% 96.1%;
+                --muted-foreground: 215.4 16.3% 46.9%;
+                --destructive: 0 84.2% 60.2%;
+                --destructive-foreground: 210 40% 98%;
+                --border: 214.3 31.8% 91.4%;
+                --input: 214.3 31.8% 91.4%;
+                --ring: 222.2 84% 4.9%;
+                --radius: 0.75rem;
+                --shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
+            }
+            html { color-scheme: light dark; }
+            body {
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--secondary)) 100%);
+                color: hsl(var(--primary));
+                font-weight: 400;
+                letter-spacing: -0.01em;
+                min-height: 100vh;
+            }
+            .container {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 2.5rem;
+            }
+            .dashboard-header {
+                background: linear-gradient(135deg, #fff 0%, hsl(var(--muted)) 100%);
+                color: hsl(var(--primary));
+                padding: 2.5rem;
+                border-radius: var(--radius);
+                margin-bottom: 2.5rem;
+                text-align: center;
+                box-shadow: var(--shadow);
+                border: 1px solid hsl(var(--border));
+                position: relative;
+                overflow: hidden;
+            }
+            .dashboard-header::before {
+                content: '';
+                position: absolute;
+                top: 0; left: 0; right: 0;
+                height: 4px;
+                background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+            }
+            .branding-top {
+                font-size: 0.95rem;
+                font-weight: 600;
+                color: hsl(var(--accent));
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                margin-bottom: 1rem;
+                padding: 0.5rem 1.5rem;
+                background: hsl(var(--accent) / 0.08);
+                border-radius: 0.5rem;
+                display: inline-block;
+            }
+            .dashboard-header h1 {
+                font-size: 2.7rem;
+                font-weight: 800;
+                margin-bottom: 1rem;
+                color: hsl(var(--primary));
+                letter-spacing: -0.025em;
+            }
+            .subtitle {
+                font-size: 1.15rem;
+                color: hsl(var(--muted-foreground));
+                margin-bottom: 1.5rem;
+                font-weight: 400;
+            }
+            .meta-info {
+                font-size: 0.95rem;
+                color: hsl(var(--muted-foreground));
+                font-weight: 500;
+                line-height: 1.8;
+            }
+            .dashboard-grid {
+                display: grid;
+                gap: 2.5rem;
+            }
+            .dashboard-section {
+                background: #fff;
+                padding: 2.5rem;
+                border-radius: var(--radius);
+                box-shadow: var(--shadow);
+                border: 1px solid hsl(var(--border));
+                transition: box-shadow 0.3s;
+            }
+            .dashboard-section:hover {
+                box-shadow: 0 8px 32px 0 rgba(0,0,0,0.10);
+            }
+            .section-title {
+                font-size: 1.85rem;
+                font-weight: 700;
+                margin-bottom: 1.5rem;
+                color: hsl(var(--primary));
+                position: relative;
+                padding-left: 1.5rem;
+            }
+            .section-title::before {
+                content: '';
+                position: absolute;
+                left: 0; top: 50%;
+                transform: translateY(-50%);
+                width: 4px; height: 28px;
+                background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+                border-radius: 2px;
+            }
+            .stats-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                gap: 1.5rem;
+                margin-bottom: 2.5rem;
+            }
+            .stat-card {
+                text-align: center;
+                padding: 2.5rem 1.5rem;
+                background: linear-gradient(135deg, #fff 0%, hsl(var(--muted)) 100%);
+                border-radius: var(--radius);
+                box-shadow: var(--shadow);
+                border: 1px solid hsl(var(--border));
+                transition: box-shadow 0.3s, transform 0.2s;
+                position: relative;
+                overflow: hidden;
+            }
+            .stat-card::before {
+                content: '';
+                position: absolute;
+                top: 0; left: 0; right: 0;
+                height: 3px;
+                background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+            }
+            .stat-card:hover {
+                transform: translateY(-2px) scale(1.02);
+                box-shadow: 0 8px 32px 0 rgba(0,0,0,0.10);
+            }
+            .stat-card h3 {
+                font-size: 2.5rem;
+                font-weight: 800;
+                margin-bottom: 0.5rem;
+                color: hsl(var(--primary));
+                letter-spacing: -0.02em;
+            }
+            .stat-card p {
+                font-size: 0.95rem;
+                color: hsl(var(--muted-foreground));
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+            .quality-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            .quality-card {
+                text-align: center;
+                padding: 1.5rem;
+                border-radius: 1rem;
+                color: #fff;
+                transition: transform 0.2s;
+                font-weight: 600;
+            }
+            .quality-card.high { background: linear-gradient(135deg, hsl(142.1 76.2% 36.3%) 0%, #28A745 100%); }
+            .quality-card.medium { background: linear-gradient(135deg, hsl(38.1 92.1% 50.2%) 0%, #FD7E14 100%); }
+            .quality-card.low { background: linear-gradient(135deg, hsl(0 84.2% 60.2%) 0%, #DC3545 100%); }
+            .quality-score {
+                font-size: 2rem;
+                font-weight: 800;
+                margin-bottom: 0.25rem;
+            }
+            .chart-container {
+                text-align: center;
+                margin: 2.5rem 0;
+                padding: 1.5rem;
+                background: hsl(var(--muted));
+                border-radius: 1rem;
+            }
+            .chart-image {
+                max-width: 100%;
+                height: auto;
+                border-radius: 0.5rem;
+                box-shadow: var(--shadow);
+            }
+            .correlation-table, .participant-table {
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0;
+                margin-top: 1.5rem;
+                font-size: 0.95rem;
+                background: #fff;
+                border-radius: 1rem;
+                overflow: hidden;
+                box-shadow: var(--shadow);
+            }
+            .correlation-table th, .correlation-table td,
+            .participant-table th, .participant-table td {
+                padding: 1rem 1.25rem;
+                text-align: left;
+                border-bottom: 1px solid hsl(var(--border));
+            }
+            .correlation-table th, .participant-table th {
+                background-color: hsl(var(--muted));
+                font-weight: 700;
+                color: hsl(var(--primary));
+                text-transform: uppercase;
+                letter-spacing: 0.025em;
+                font-size: 0.85rem;
+            }
+            .correlation-table tr:hover, .participant-table tr:hover {
+                background-color: hsl(var(--secondary));
+            }
+            /* Participant overview styling */
+            .table-container {
+                position: relative;
+                overflow-x: auto;
+                border-radius: var(--radius);
+            }
+            .participant-cell {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+            .avatar {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 9999px;
+                background-color: hsl(var(--primary));
+                color: white;
+                font-weight: 600;
+                flex-shrink: 0;
+            }
+            .badge {
+                display: inline-flex;
+                padding: 0.25rem 0.75rem;
+                border-radius: 9999px;
+                font-weight: 600;
+                font-size: 0.85rem;
+                line-height: 1.25;
+            }
+            .badge.high {
+                background-color: hsl(var(--success) / 0.2);
+                color: hsl(var(--success));
+            }
+            .badge.medium {
+                background-color: hsl(var(--warning) / 0.2);
+                color: hsl(var(--warning));
+            }
+            .badge.low {
+                background-color: hsl(var(--error) / 0.2);
+                color: hsl(var(--error));
+            }
+            .metric-count {
+                font-weight: 600;
+                color: hsl(var(--primary));
+            }
+            .empty-state {
+                padding: 3rem;
+                text-align: center;
+                color: hsl(var(--muted-foreground));
+                background: hsl(var(--muted));
+                border-radius: var(--radius);
+                font-size: 1rem;
+            }
+            .anomaly-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+            .anomaly-card {
+                text-align: center;
+                padding: 2.5rem 1.5rem;
+                background: linear-gradient(135deg, #fff 0%, hsl(var(--accent) / 0.08) 100%);
+                border-radius: var(--radius);
+                border: 1px solid hsl(var(--accent));
+                border-width: 0 0 0 4px;
+                transition: box-shadow 0.3s, transform 0.2s;
+            }
+            .anomaly-card:hover {
+                transform: translateY(-2px) scale(1.02);
+                box-shadow: 0 8px 32px 0 rgba(0,0,0,0.10);
+            }
+            .anomaly-number {
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: hsl(var(--accent));
+                margin-bottom: 0.5rem;
+            }
+            .anomaly-affected {
+                font-size: 0.95rem;
+                color: hsl(var(--muted-foreground));
+                margin-top: 0.5rem;
+                font-weight: 600;
+            }
+            .correlation-summary, .noise-summary {
+                display: grid;
+                gap: 1rem;
+                margin-top: 1.5rem;
+            }
+            .correlation-item, .noise-item {
+                padding: 1.5rem;
+                background: hsl(var(--muted));
+                border-radius: 1rem;
+                border-left: 4px solid hsl(var(--primary));
+                transition: background 0.2s, transform 0.2s;
+            }
+            .correlation-item:hover, .noise-item:hover {
+                background: hsl(var(--secondary));
+                transform: translateX(4px);
+            }
+            .dashboard-footer {
+                text-align: center;
+                margin-top: 3rem;
+                padding: 2.5rem;
+                color: hsl(var(--muted-foreground));
+                font-size: 0.95rem;
+                background: #fff;
+                border-radius: var(--radius);
+                border: 1px solid hsl(var(--border));
+            }
+            .branding-bottom {
+                font-size: 0.95rem;
+                font-weight: 700;
+                color: hsl(var(--accent));
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                margin-bottom: 0.5rem;
+            }
+            /* Avatars for participant table */
+            .avatar {
+                width: 32px; height: 32px;
+                border-radius: 50%;
+                background: hsl(var(--muted));
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 700;
+                color: hsl(var(--primary));
+                margin-right: 0.75rem;
+                font-size: 1.1rem;
+            }
+            /* Badge styles */
+            .badge {
+                display: inline-block;
+                padding: 0.25em 0.75em;
+                font-size: 0.85em;
+                font-weight: 600;
+                border-radius: 999px;
+                background: hsl(var(--muted));
+                color: hsl(var(--primary));
+                margin-left: 0.5em;
+            }
+            .badge.high { background: hsl(var(--accent)); color: #fff; }
+            .badge.medium { background: hsl(38.1 92.1% 50.2%); color: #fff; }
+            .badge.low { background: hsl(var(--destructive)); color: #fff; }
+            /* Section divider */
+            .section-divider {
+                height: 2px;
+                background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+                border-radius: 1px;
+                margin: 2rem 0;
+                opacity: 0.12;
+            }
+            /* Dark mode support */
+            @media (prefers-color-scheme: dark) {
+                body { background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%); color: hsl(var(--primary-foreground)); }
+                .dashboard-header, .dashboard-section, .dashboard-footer, .correlation-table, .participant-table { background: hsl(var(--secondary)); color: hsl(var(--primary-foreground)); }
+                .stat-card, .anomaly-card, .correlation-item, .noise-item { background: hsl(var(--muted)); color: hsl(var(--primary-foreground)); }
+                .correlation-table th, .participant-table th { background: hsl(var(--muted)); color: hsl(var(--primary-foreground)); }
+            }
+            @media (max-width: 768px) {
+                .container { padding: 1rem; }
+                .dashboard-header { padding: 1rem; }
+                .dashboard-header h1 { font-size: 2rem; }
+                .stats-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+                .quality-grid { grid-template-columns: 1fr 1fr; }
+                .anomaly-grid { grid-template-columns: 1fr; }
+            }
+            """
     
-    def _build_cohort_summary(self, data: Dict) -> str:
-        """Build cohort summary section"""
-        
-        technical_analysis = data.get('technical_analysis', {})
-        cohort_stats = technical_analysis.get('cohort_analysis', {})
-        
-        html = '<section class="dashboard-section">'
-        html += '<h2 class="section-title">Cohort Summary</h2>'
-        html += '<div class="stats-grid">'
-        
-        # Participant count
-        participants = data.get('participant_insights', {})
-        html += f'<div class="stat-card"><h3>{len(participants)}</h3><p>Total Participants</p></div>'
-        
-        # Data quality
-        avg_quality = cohort_stats.get('average_data_quality', 0)
-        html += f'<div class="stat-card"><h3>{avg_quality}%</h3><p>Average Data Quality</p></div>'
-        
-        # Compliance
-        compliance = cohort_stats.get('average_compliance', 0)
-        html += f'<div class="stat-card"><h3>{compliance}%</h3><p>Monitoring Compliance</p></div>'
-        
-        # Total records
-        total_records = sum(
-            sum(baseline.get('count', 0) for baseline in participant.get('health_baselines', {}).values())
-            for participant in participants.values()
-        )
-        html += f'<div class="stat-card"><h3>{total_records:,}</h3><p>Total Data Points</p></div>'
-        
-        html += '</div>'
-        
-        # Add cohort correlations if available
-        cohort_corr = cohort_stats.get('cohort_correlations', {})
-        if cohort_corr:
-            html += '<h3>Cohort-Level Correlations</h3>'
-            html += '<div class="correlation-summary">'
-            for corr_name, corr_data in cohort_corr.items():
-                if corr_data.get('significant', False):
-                    r_val = corr_data.get('r', 0)
-                    confidence = corr_data.get('confidence', '')
-                    html += f'<div class="correlation-item">'
-                    html += f'<strong>{corr_name.replace("_vs_", " vs ")}</strong>: r={r_val:.3f} ({confidence})'
-                    html += '</div>'
-            html += '</div>'
-        
-        html += '</section>'
-        return html
-    
-    def _build_data_quality_section(self, data: Dict) -> str:
-        """Build data quality analysis section"""
-        
-        technical_analysis = data.get('technical_analysis', {})
-        
-        html = '<section class="dashboard-section">'
-        html += '<h2 class="section-title">Data Quality Analysis</h2>'
-        
-        # Missingness analysis
-        missingness = technical_analysis.get('missingness_analysis', {})
-        if missingness:
-            html += '<h3>Data Completeness by Metric</h3>'
-            html += '<div class="quality-grid">'
+    def _get_research_css(self) -> str:
+        """Get CSS styles for research dashboard"""
+        return """
+            :root {
+                --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                --success: 142.1 76.2% 36.3%;
+                --warning: 38.1 92.1% 50.2%;
+                --error: 0 84.2% 60.2%;
+                --primary: 222.2 47.4% 11.2%;
+                --primary-foreground: 210 40% 98%;
+                --secondary: 210 40% 96.1%;
+                --secondary-foreground: 222.2 47.4% 11.2%;
+                --accent: 142.1 76.2% 36.3%;
+                --accent-foreground: 210 40% 98%;
+                --muted: 210 40% 96.1%;
+                --muted-foreground: 215.4 16.3% 46.9%;
+                --destructive: 0 84.2% 60.2%;
+                --destructive-foreground: 210 40% 98%;
+                --border: 214.3 31.8% 91.4%;
+                --input: 214.3 31.8% 91.4%;
+                --ring: 222.2 84% 4.9%;
+                --radius: 0.75rem;
+                --shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
+            }
+            html { color-scheme: light dark; }
+            body {
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--secondary)) 100%);
+                color: hsl(var(--primary));
+                font-weight: 400;
+                letter-spacing: -0.01em;
+                min-height: 100vh;
+            }
+            .container {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 2.5rem;
+            }
+            .dashboard-header {
+                margin-bottom: 2.5rem;
+                text-align: center;
+                padding: 2.5rem;
+                background: #fff;
+                border-radius: var(--radius);
+                box-shadow: var(--shadow);
+            }
+            .dashboard-header h1 {
+                font-size: 2.8rem;
+                font-weight: 800;
+                margin-bottom: 0.75rem;
+                color: hsl(var(--primary));
+                letter-spacing: -0.025em;
+                line-height: 1.1;
+            }
+            .dashboard-header .subtitle {
+                font-size: 1.1rem;
+                color: hsl(var(--muted-foreground));
+                margin-bottom: 1.5rem;
+                font-weight: 400;
+            }
+            .meta-info {
+                font-size: 0.9rem;
+                color: hsl(var(--muted-foreground));
+                margin-top: 1.5rem;
+                padding: 1rem;
+                background: hsl(var(--muted));
+                border-radius: 1rem;
+                display: inline-block;
+            }
+            .dashboard-grid {
+                display: grid;
+                gap: 1.5rem;
+            }
+            .dashboard-section {
+                padding: 2.5rem;
+                background: #fff;
+                border-radius: var(--radius);
+                box-shadow: var(--shadow);
+            }
+            .section-title {
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-bottom: 1.75rem;
+                color: hsl(var(--primary));
+                padding-bottom: 0.75rem;
+                border-bottom: 1px solid hsl(var(--border));
+            }
+            .stats-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            .stat-card {
+                text-align: center;
+                padding: 1.5rem;
+                background: #fff;
+                border-radius: 1rem;
+                box-shadow: var(--shadow);
+                border: 1px solid hsl(var(--border));
+                transition: transform 0.2s, box-shadow 0.2s;
+                position: relative;
+                overflow: hidden;
+            }
+            .stat-card::before {
+                content: '';
+                position: absolute;
+                top: 0; left: 0; right: 0;
+                height: 3px;
+                background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+            }
+            .stat-card:hover {
+                transform: translateY(-2px) scale(1.02);
+                box-shadow: 0 8px 32px 0 rgba(0,0,0,0.10);
+            }
+            .stat-card h3 {
+                font-size: 2.5rem;
+                font-weight: 800;
+                margin-bottom: 0.5rem;
+                color: hsl(var(--primary));
+                letter-spacing: -0.02em;
+            }
+            .stat-card p {
+                font-size: 0.95rem;
+                color: hsl(var(--muted-foreground));
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+            .quality-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            .quality-card {
+                text-align: center;
+                padding: 1.5rem;
+                border-radius: 1rem;
+                color: #fff;
+                transition: transform 0.2s;
+                font-weight: 600;
+            }
+            .quality-card.high { background: linear-gradient(135deg, hsl(142.1 76.2% 36.3%) 0%, #28A745 100%); }
+            .quality-card.medium { background: linear-gradient(135deg, hsl(38.1 92.1% 50.2%) 0%, #FD7E14 100%); }
+            .quality-card.low { background: linear-gradient(135deg, hsl(0 84.2% 60.2%) 0%, #DC3545 100%); }
+            .quality-score {
+                font-size: 2rem;
+                font-weight: 800;
+                margin-bottom: 0.25rem;
+            }
+            .chart-container {
+                text-align: center;
+                margin: 2.5rem 0;
+                padding: 1.5rem;
+                background: hsl(var(--muted));
+                border-radius: 1rem;
+            }
+            .chart-image {
+                max-width: 100%;
+                height: auto;
+                border-radius: 0.5rem;
+                box-shadow: var(--shadow);
+            }
+            .correlation-table, .participant-table {
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0;
+                margin-top: 1.5rem;
+                font-size: 0.95rem;
+                background: #fff;
+                border-radius: 1rem;
+                overflow: hidden;
+                box-shadow: var(--shadow);
+            }
+            .correlation-table th, .correlation-table td,
+            .participant-table th, .participant-table td {
+                padding: 1rem 1.25rem;
+                text-align: left;
+                border-bottom: 1px solid hsl(var(--border));
+            }
+            .correlation-table th, .participant-table th {
+                background-color: hsl(var(--muted));
+                font-weight: 700;
+                color: hsl(var(--primary));
+                text-transform: uppercase;
+                letter-spacing: 0.025em;
+                font-size: 0.85rem;
+            }
+            .correlation-table tr:hover, .participant-table tr:hover {
+                background-color: hsl(var(--secondary));
+            }
+            /* Participant overview styling */
+            .table-container {
+                position: relative;
+                overflow-x: auto;
+                border-radius: var(--radius);
+            }
+            .participant-cell {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+            .avatar {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 9999px;
+                background-color: hsl(var(--primary));
+                color: white;
+                font-weight: 600;
+                flex-shrink: 0;
+            }
+            .badge {
+                display: inline-flex;
+                padding: 0.25rem 0.75rem;
+                border-radius: 9999px;
+                font-weight: 600;
+                font-size: 0.85rem;
+                line-height: 1.25;
+            }
+            .badge.high {
+                background-color: hsl(var(--success) / 0.2);
+                color: hsl(var(--success));
+            }
+            .badge.medium {
+                background-color: hsl(var(--warning) / 0.2);
+                color: hsl(var(--warning));
+            }
+            .badge.low {
+                background-color: hsl(var(--error) / 0.2);
+                color: hsl(var(--error));
+            }
+            .metric-count {
+                font-weight: 600;
+                color: hsl(var(--primary));
+            }
+            .empty-state {
+                padding: 3rem;
+                text-align: center;
+                color: hsl(var(--muted-foreground));
+                background: hsl(var(--muted));
+                border-radius: var(--radius);
+                font-size: 1rem;
+            }
+            .anomaly-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+            .anomaly-card {
+                text-align: center;
+                padding: 2.5rem 1.5rem;
+                background: linear-gradient(135deg, #fff 0%, hsl(var(--accent) / 0.08) 100%);
+                border-radius: var(--radius);
+                border: 1px solid hsl(var(--accent));
+                border-width: 0 0 0 4px;
+                transition: box-shadow 0.3s, transform 0.2s;
+            }
+            .anomaly-card:hover {
+                transform: translateY(-2px) scale(1.02);
+                box-shadow: 0 8px 32px 0 rgba(0,0,0,0.10);
+            }
+            .anomaly-number {
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: hsl(var(--accent));
+                margin-bottom: 0.5rem;
+            }
+            .anomaly-affected {
+                font-size: 0.95rem;
+                color: hsl(var(--muted-foreground));
+                margin-top: 0.5rem;
+                font-weight: 600;
+            }
+            .correlation-summary, .noise-summary {
+                display: grid;
+                gap: 1rem;
+                margin-top: 1.5rem;
+            }
+            .correlation-item, .noise-item {
+                padding: 1.5rem;
+                background: hsl(var(--muted));
+                border-radius: 1rem;
+                border-left: 4px solid hsl(var(--primary));
+                transition: background 0.2s, transform 0.2s;
+            }
+            .correlation-item:hover, .noise-item:hover {
+                background: hsl(var(--secondary));
+                transform: translateX(4px);
+            }
+            .dashboard-footer {
+                text-align: center;
+                margin-top: 3rem;
+                padding: 2.5rem;
+                color: hsl(var(--muted-foreground));
+                font-size: 0.95rem;
+                background: #fff;
+                border-radius: var(--radius);
+                border: 1px solid hsl(var(--border));
+            }
+            .branding-bottom {
+                font-size: 0.95rem;
+                font-weight: 700;
+                color: hsl(var(--accent));
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                margin-bottom: 0.5rem;
+            }
+            /* Avatars for participant table */
+            .avatar {
+                width: 32px; height: 32px;
+                border-radius: 50%;
+                background: hsl(var(--muted));
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 700;
+                color: hsl(var(--primary));
+                margin-right: 0.75rem;
+                font-size: 1.1rem;
+            }
+            /* Badge styles */
+            .badge {
+                display: inline-block;
+                padding: 0.25em 0.75em;
+                font-size: 0.85em;
+                font-weight: 600;
+                border-radius: 999px;
+                background: hsl(var(--muted));
+                color: hsl(var(--primary));
+                margin-left: 0.5em;
+            }
+            .badge.high { background: hsl(var(--accent)); color: #fff; }
+            .badge.medium { background: hsl(38.1 92.1% 50.2%); color: #fff; }
+            .badge.low { background: hsl(var(--destructive)); color: #fff; }
+            /* Section divider */
+            .section-divider {
+                height: 2px;
+                background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+                border-radius: 1px;
+                margin: 2rem 0;
+                opacity: 0.12;
+            }
+            /* Dark mode support */
+            @media (prefers-color-scheme: dark) {
+                body { background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%); color: hsl(var(--primary-foreground)); }
+                .dashboard-header, .dashboard-section, .dashboard-footer, .correlation-table, .participant-table { background: hsl(var(--secondary)); color: hsl(var(--primary-foreground)); }
+                .stat-card, .anomaly-card, .correlation-item, .noise-item { background: hsl(var(--muted)); color: hsl(var(--primary-foreground)); }
+                .correlation-table th, .participant-table th { background: hsl(var(--muted)); color: hsl(var(--primary-foreground)); }
+            }
+            @media (max-width: 768px) {
+                .container { padding: 1rem; }
+                .dashboard-header { padding: 1rem; }
+                .dashboard-header h1 { font-size: 2rem; }
+                .stats-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+                .quality-grid { grid-template-columns: 1fr 1fr; }
+                .anomaly-grid { grid-template-columns: 1fr; }
+            }
             
-            for metric, miss_data in missingness.items():
-                completeness = 100 - miss_data.get('missing_percentage', 0)
-                quality_class = 'high' if completeness > 80 else 'medium' if completeness > 60 else 'low'
-                html += f'<div class="quality-card {quality_class}">'
-                html += f'<h4>{metric.replace("_", " ").title()}</h4>'
-                html += f'<div class="quality-score">{completeness:.1f}%</div>'
-                html += f'<p>Complete</p>'
-                html += '</div>'
-            html += '</div>'
-        
-        # Noise analysis
-        noise_analysis = technical_analysis.get('noise_analysis', {})
-        if noise_analysis:
-            html += '<h3>Data Quality Flags</h3>'
-            html += '<div class="noise-summary">'
+            /* New Components for shadcn/ui inspired styling */
             
-            for metric, noise_data in noise_analysis.items():
-                outlier_pct = noise_data.get('outlier_percentage', 0)
-                quality_pct = noise_data.get('quality_percentage', 0)
-                
-                html += f'<div class="noise-item">'
-                html += f'<strong>{metric.replace("_", " ").title()}</strong>: '
-                html += f'{quality_pct:.1f}% clean data, {outlier_pct:.1f}% outliers'
-                html += '</div>'
-            html += '</div>'
-        
-        html += '</section>'
-        return html
-    
-    def _build_correlation_analysis(self, data: Dict) -> str:
-        """Build correlation analysis section"""
-        
-        html = '<section class="dashboard-section">'
-        html += '<h2 class="section-title">Correlation Analysis</h2>'
-        
-        # Get a representative participant's correlations for cohort-level insights
-        participants = data.get('participant_insights', {})
-        
-        if participants:
-            # Use first participant's correlation structure for display
-            first_participant = next(iter(participants.values()))
-            daily_correlations = first_participant.get('correlations', {}).get('daily', {})
+            /* Cohort Summary */
+            .cohort-summary {
+                background-color: hsl(var(--card));
+                border-radius: var(--radius);
+                box-shadow: var(--shadow);
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
             
-            if daily_correlations:
-                # Generate correlation heatmap
-                chart_generator = ChartGenerator()
-                heatmap_img = chart_generator.create_correlation_heatmap(
-                    daily_correlations, 
-                    "Average Daily Correlations Across Cohort"
-                )
-                
-                if heatmap_img:
-                    html += '<div class="chart-container">'
-                    html += f'<img src="data:image/png;base64,{heatmap_img}" alt="Correlation Heatmap" class="chart-image">'
-                    html += '</div>'
-                
-                # Strong correlations table
-                html += '<h3>Significant Correlations</h3>'
-                html += '<table class="correlation-table">'
-                html += '<thead><tr><th>Metric Pair</th><th>Correlation</th><th>Confidence</th><th>Interpretation</th></tr></thead>'
-                html += '<tbody>'
-                
-                for corr_name, corr_data in daily_correlations.items():
-                    if corr_data.get('pearson', {}).get('significant', False):
-                        r_val = corr_data['pearson']['r']
-                        confidence = corr_data.get('confidence', 'uncertain')
-                        interpretation = corr_data.get('interpretation', 'No interpretation available')
-                        
-                        html += '<tr>'
-                        html += f'<td>{corr_name.replace("_vs_", " vs ").title()}</td>'
-                        html += f'<td>{r_val:.3f}</td>'
-                        html += f'<td>{confidence}</td>'
-                        html += f'<td>{interpretation}</td>'
-                        html += '</tr>'
-                
-                html += '</tbody></table>'
-        
-        html += '</section>'
-        return html
-    
-    def _build_anomaly_analysis(self, data: Dict) -> str:
-        """Build anomaly analysis section"""
-        
-        html = '<section class="dashboard-section">'
-        html += '<h2 class="section-title">Anomaly Detection</h2>'
-        
-        participants = data.get('participant_insights', {})
-        
-        if participants:
-            # Aggregate anomaly statistics
-            anomaly_stats = {}
-            total_participants = len(participants)
+            .stats-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
             
-            for participant_data in participants.values():
-                anomalies = participant_data.get('anomalies', {})
-                
-                for metric, anomaly_data in anomalies.items():
-                    if metric not in anomaly_stats:
-                        anomaly_stats[metric] = {'count': 0, 'affected_participants': 0, 'total_anomalies': 0}
-                    
-                    anomaly_count = anomaly_data.get('anomaly_count', 0)
-                    if anomaly_count > 0:
-                        anomaly_stats[metric]['affected_participants'] += 1
-                        anomaly_stats[metric]['total_anomalies'] += anomaly_count
+            .stat-card {
+                background-color: hsl(var(--secondary));
+                border-radius: var(--radius);
+                padding: 1.25rem;
+                text-align: center;
+                box-shadow: var(--shadow);
+            }
             
-            if anomaly_stats:
-                html += '<div class="anomaly-grid">'
-                
-                for metric, stats in anomaly_stats.items():
-                    affected_pct = (stats['affected_participants'] / total_participants) * 100
-                    
-                    html += f'<div class="anomaly-card">'
-                    html += f'<h3>{metric.replace("_", " ").title()}</h3>'
-                    html += f'<div class="anomaly-number">{stats["total_anomalies"]}</div>'
-                    html += f'<p>Total Anomalies</p>'
-                    html += f'<div class="anomaly-affected">{affected_pct:.1f}% participants affected</div>'
-                    html += '</div>'
-                
-                html += '</div>'
+            .stat-value {
+                font-size: 2rem;
+                font-weight: 700;
+                color: hsl(var(--primary));
+                line-height: 1.2;
+            }
+            
+            .stat-label {
+                font-size: 0.875rem;
+                color: hsl(var(--muted-foreground));
+                margin-top: 0.25rem;
+            }
+            
+            .data-types-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+            
+            .data-type-badge {
+                display: flex;
+                align-items: center;
+                padding: 0.75rem;
+                background-color: hsl(var(--accent));
+                color: hsl(var(--accent-foreground));
+                border-radius: var(--radius);
+                font-size: 0.875rem;
+                font-weight: 500;
+            }
+            
+            .data-type-badge.unavailable {
+                background-color: hsl(var(--muted));
+                color: hsl(var(--muted-foreground));
+                opacity: 0.7;
+            }
+            
+            .data-type-icon {
+                margin-right: 0.5rem;
+                font-size: 1.25rem;
+            }
+            
+            /* Data Quality Section */
+            .data-quality-section {
+                background-color: hsl(var(--card));
+                border-radius: var(--radius);
+                box-shadow: var(--shadow);
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .quality-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.25rem;
+                margin-top: 1.25rem;
+            }
+            
+            .quality-card {
+                background-color: hsl(var(--secondary));
+                border-radius: var(--radius);
+                padding: 1.25rem;
+                text-align: center;
+            }
+            
+            .quality-meter {
+                height: 8px;
+                width: 100%;
+                background-color: hsl(var(--muted));
+                border-radius: 4px;
+                margin: 0.75rem 0;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .quality-meter.high::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: hsl(var(--success));
+                border-radius: 4px;
+            }
+            
+            .quality-meter.medium::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 70%;
+                background-color: hsl(var(--warning));
+                border-radius: 4px;
+            }
+            
+            .quality-meter.low::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 40%;
+                background-color: hsl(var(--destructive));
+                border-radius: 4px;
+            }
+            
+            .quality-value {
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-top: 0.5rem;
+            }
+            
+            .quality-details {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 0.75rem;
+                font-size: 0.75rem;
+                color: hsl(var(--muted-foreground));
+            }
+            
+            /* Correlation Analysis */
+            .correlation-analysis {
+                background-color: hsl(var(--card));
+                border-radius: var(--radius);
+                box-shadow: var(--shadow);
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .correlation-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.25rem;
+                margin-top: 1.25rem;
+            }
+            
+            .correlation-card {
+                background-color: hsl(var(--secondary));
+                border-radius: var(--radius);
+                padding: 1.25rem;
+                box-shadow: var(--shadow);
+            }
+            
+            .correlation-metrics {
+                font-weight: 600;
+                margin-bottom: 0.75rem;
+            }
+            
+            .correlation-strength {
+                font-size: 1.25rem;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+            }
+            
+            .correlation-strength.high { color: hsl(var(--success)); }
+            .correlation-strength.medium { color: hsl(var(--warning)); }
+            .correlation-strength.low { color: hsl(var(--muted-foreground)); }
+            
+            .correlation-significance {
+                font-size: 0.875rem;
+                color: hsl(var(--muted-foreground));
+            }
+            
+            .info-message {
+                background-color: hsl(var(--muted));
+                border-radius: var(--radius);
+                padding: 1.25rem;
+                text-align: center;
+                color: hsl(var(--muted-foreground));
+                margin-top: 1.25rem;
+            }
+            
+            /* Anomaly Analysis */
+            .anomaly-analysis {
+                background-color: hsl(var(--card));
+                border-radius: var(--radius);
+                box-shadow: var(--shadow);
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .anomaly-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.25rem;
+                margin-top: 1.25rem;
+            }
+            
+            .anomaly-card {
+                background-color: hsl(var(--secondary));
+                border-radius: var(--radius);
+                padding: 1.25rem;
+                box-shadow: var(--shadow);
+            }
+            
+            .anomaly-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+            }
+            
+            .anomaly-badge {
+                background-color: hsl(var(--destructive));
+                color: hsl(var(--destructive-foreground));
+                font-size: 0.75rem;
+                font-weight: 600;
+                padding: 0.25rem 0.5rem;
+                border-radius: 9999px;
+            }
+            
+            .anomaly-list {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .anomaly-item {
+                padding: 0.75rem;
+                border-bottom: 1px solid hsl(var(--border));
+            }
+            
+            .anomaly-item:last-child {
+                border-bottom: none;
+            }
+            
+            .anomaly-date {
+                font-size: 0.75rem;
+                color: hsl(var(--muted-foreground));
+                margin-bottom: 0.25rem;
+            }
+            
+            .anomaly-value {
+                font-weight: 600;
+                margin-bottom: 0.25rem;
+            }
+            
+            .anomaly-description {
+                font-size: 0.875rem;
+                color: hsl(var(--muted-foreground));
+            }
+            
+            .more-indicator {
+                text-align: center;
+                color: hsl(var(--muted-foreground));
+                font-size: 0.875rem;
+            }
+            
+            .no-anomalies {
+                text-align: center;
+                color: hsl(var(--success));
+                padding: 1rem 0;
+                font-weight: 500;
+            }
+        """
         
-        html += '</section>'
-        return html
-    
     def _build_participant_overview(self, data: Dict) -> str:
         """Build participant overview section"""
         
@@ -457,8 +1312,9 @@ class ResearcherDashboard(BaseProcessor):
         participants = data.get('participant_insights', {})
         
         if participants:
+            html += '<div class="table-container">'
             html += '<table class="participant-table">'
-            html += '<thead><tr><th>Participant ID</th><th>Data Quality</th><th>Metrics Tracked</th><th>Key Findings</th></tr></thead>'
+            html += '<thead><tr><th>Participant</th><th>Data Quality</th><th>Metrics Tracked</th><th>Key Findings</th></tr></thead>'
             html += '<tbody>'
             
             for participant_id, participant_data in participants.items():
@@ -473,18 +1329,291 @@ class ResearcherDashboard(BaseProcessor):
                 key_findings = insights.get('key_findings', [])
                 findings_summary = '; '.join(key_findings[:2]) if key_findings else 'No significant findings'
                 
+                # Create avatar from participant ID initials
+                initials = ''.join([x[0].upper() for x in participant_id.replace('participant-', '').split('_') if x])[:2]
+                if not initials:
+                    initials = 'P'
+                
+                quality_class = "high" if quality_score > 80 else "medium" if quality_score > 60 else "low"
+                
                 html += '<tr>'
-                html += f'<td>{participant_id}</td>'
-                html += f'<td>{quality_score:.0f}%</td>'
-                html += f'<td>{len(baselines)} metrics</td>'
+                html += f'<td><div class="participant-cell"><span class="avatar">{initials}</span><span>{participant_id}</span></div></td>'
+                html += f'<td><span class="badge {quality_class}">{quality_score:.0f}%</span></td>'
+                html += f'<td><span class="metric-count">{len(baselines)}</span> metrics</td>'
                 html += f'<td>{findings_summary[:100]}{"..." if len(findings_summary) > 100 else ""}</td>'
                 html += '</tr>'
             
             html += '</tbody></table>'
+            html += '</div>'
+        else:
+            html += '<div class="empty-state">'
+            html += '<p>No participant data available.</p>'
+            html += '</div>'
         
         html += '</section>'
         return html
+        
+    def _build_data_quality_section(self, data: Dict) -> str:
+        """Build data quality section with shadcn/ui inspired styling"""
+        
+        # Extract data quality information from the analysis results
+        cleaning_data = data.get('cleaning_report', {})
+        metrics = ['steps', 'sleep', 'bp', 'temp', 'hr']
+        
+        html = """
+        <section class="dashboard-card data-quality-section">
+            <h2>Data Quality Analysis</h2>
+            <div class="quality-grid">
+        """
+        
+        # If we have cleaning data, build quality metrics
+        if cleaning_data:
+            for metric in metrics:
+                if metric in cleaning_data:
+                    metric_data = cleaning_data[metric]
+                    good_records = metric_data.get('good_records', 0)
+                    total_records = metric_data.get('total_records', 0)
+                    percentage = (good_records / total_records * 100) if total_records > 0 else 0
+                    
+                    quality_class = "high" if percentage >= 80 else "medium" if percentage >= 50 else "low"
+                    
+                    html += f"""
+                    <div class="quality-card">
+                        <h3>{metric.capitalize()}</h3>
+                        <div class="quality-meter {quality_class}">
+                            <div class="quality-value">{percentage:.1f}%</div>
+                        </div>
+                        <div class="quality-details">
+                            <div>Good Records: {good_records}</div>
+                            <div>Total Records: {total_records}</div>
+                        </div>
+                    </div>
+                    """
+        else:
+            html += "<p>No data quality information available.</p>"
+        
+        html += """
+            </div>
+        </section>
+        """
+        return html
     
+    def _build_correlation_analysis(self, data: Dict) -> str:
+        """Build correlation analysis section with shadcn/ui inspired styling"""
+        
+        # Extract correlation data from the analysis results
+        correlation_data = data.get('correlation_analysis', {})
+        
+        html = """
+        <section class="dashboard-card correlation-analysis">
+            <h2>Correlation Analysis</h2>
+        """
+        
+        if correlation_data:
+            significant_correlations = correlation_data.get('significant_correlations', [])
+            
+            if significant_correlations:
+                html += """
+                <div class="correlation-grid">
+                """
+                
+                for correlation in significant_correlations:
+                    metric1 = correlation.get('metric1', 'Unknown')
+                    metric2 = correlation.get('metric2', 'Unknown')
+                    strength = correlation.get('strength', 0)
+                    p_value = correlation.get('p_value', 1)
+                    
+                    # Determine correlation strength class
+                    if abs(strength) >= 0.7:
+                        strength_class = "high"
+                    elif abs(strength) >= 0.4:
+                        strength_class = "medium" 
+                    else:
+                        strength_class = "low"
+                    
+                    html += f"""
+                    <div class="correlation-card">
+                        <div class="correlation-metrics">{metric1} ↔ {metric2}</div>
+                        <div class="correlation-strength {strength_class}">
+                            <span>r = {strength:.3f}</span>
+                        </div>
+                        <div class="correlation-significance">p = {p_value:.4f}</div>
+                    </div>
+                    """
+                
+                html += """
+                </div>
+                """
+            else:
+                html += """
+                <div class="info-message">
+                    <p>No significant correlations found in the dataset.</p>
+                </div>
+                """
+        else:
+            html += """
+            <div class="info-message">
+                <p>No correlation data available.</p>
+            </div>
+            """
+        
+        html += """
+        </section>
+        """
+        return html
+    
+    def _build_anomaly_analysis(self, data: Dict) -> str:
+        """Build anomaly analysis section with shadcn/ui inspired styling"""
+        
+        # Extract anomaly data from the technical analysis
+        technical_data = data.get('technical_analysis', {})
+        anomaly_data = technical_data.get('anomalies', {})
+        
+        html = """
+        <section class="dashboard-card anomaly-analysis">
+            <h2>Anomaly Analysis</h2>
+        """
+        
+        if anomaly_data:
+            html += """
+            <div class="anomaly-grid">
+            """
+            
+            metrics = ['steps', 'sleep', 'bp', 'temp', 'hr']
+            for metric in metrics:
+                if metric in anomaly_data:
+                    metric_anomalies = anomaly_data[metric]
+                    anomaly_count = len(metric_anomalies.get('instances', []))
+                    
+                    html += f"""
+                    <div class="anomaly-card">
+                        <div class="anomaly-header">
+                            <h3>{metric.capitalize()}</h3>
+                            <span class="anomaly-badge">{anomaly_count}</span>
+                        </div>
+                        """
+                    
+                    if anomaly_count > 0:
+                        html += """
+                        <ul class="anomaly-list">
+                        """
+                        
+                        for instance in metric_anomalies.get('instances', [])[:3]:  # Show only top 3
+                            date = instance.get('date', 'Unknown')
+                            value = instance.get('value', 'Unknown')
+                            description = instance.get('description', 'Anomalous value detected')
+                            
+                            html += f"""
+                            <li class="anomaly-item">
+                                <div class="anomaly-date">{date}</div>
+                                <div class="anomaly-value">{value}</div>
+                                <div class="anomaly-description">{description}</div>
+                            </li>
+                            """
+                        
+                        if anomaly_count > 3:
+                            html += f"""
+                            <li class="anomaly-item more-indicator">
+                                <div>+{anomaly_count - 3} more anomalies</div>
+                            </li>
+                            """
+                        
+                        html += """
+                        </ul>
+                        """
+                    else:
+                        html += """
+                        <div class="no-anomalies">No anomalies detected</div>
+                        """
+                    
+                    html += """
+                    </div>
+                    """
+            
+            html += """
+            </div>
+            """
+        else:
+            html += """
+            <div class="info-message">
+                <p>No anomaly data available.</p>
+            </div>
+            """
+        
+        html += """
+        </section>
+        """
+        return html
+        
+    def _build_cohort_summary(self, data: Dict) -> str:
+        """Build a summary of the cohort data with shadcn/ui inspired styling"""
+        total_participants = data.get('total_participants', 0)
+        date_range = data.get('date_range', {})
+        span_days = date_range.get('span_days', 0)
+        
+        metric_availability = data.get('metric_availability', {})
+        bp_available = metric_availability.get('bp', '0')
+        sleep_available = metric_availability.get('sleep', '0')
+        steps_available = metric_availability.get('steps', '0')
+        hr_available = metric_availability.get('hr', '0')
+        spo2_available = metric_availability.get('spo2', '0')
+        temp_available = metric_availability.get('temp', '0')
+        
+        # Calculate availability percentages
+        metrics_count = 6  # bp, sleep, steps, hr, spo2, temp
+        available_metrics = sum(1 for m in [bp_available, sleep_available, steps_available, 
+                                            hr_available, spo2_available, temp_available] if m != '0')
+        data_coverage = (available_metrics / metrics_count) * 100 if metrics_count > 0 else 0
+        
+        html = f"""
+        <section class="dashboard-card cohort-summary">
+            <h2>Cohort Summary</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">{total_participants}</div>
+                    <div class="stat-label">Participants</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">{span_days}</div>
+                    <div class="stat-label">Days Analyzed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">{data_coverage:.1f}%</div>
+                    <div class="stat-label">Data Coverage</div>
+                </div>
+            </div>
+            
+            <h3>Available Data Types</h3>
+            <div class="data-types-grid">
+                <div class="data-type-badge {'' if bp_available != '0' else 'unavailable'}">
+                    <span class="data-type-icon">🫀</span>
+                    <span>Blood Pressure</span>
+                </div>
+                <div class="data-type-badge {'' if sleep_available != '0' else 'unavailable'}">
+                    <span class="data-type-icon">😴</span>
+                    <span>Sleep</span>
+                </div>
+                <div class="data-type-badge {'' if steps_available != '0' else 'unavailable'}">
+                    <span class="data-type-icon">👣</span>
+                    <span>Steps</span>
+                </div>
+                <div class="data-type-badge {'' if hr_available != '0' else 'unavailable'}">
+                    <span class="data-type-icon">❤️</span>
+                    <span>Heart Rate</span>
+                </div>
+                <div class="data-type-badge {'' if spo2_available != '0' else 'unavailable'}">
+                    <span class="data-type-icon">💧</span>
+                    <span>SpO2</span>
+                </div>
+                <div class="data-type-badge {'' if temp_available != '0' else 'unavailable'}">
+                    <span class="data-type-icon">🌡️</span>
+                    <span>Temperature</span>
+                </div>
+            </div>
+        </section>
+        """
+        return html
+        
     def _get_date_range(self, data: Dict) -> str:
         """Extract date range from data"""
         participants = data.get('participant_insights', {})
@@ -499,364 +1628,6 @@ class ResearcherDashboard(BaseProcessor):
             return f"{start_date} to {end_date}"
         
         return "Unknown"
-    
-    def _get_research_css(self) -> str:
-        """Get CSS styles for researcher dashboard"""
-        return """
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
-        
-        :root {
-            --color-primary: #007AFF;
-            --color-primary-light: #E3F2FD;
-            --color-secondary: #5856D6;
-            --color-success: #34C759;
-            --color-warning: #FF9500;
-            --color-error: #FF3B30;
-            --color-gray-50: #FAFAFA;
-            --color-gray-100: #F5F5F7;
-            --color-gray-200: #E5E5EA;
-            --color-gray-300: #D1D1D6;
-            --color-gray-400: #8E8E93;
-            --color-gray-600: #636366;
-            --color-gray-800: #1C1C1E;
-            --color-gray-900: #000000;
-            --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-            --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-heavy: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.06);
-            --border-radius-sm: 8px;
-            --border-radius-md: 12px;
-            --border-radius-lg: 16px;
-            --spacing-xs: 4px;
-            --spacing-sm: 8px;
-            --spacing-md: 16px;
-            --spacing-lg: 24px;
-            --spacing-xl: 32px;
-            --spacing-2xl: 48px;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            font-feature-settings: 'kern' 1, 'liga' 1;
-            line-height: 1.6;
-            color: var(--color-gray-800);
-            background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-gray-100) 100%);
-            font-weight: 400;
-            letter-spacing: -0.01em;
-        }
-        
-        .container { 
-            max-width: 1400px; 
-            margin: 0 auto; 
-            padding: var(--spacing-xl); 
-        }
-        
-        .dashboard-header {
-            background: linear-gradient(135deg, #FFFFFF 0%, var(--color-gray-50) 100%);
-            color: var(--color-gray-800);
-            padding: var(--spacing-2xl);
-            border-radius: var(--spacing-lg);
-            margin-bottom: var(--spacing-xl);
-            text-align: center;
-            box-shadow: var(--shadow-light);
-            border: 1px solid var(--color-gray-200);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .dashboard-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-        }
-        
-        .branding-top {
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: var(--color-primary);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: var(--spacing-md);
-            padding: var(--spacing-sm) var(--spacing-lg);
-            background: var(--color-primary-light);
-            border-radius: var(--border-radius-sm);
-            display: inline-block;
-        }
-        
-        .dashboard-header h1 { 
-            font-size: 2.5rem; 
-            font-weight: 700;
-            margin-bottom: var(--spacing-md);
-            color: var(--color-gray-900);
-            letter-spacing: -0.025em;
-        }
-        
-        .subtitle { 
-            font-size: 1.125rem; 
-            color: var(--color-gray-600);
-            margin-bottom: var(--spacing-lg);
-            font-weight: 400;
-        }
-        
-        .meta-info { 
-            font-size: 0.875rem; 
-            color: var(--color-gray-400);
-            font-weight: 500;
-            line-height: 1.8;
-        }
-        
-        .dashboard-grid { 
-            display: grid; 
-            gap: var(--spacing-xl);
-        }
-        
-        .dashboard-section {
-            background: #FFFFFF;
-            padding: var(--spacing-xl);
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-medium);
-            border: 1px solid var(--color-gray-200);
-            transition: box-shadow 0.3s ease;
-        }
-        
-        .dashboard-section:hover {
-            box-shadow: var(--shadow-heavy);
-        }
-        
-        .section-title {
-            font-size: 1.75rem;
-            font-weight: 600;
-            margin-bottom: var(--spacing-lg);
-            color: var(--color-gray-900);
-            position: relative;
-            padding-left: var(--spacing-lg);
-        }
-        
-        .section-title::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 4px;
-            height: 24px;
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-            border-radius: 2px;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: var(--spacing-lg);
-            margin-bottom: var(--spacing-xl);
-        }
-        
-        .stat-card {
-            text-align: center;
-            padding: var(--spacing-xl);
-            background: linear-gradient(135deg, #FFFFFF 0%, var(--color-gray-50) 100%);
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-light);
-            border: 1px solid var(--color-gray-200);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-        }
-        
-        .stat-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .stat-card h3 { 
-            font-size: 2.75rem; 
-            font-weight: 700;
-            margin-bottom: var(--spacing-sm);
-            color: var(--color-primary);
-            letter-spacing: -0.02em;
-        }
-        
-        .stat-card p { 
-            font-size: 0.875rem; 
-            color: var(--color-gray-600);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .quality-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: var(--spacing-md);
-            margin-bottom: var(--spacing-lg);
-        }
-        
-        .quality-card {
-            text-align: center;
-            padding: var(--spacing-lg);
-            border-radius: var(--border-radius-md);
-            color: white;
-            transition: transform 0.2s ease;
-        }
-        
-        .quality-card:hover {
-            transform: scale(1.02);
-        }
-        
-        .quality-card.high { background: linear-gradient(135deg, var(--color-success) 0%, #28A745 100%); }
-        .quality-card.medium { background: linear-gradient(135deg, var(--color-warning) 0%, #FD7E14 100%); }
-        .quality-card.low { background: linear-gradient(135deg, var(--color-error) 0%, #DC3545 100%); }
-        
-        .quality-score { 
-            font-size: 2rem; 
-            font-weight: 700;
-            margin-bottom: var(--spacing-xs);
-        }
-        
-        .chart-container {
-            text-align: center;
-            margin: var(--spacing-xl) 0;
-            padding: var(--spacing-lg);
-            background: var(--color-gray-50);
-            border-radius: var(--border-radius-md);
-        }
-        
-        .chart-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: var(--border-radius-sm);
-            box-shadow: var(--shadow-light);
-        }
-        
-        .correlation-table, .participant-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: var(--spacing-lg);
-            font-size: 0.875rem;
-        }
-        
-        .correlation-table th, .correlation-table td,
-        .participant-table th, .participant-table td {
-            padding: var(--spacing-md);
-            text-align: left;
-            border-bottom: 1px solid var(--color-gray-200);
-        }
-        
-        .correlation-table th, .participant-table th {
-            background-color: var(--color-gray-100);
-            font-weight: 600;
-            color: var(--color-gray-800);
-            text-transform: uppercase;
-            letter-spacing: 0.025em;
-            font-size: 0.75rem;
-        }
-        
-        .correlation-table tr:hover, .participant-table tr:hover {
-            background-color: var(--color-gray-50);
-        }
-        
-        .anomaly-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--spacing-lg);
-        }
-        
-        .anomaly-card {
-            text-align: center;
-            padding: var(--spacing-xl);
-            background: linear-gradient(135deg, #FFFFFF 0%, var(--color-primary-light) 100%);
-            border-radius: var(--border-radius-lg);
-            border: 1px solid var(--color-primary);
-            border-width: 0 0 0 4px;
-            transition: all 0.3s ease;
-        }
-        
-        .anomaly-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .anomaly-number { 
-            font-size: 2.75rem; 
-            font-weight: 700; 
-            color: var(--color-primary);
-            margin-bottom: var(--spacing-sm);
-        }
-        
-        .anomaly-affected { 
-            font-size: 0.875rem; 
-            color: var(--color-gray-600);
-            margin-top: var(--spacing-sm);
-            font-weight: 500;
-        }
-        
-        .correlation-summary, .noise-summary {
-            display: grid;
-            gap: var(--spacing-md);
-            margin-top: var(--spacing-lg);
-        }
-        
-        .correlation-item, .noise-item {
-            padding: var(--spacing-lg);
-            background: var(--color-gray-50);
-            border-radius: var(--border-radius-md);
-            border-left: 4px solid var(--color-primary);
-            transition: all 0.2s ease;
-        }
-        
-        .correlation-item:hover, .noise-item:hover {
-            background: var(--color-primary-light);
-            transform: translateX(4px);
-        }
-        
-        .dashboard-footer {
-            text-align: center;
-            margin-top: var(--spacing-2xl);
-            padding: var(--spacing-xl);
-            color: var(--color-gray-600);
-            font-size: 0.875rem;
-            background: #FFFFFF;
-            border-radius: var(--border-radius-lg);
-            border: 1px solid var(--color-gray-200);
-        }
-        
-        .branding-bottom {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--color-primary);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: var(--spacing-sm);
-        }
-        
-        @media (max-width: 768px) {
-            .container { padding: var(--spacing-lg); }
-            .dashboard-header { padding: var(--spacing-lg); }
-            .dashboard-header h1 { font-size: 2rem; }
-            .stats-grid { grid-template-columns: 1fr 1fr; gap: var(--spacing-md); }
-            .quality-grid { grid-template-columns: 1fr 1fr; }
-            .anomaly-grid { grid-template-columns: 1fr; }
-        }
-        """
 
 
 class ParticipantDashboard(BaseProcessor):

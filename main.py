@@ -26,7 +26,7 @@ from src.data_cleaner import clean_goqii_data
 from src.technical_analysis import generate_technical_analysis
 from src.correlation_engine import generate_correlation_analysis
 from src.participant_insights import generate_participant_insights
-from src.dashboard import generate_dashboards
+from src.modern_dashboard_complete import generate_modern_dashboards
 
 
 def setup_logging(output_dir: Path) -> logging.Logger:
@@ -269,7 +269,7 @@ def run_eda_pipeline(
         
         # Generate dashboards
         dashboard_dir = output_path / "dashboards"
-        dashboards = generate_dashboards(combined_results, dashboard_dir)
+        dashboards = generate_modern_dashboards(combined_results, dashboard_dir)
         
         logger.info(f"✅ Dashboard generation completed")
         logger.info(f"📈 Researcher dashboard created: {dashboard_dir / 'researcher-dashboard.html'}")
