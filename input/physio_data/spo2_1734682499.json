@@ -1,0 +1,380 @@
+[
+  {
+    "activityId": 0,
+    "createdTime": 1734678748,
+    "l_activityId": 43,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 97,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734668352,
+    "l_activityId": 44,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 97,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734667771,
+    "l_activityId": 45,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 97,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734667188,
+    "l_activityId": 46,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 98,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734665980,
+    "l_activityId": 47,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 97,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734665353,
+    "l_activityId": 48,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 98,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734664751,
+    "l_activityId": 49,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 98,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734664151,
+    "l_activityId": 50,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 99,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734663551,
+    "l_activityId": 51,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 99,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734662951,
+    "l_activityId": 52,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 96,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734662375,
+    "l_activityId": 53,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 99,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734661752,
+    "l_activityId": 54,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 98,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734661152,
+    "l_activityId": 55,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 98,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734659919,
+    "l_activityId": 56,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 97,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734659336,
+    "l_activityId": 57,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 97,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734658707,
+    "l_activityId": 58,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 99,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734658109,
+    "l_activityId": 59,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 97,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734657519,
+    "l_activityId": 60,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 99,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734656907,
+    "l_activityId": 61,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 97,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734656311,
+    "l_activityId": 62,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 97,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734655712,
+    "l_activityId": 63,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 99,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734655117,
+    "l_activityId": 64,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 97,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734654507,
+    "l_activityId": 65,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 98,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734653917,
+    "l_activityId": 66,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 97,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734653310,
+    "l_activityId": 25,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 99,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734650376,
+    "l_activityId": 26,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 97,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734647975,
+    "l_activityId": 27,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 97,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734647352,
+    "l_activityId": 28,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 96,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734646754,
+    "l_activityId": 29,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 96,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734646154,
+    "l_activityId": 30,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 96,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734645567,
+    "l_activityId": 31,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 97,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734644951,
+    "l_activityId": 32,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 98,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734644373,
+    "l_activityId": 33,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 97,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734643788,
+    "l_activityId": 34,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 97,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734643176,
+    "l_activityId": 35,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 97,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734642567,
+    "l_activityId": 36,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 97,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734641968,
+    "l_activityId": 37,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 99,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734641367,
+    "l_activityId": 38,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 99,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734640752,
+    "l_activityId": 39,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 98,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734640178,
+    "l_activityId": 40,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 96,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734639591,
+    "l_activityId": 41,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 98,
+    "status": "new"
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734638955,
+    "l_activityId": 42,
+    "logDate": 1734633000,
+    "skipable": 0,
+    "spo2Value": 97,
+    "status": "new"
+  }
+]

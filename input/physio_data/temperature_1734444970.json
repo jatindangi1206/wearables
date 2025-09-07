@@ -1,0 +1,80 @@
+[
+  {
+    "activityId": 0,
+    "createdTime": 1734444960,
+    "isDeleted": "N",
+    "isSelf": 0,
+    "l_activityId": 2,
+    "logDate": 1734373800,
+    "logType": "0",
+    "otherName": "Self",
+    "skipable": 0,
+    "status": "new",
+    "temperature": 96.8
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734444900,
+    "isDeleted": "N",
+    "isSelf": 0,
+    "l_activityId": 5,
+    "logDate": 1734373800,
+    "logType": "0",
+    "otherName": "Self",
+    "skipable": 0,
+    "status": "new",
+    "temperature": 96.6
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734444600,
+    "isDeleted": "N",
+    "isSelf": 0,
+    "l_activityId": 6,
+    "logDate": 1734373800,
+    "logType": "0",
+    "otherName": "Self",
+    "skipable": 0,
+    "status": "new",
+    "temperature": 95.2
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734444540,
+    "isDeleted": "N",
+    "isSelf": 0,
+    "l_activityId": 7,
+    "logDate": 1734373800,
+    "logType": "0",
+    "otherName": "Self",
+    "skipable": 0,
+    "status": "new",
+    "temperature": 78.8
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734444420,
+    "isDeleted": "N",
+    "isSelf": 0,
+    "l_activityId": 8,
+    "logDate": 1734373800,
+    "logType": "0",
+    "otherName": "Self",
+    "skipable": 0,
+    "status": "new",
+    "temperature": 95.2
+  },
+  {
+    "activityId": 0,
+    "createdTime": 1734090900,
+    "isDeleted": "N",
+    "isSelf": 0,
+    "l_activityId": 9,
+    "logDate": 1734028200,
+    "logType": "0",
+    "otherName": "Self",
+    "skipable": 0,
+    "status": "new",
+    "temperature": 96.1
+  }
+]

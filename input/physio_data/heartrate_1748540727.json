@@ -1,0 +1,3038 @@
+[
+  {
+    "averageSessionHeartRate": 85,
+    "exerciseType": "",
+    "group": 1748533222,
+    "jsonData": [
+      {
+        "createdTime": 1748533222,
+        "exerciseType": "",
+        "heartRate": 85,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 85,
+    "logDateTime": 1748533222,
+    "logFrom": "",
+    "maxRate": 85,
+    "minRate": 85,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 72,
+    "exerciseType": "",
+    "group": 1748532922,
+    "jsonData": [
+      {
+        "createdTime": 1748532922,
+        "exerciseType": "",
+        "heartRate": 72,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 72,
+    "logDateTime": 1748532922,
+    "logFrom": "",
+    "maxRate": 72,
+    "minRate": 72,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 109,
+    "exerciseType": "",
+    "group": 1748532618,
+    "jsonData": [
+      {
+        "createdTime": 1748532618,
+        "exerciseType": "",
+        "heartRate": 109,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 109,
+    "logDateTime": 1748532618,
+    "logFrom": "",
+    "maxRate": 109,
+    "minRate": 109,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 109,
+    "exerciseType": "",
+    "group": 1748532322,
+    "jsonData": [
+      {
+        "createdTime": 1748532322,
+        "exerciseType": "",
+        "heartRate": 109,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 109,
+    "logDateTime": 1748532322,
+    "logFrom": "",
+    "maxRate": 109,
+    "minRate": 109,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 85,
+    "exerciseType": "",
+    "group": 1748532022,
+    "jsonData": [
+      {
+        "createdTime": 1748532022,
+        "exerciseType": "",
+        "heartRate": 85,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 85,
+    "logDateTime": 1748532022,
+    "logFrom": "",
+    "maxRate": 85,
+    "minRate": 85,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 57,
+    "exerciseType": "",
+    "group": 1748531722,
+    "jsonData": [
+      {
+        "createdTime": 1748531722,
+        "exerciseType": "",
+        "heartRate": 57,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 57,
+    "logDateTime": 1748531722,
+    "logFrom": "",
+    "maxRate": 57,
+    "minRate": 57,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 57,
+    "exerciseType": "",
+    "group": 1748531414,
+    "jsonData": [
+      {
+        "createdTime": 1748531414,
+        "exerciseType": "",
+        "heartRate": 57,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 57,
+    "logDateTime": 1748531414,
+    "logFrom": "",
+    "maxRate": 57,
+    "minRate": 57,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 50,
+    "exerciseType": "",
+    "group": 1748531122,
+    "jsonData": [
+      {
+        "createdTime": 1748531122,
+        "exerciseType": "",
+        "heartRate": 50,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 50,
+    "logDateTime": 1748531122,
+    "logFrom": "",
+    "maxRate": 50,
+    "minRate": 50,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 70,
+    "exerciseType": "",
+    "group": 1748530822,
+    "jsonData": [
+      {
+        "createdTime": 1748530822,
+        "exerciseType": "",
+        "heartRate": 70,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 70,
+    "logDateTime": 1748530822,
+    "logFrom": "",
+    "maxRate": 70,
+    "minRate": 70,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 68,
+    "exerciseType": "",
+    "group": 1748530522,
+    "jsonData": [
+      {
+        "createdTime": 1748530522,
+        "exerciseType": "",
+        "heartRate": 68,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 68,
+    "logDateTime": 1748530522,
+    "logFrom": "",
+    "maxRate": 68,
+    "minRate": 68,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 70,
+    "exerciseType": "",
+    "group": 1748530222,
+    "jsonData": [
+      {
+        "createdTime": 1748530222,
+        "exerciseType": "",
+        "heartRate": 70,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 70,
+    "logDateTime": 1748530222,
+    "logFrom": "",
+    "maxRate": 70,
+    "minRate": 70,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 90,
+    "exerciseType": "",
+    "group": 1748530098,
+    "jsonData": [
+      {
+        "createdTime": 1748530098,
+        "exerciseType": "",
+        "heartRate": 90,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 90,
+    "logDateTime": 1748530098,
+    "logFrom": "",
+    "maxRate": 90,
+    "minRate": 90,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 90,
+    "exerciseType": "",
+    "group": 1748530079,
+    "jsonData": [
+      {
+        "createdTime": 1748530079,
+        "exerciseType": "",
+        "heartRate": 90,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 90,
+    "logDateTime": 1748530079,
+    "logFrom": "",
+    "maxRate": 90,
+    "minRate": 90,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 89,
+    "exerciseType": "",
+    "group": 1748530019,
+    "jsonData": [
+      {
+        "createdTime": 1748530019,
+        "exerciseType": "",
+        "heartRate": 89,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 89,
+    "logDateTime": 1748530019,
+    "logFrom": "",
+    "maxRate": 89,
+    "minRate": 89,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 111,
+    "exerciseType": "",
+    "group": 1748529958,
+    "jsonData": [
+      {
+        "createdTime": 1748529958,
+        "exerciseType": "",
+        "heartRate": 111,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 111,
+    "logDateTime": 1748529958,
+    "logFrom": "",
+    "maxRate": 111,
+    "minRate": 111,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 121,
+    "exerciseType": "",
+    "group": 1748529901,
+    "jsonData": [
+      {
+        "createdTime": 1748529901,
+        "exerciseType": "",
+        "heartRate": 121,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 121,
+    "logDateTime": 1748529901,
+    "logFrom": "",
+    "maxRate": 121,
+    "minRate": 121,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 124,
+    "exerciseType": "",
+    "group": 1748529899,
+    "jsonData": [
+      {
+        "createdTime": 1748529899,
+        "exerciseType": "",
+        "heartRate": 124,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 124,
+    "logDateTime": 1748529899,
+    "logFrom": "",
+    "maxRate": 124,
+    "minRate": 124,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 117,
+    "exerciseType": "",
+    "group": 1748529839,
+    "jsonData": [
+      {
+        "createdTime": 1748529839,
+        "exerciseType": "",
+        "heartRate": 117,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 117,
+    "logDateTime": 1748529839,
+    "logFrom": "",
+    "maxRate": 117,
+    "minRate": 117,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 118,
+    "exerciseType": "",
+    "group": 1748529779,
+    "jsonData": [
+      {
+        "createdTime": 1748529779,
+        "exerciseType": "",
+        "heartRate": 118,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 118,
+    "logDateTime": 1748529779,
+    "logFrom": "",
+    "maxRate": 118,
+    "minRate": 118,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 104,
+    "exerciseType": "",
+    "group": 1748529719,
+    "jsonData": [
+      {
+        "createdTime": 1748529719,
+        "exerciseType": "",
+        "heartRate": 104,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 104,
+    "logDateTime": 1748529719,
+    "logFrom": "",
+    "maxRate": 104,
+    "minRate": 104,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 105,
+    "exerciseType": "",
+    "group": 1748529659,
+    "jsonData": [
+      {
+        "createdTime": 1748529659,
+        "exerciseType": "",
+        "heartRate": 105,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 105,
+    "logDateTime": 1748529659,
+    "logFrom": "",
+    "maxRate": 105,
+    "minRate": 105,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 105,
+    "exerciseType": "",
+    "group": 1748529601,
+    "jsonData": [
+      {
+        "createdTime": 1748529601,
+        "exerciseType": "",
+        "heartRate": 105,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 105,
+    "logDateTime": 1748529601,
+    "logFrom": "",
+    "maxRate": 105,
+    "minRate": 105,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 105,
+    "exerciseType": "",
+    "group": 1748529599,
+    "jsonData": [
+      {
+        "createdTime": 1748529599,
+        "exerciseType": "",
+        "heartRate": 105,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 105,
+    "logDateTime": 1748529599,
+    "logFrom": "",
+    "maxRate": 105,
+    "minRate": 105,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 103,
+    "exerciseType": "",
+    "group": 1748529539,
+    "jsonData": [
+      {
+        "createdTime": 1748529539,
+        "exerciseType": "",
+        "heartRate": 103,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 103,
+    "logDateTime": 1748529539,
+    "logFrom": "",
+    "maxRate": 103,
+    "minRate": 103,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 101,
+    "exerciseType": "",
+    "group": 1748529479,
+    "jsonData": [
+      {
+        "createdTime": 1748529479,
+        "exerciseType": "",
+        "heartRate": 101,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 101,
+    "logDateTime": 1748529479,
+    "logFrom": "",
+    "maxRate": 101,
+    "minRate": 101,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 91,
+    "exerciseType": "",
+    "group": 1748529419,
+    "jsonData": [
+      {
+        "createdTime": 1748529419,
+        "exerciseType": "",
+        "heartRate": 91,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 91,
+    "logDateTime": 1748529419,
+    "logFrom": "",
+    "maxRate": 91,
+    "minRate": 91,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 99,
+    "exerciseType": "",
+    "group": 1748529359,
+    "jsonData": [
+      {
+        "createdTime": 1748529359,
+        "exerciseType": "",
+        "heartRate": 99,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 99,
+    "logDateTime": 1748529359,
+    "logFrom": "",
+    "maxRate": 99,
+    "minRate": 99,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 103,
+    "exerciseType": "",
+    "group": 1748529301,
+    "jsonData": [
+      {
+        "createdTime": 1748529301,
+        "exerciseType": "",
+        "heartRate": 103,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 103,
+    "logDateTime": 1748529301,
+    "logFrom": "",
+    "maxRate": 103,
+    "minRate": 103,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 122,
+    "exerciseType": "",
+    "group": 1748529299,
+    "jsonData": [
+      {
+        "createdTime": 1748529299,
+        "exerciseType": "",
+        "heartRate": 122,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 122,
+    "logDateTime": 1748529299,
+    "logFrom": "",
+    "maxRate": 122,
+    "minRate": 122,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 124,
+    "exerciseType": "",
+    "group": 1748529239,
+    "jsonData": [
+      {
+        "createdTime": 1748529239,
+        "exerciseType": "",
+        "heartRate": 124,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 124,
+    "logDateTime": 1748529239,
+    "logFrom": "",
+    "maxRate": 124,
+    "minRate": 124,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 122,
+    "exerciseType": "",
+    "group": 1748529179,
+    "jsonData": [
+      {
+        "createdTime": 1748529179,
+        "exerciseType": "",
+        "heartRate": 122,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 122,
+    "logDateTime": 1748529179,
+    "logFrom": "",
+    "maxRate": 122,
+    "minRate": 122,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 111,
+    "exerciseType": "",
+    "group": 1748529119,
+    "jsonData": [
+      {
+        "createdTime": 1748529119,
+        "exerciseType": "",
+        "heartRate": 111,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 111,
+    "logDateTime": 1748529119,
+    "logFrom": "",
+    "maxRate": 111,
+    "minRate": 111,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 109,
+    "exerciseType": "",
+    "group": 1748529059,
+    "jsonData": [
+      {
+        "createdTime": 1748529059,
+        "exerciseType": "",
+        "heartRate": 109,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 109,
+    "logDateTime": 1748529059,
+    "logFrom": "",
+    "maxRate": 109,
+    "minRate": 109,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 106,
+    "exerciseType": "",
+    "group": 1748529001,
+    "jsonData": [
+      {
+        "createdTime": 1748529001,
+        "exerciseType": "",
+        "heartRate": 106,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 106,
+    "logDateTime": 1748529001,
+    "logFrom": "",
+    "maxRate": 106,
+    "minRate": 106,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 98,
+    "exerciseType": "",
+    "group": 1748528924,
+    "jsonData": [
+      {
+        "createdTime": 1748528924,
+        "exerciseType": "",
+        "heartRate": 98,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 98,
+    "logDateTime": 1748528924,
+    "logFrom": "",
+    "maxRate": 98,
+    "minRate": 98,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 91,
+    "exerciseType": "",
+    "group": 1748528879,
+    "jsonData": [
+      {
+        "createdTime": 1748528879,
+        "exerciseType": "",
+        "heartRate": 91,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 91,
+    "logDateTime": 1748528879,
+    "logFrom": "",
+    "maxRate": 91,
+    "minRate": 91,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 85,
+    "exerciseType": "",
+    "group": 1748528819,
+    "jsonData": [
+      {
+        "createdTime": 1748528819,
+        "exerciseType": "",
+        "heartRate": 85,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 85,
+    "logDateTime": 1748528819,
+    "logFrom": "",
+    "maxRate": 85,
+    "minRate": 85,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 93,
+    "exerciseType": "",
+    "group": 1748528759,
+    "jsonData": [
+      {
+        "createdTime": 1748528759,
+        "exerciseType": "",
+        "heartRate": 93,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 93,
+    "logDateTime": 1748528759,
+    "logFrom": "",
+    "maxRate": 93,
+    "minRate": 93,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 94,
+    "exerciseType": "",
+    "group": 1748528701,
+    "jsonData": [
+      {
+        "createdTime": 1748528701,
+        "exerciseType": "",
+        "heartRate": 94,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 94,
+    "logDateTime": 1748528701,
+    "logFrom": "",
+    "maxRate": 94,
+    "minRate": 94,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 100,
+    "exerciseType": "",
+    "group": 1748528699,
+    "jsonData": [
+      {
+        "createdTime": 1748528699,
+        "exerciseType": "",
+        "heartRate": 100,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 100,
+    "logDateTime": 1748528699,
+    "logFrom": "",
+    "maxRate": 100,
+    "minRate": 100,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 102,
+    "exerciseType": "",
+    "group": 1748528639,
+    "jsonData": [
+      {
+        "createdTime": 1748528639,
+        "exerciseType": "",
+        "heartRate": 102,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 102,
+    "logDateTime": 1748528639,
+    "logFrom": "",
+    "maxRate": 102,
+    "minRate": 102,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 102,
+    "exerciseType": "",
+    "group": 1748528579,
+    "jsonData": [
+      {
+        "createdTime": 1748528579,
+        "exerciseType": "",
+        "heartRate": 102,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 102,
+    "logDateTime": 1748528579,
+    "logFrom": "",
+    "maxRate": 102,
+    "minRate": 102,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 100,
+    "exerciseType": "",
+    "group": 1748528519,
+    "jsonData": [
+      {
+        "createdTime": 1748528519,
+        "exerciseType": "",
+        "heartRate": 100,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 100,
+    "logDateTime": 1748528519,
+    "logFrom": "",
+    "maxRate": 100,
+    "minRate": 100,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 90,
+    "exerciseType": "",
+    "group": 1748528459,
+    "jsonData": [
+      {
+        "createdTime": 1748528459,
+        "exerciseType": "",
+        "heartRate": 90,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 90,
+    "logDateTime": 1748528459,
+    "logFrom": "",
+    "maxRate": 90,
+    "minRate": 90,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 95,
+    "exerciseType": "",
+    "group": 1748528415,
+    "jsonData": [
+      {
+        "createdTime": 1748528415,
+        "exerciseType": "",
+        "heartRate": 95,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 95,
+    "logDateTime": 1748528415,
+    "logFrom": "",
+    "maxRate": 95,
+    "minRate": 95,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 64,
+    "exerciseType": "",
+    "group": 1748525722,
+    "jsonData": [
+      {
+        "createdTime": 1748525722,
+        "exerciseType": "",
+        "heartRate": 64,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 64,
+    "logDateTime": 1748525722,
+    "logFrom": "",
+    "maxRate": 64,
+    "minRate": 64,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 92,
+    "exerciseType": "",
+    "group": 1748525518,
+    "jsonData": [
+      {
+        "createdTime": 1748525518,
+        "exerciseType": "",
+        "heartRate": 92,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 92,
+    "logDateTime": 1748525518,
+    "logFrom": "",
+    "maxRate": 92,
+    "minRate": 92,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 99,
+    "exerciseType": "",
+    "group": 1748525459,
+    "jsonData": [
+      {
+        "createdTime": 1748525459,
+        "exerciseType": "",
+        "heartRate": 99,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 99,
+    "logDateTime": 1748525459,
+    "logFrom": "",
+    "maxRate": 99,
+    "minRate": 99,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 94,
+    "exerciseType": "",
+    "group": 1748525401,
+    "jsonData": [
+      {
+        "createdTime": 1748525401,
+        "exerciseType": "",
+        "heartRate": 94,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 94,
+    "logDateTime": 1748525401,
+    "logFrom": "",
+    "maxRate": 94,
+    "minRate": 94,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 92,
+    "exerciseType": "",
+    "group": 1748525399,
+    "jsonData": [
+      {
+        "createdTime": 1748525399,
+        "exerciseType": "",
+        "heartRate": 92,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 92,
+    "logDateTime": 1748525399,
+    "logFrom": "",
+    "maxRate": 92,
+    "minRate": 92,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 86,
+    "exerciseType": "",
+    "group": 1748525339,
+    "jsonData": [
+      {
+        "createdTime": 1748525339,
+        "exerciseType": "",
+        "heartRate": 86,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 86,
+    "logDateTime": 1748525339,
+    "logFrom": "",
+    "maxRate": 86,
+    "minRate": 86,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 86,
+    "exerciseType": "",
+    "group": 1748525279,
+    "jsonData": [
+      {
+        "createdTime": 1748525279,
+        "exerciseType": "",
+        "heartRate": 86,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 86,
+    "logDateTime": 1748525279,
+    "logFrom": "",
+    "maxRate": 86,
+    "minRate": 86,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 88,
+    "exerciseType": "",
+    "group": 1748525219,
+    "jsonData": [
+      {
+        "createdTime": 1748525219,
+        "exerciseType": "",
+        "heartRate": 88,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 88,
+    "logDateTime": 1748525219,
+    "logFrom": "",
+    "maxRate": 88,
+    "minRate": 88,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 80,
+    "exerciseType": "",
+    "group": 1748525159,
+    "jsonData": [
+      {
+        "createdTime": 1748525159,
+        "exerciseType": "",
+        "heartRate": 80,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 80,
+    "logDateTime": 1748525159,
+    "logFrom": "",
+    "maxRate": 80,
+    "minRate": 80,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 80,
+    "exerciseType": "",
+    "group": 1748525101,
+    "jsonData": [
+      {
+        "createdTime": 1748525101,
+        "exerciseType": "",
+        "heartRate": 80,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 80,
+    "logDateTime": 1748525101,
+    "logFrom": "",
+    "maxRate": 80,
+    "minRate": 80,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 80,
+    "exerciseType": "",
+    "group": 1748525099,
+    "jsonData": [
+      {
+        "createdTime": 1748525099,
+        "exerciseType": "",
+        "heartRate": 80,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 80,
+    "logDateTime": 1748525099,
+    "logFrom": "",
+    "maxRate": 80,
+    "minRate": 80,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 77,
+    "exerciseType": "",
+    "group": 1748525039,
+    "jsonData": [
+      {
+        "createdTime": 1748525039,
+        "exerciseType": "",
+        "heartRate": 77,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 77,
+    "logDateTime": 1748525039,
+    "logFrom": "",
+    "maxRate": 77,
+    "minRate": 77,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 77,
+    "exerciseType": "",
+    "group": 1748524979,
+    "jsonData": [
+      {
+        "createdTime": 1748524979,
+        "exerciseType": "",
+        "heartRate": 77,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 77,
+    "logDateTime": 1748524979,
+    "logFrom": "",
+    "maxRate": 77,
+    "minRate": 77,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 83,
+    "exerciseType": "",
+    "group": 1748524919,
+    "jsonData": [
+      {
+        "createdTime": 1748524919,
+        "exerciseType": "",
+        "heartRate": 83,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 83,
+    "logDateTime": 1748524919,
+    "logFrom": "",
+    "maxRate": 83,
+    "minRate": 83,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 83,
+    "exerciseType": "",
+    "group": 1748524859,
+    "jsonData": [
+      {
+        "createdTime": 1748524859,
+        "exerciseType": "",
+        "heartRate": 83,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 83,
+    "logDateTime": 1748524859,
+    "logFrom": "",
+    "maxRate": 83,
+    "minRate": 83,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 80,
+    "exerciseType": "",
+    "group": 1748524801,
+    "jsonData": [
+      {
+        "createdTime": 1748524801,
+        "exerciseType": "",
+        "heartRate": 80,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 80,
+    "logDateTime": 1748524801,
+    "logFrom": "",
+    "maxRate": 80,
+    "minRate": 80,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 76,
+    "exerciseType": "",
+    "group": 1748524799,
+    "jsonData": [
+      {
+        "createdTime": 1748524799,
+        "exerciseType": "",
+        "heartRate": 76,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 76,
+    "logDateTime": 1748524799,
+    "logFrom": "",
+    "maxRate": 76,
+    "minRate": 76,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 81,
+    "exerciseType": "",
+    "group": 1748524739,
+    "jsonData": [
+      {
+        "createdTime": 1748524739,
+        "exerciseType": "",
+        "heartRate": 81,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 81,
+    "logDateTime": 1748524739,
+    "logFrom": "",
+    "maxRate": 81,
+    "minRate": 81,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 91,
+    "exerciseType": "",
+    "group": 1748524679,
+    "jsonData": [
+      {
+        "createdTime": 1748524679,
+        "exerciseType": "",
+        "heartRate": 91,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 91,
+    "logDateTime": 1748524679,
+    "logFrom": "",
+    "maxRate": 91,
+    "minRate": 91,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 85,
+    "exerciseType": "",
+    "group": 1748524619,
+    "jsonData": [
+      {
+        "createdTime": 1748524619,
+        "exerciseType": "",
+        "heartRate": 85,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 85,
+    "logDateTime": 1748524619,
+    "logFrom": "",
+    "maxRate": 85,
+    "minRate": 85,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 73,
+    "exerciseType": "",
+    "group": 1748524559,
+    "jsonData": [
+      {
+        "createdTime": 1748524559,
+        "exerciseType": "",
+        "heartRate": 73,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 73,
+    "logDateTime": 1748524559,
+    "logFrom": "",
+    "maxRate": 73,
+    "minRate": 73,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 75,
+    "exerciseType": "",
+    "group": 1748524501,
+    "jsonData": [
+      {
+        "createdTime": 1748524501,
+        "exerciseType": "",
+        "heartRate": 75,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 75,
+    "logDateTime": 1748524501,
+    "logFrom": "",
+    "maxRate": 75,
+    "minRate": 75,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 75,
+    "exerciseType": "",
+    "group": 1748524499,
+    "jsonData": [
+      {
+        "createdTime": 1748524499,
+        "exerciseType": "",
+        "heartRate": 75,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 75,
+    "logDateTime": 1748524499,
+    "logFrom": "",
+    "maxRate": 75,
+    "minRate": 75,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 78,
+    "exerciseType": "",
+    "group": 1748524439,
+    "jsonData": [
+      {
+        "createdTime": 1748524439,
+        "exerciseType": "",
+        "heartRate": 78,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 78,
+    "logDateTime": 1748524439,
+    "logFrom": "",
+    "maxRate": 78,
+    "minRate": 78,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 83,
+    "exerciseType": "",
+    "group": 1748524379,
+    "jsonData": [
+      {
+        "createdTime": 1748524379,
+        "exerciseType": "",
+        "heartRate": 83,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 83,
+    "logDateTime": 1748524379,
+    "logFrom": "",
+    "maxRate": 83,
+    "minRate": 83,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 86,
+    "exerciseType": "",
+    "group": 1748524319,
+    "jsonData": [
+      {
+        "createdTime": 1748524319,
+        "exerciseType": "",
+        "heartRate": 86,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 86,
+    "logDateTime": 1748524319,
+    "logFrom": "",
+    "maxRate": 86,
+    "minRate": 86,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 97,
+    "exerciseType": "",
+    "group": 1748524259,
+    "jsonData": [
+      {
+        "createdTime": 1748524259,
+        "exerciseType": "",
+        "heartRate": 97,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 97,
+    "logDateTime": 1748524259,
+    "logFrom": "",
+    "maxRate": 97,
+    "minRate": 97,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 105,
+    "exerciseType": "",
+    "group": 1748524201,
+    "jsonData": [
+      {
+        "createdTime": 1748524201,
+        "exerciseType": "",
+        "heartRate": 105,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 105,
+    "logDateTime": 1748524201,
+    "logFrom": "",
+    "maxRate": 105,
+    "minRate": 105,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 108,
+    "exerciseType": "",
+    "group": 1748524199,
+    "jsonData": [
+      {
+        "createdTime": 1748524199,
+        "exerciseType": "",
+        "heartRate": 108,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 108,
+    "logDateTime": 1748524199,
+    "logFrom": "",
+    "maxRate": 108,
+    "minRate": 108,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 100,
+    "exerciseType": "",
+    "group": 1748524139,
+    "jsonData": [
+      {
+        "createdTime": 1748524139,
+        "exerciseType": "",
+        "heartRate": 100,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 100,
+    "logDateTime": 1748524139,
+    "logFrom": "",
+    "maxRate": 100,
+    "minRate": 100,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 97,
+    "exerciseType": "",
+    "group": 1748524079,
+    "jsonData": [
+      {
+        "createdTime": 1748524079,
+        "exerciseType": "",
+        "heartRate": 97,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 97,
+    "logDateTime": 1748524079,
+    "logFrom": "",
+    "maxRate": 97,
+    "minRate": 97,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 96,
+    "exerciseType": "",
+    "group": 1748524019,
+    "jsonData": [
+      {
+        "createdTime": 1748524019,
+        "exerciseType": "",
+        "heartRate": 96,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 96,
+    "logDateTime": 1748524019,
+    "logFrom": "",
+    "maxRate": 96,
+    "minRate": 96,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 87,
+    "exerciseType": "",
+    "group": 1748523959,
+    "jsonData": [
+      {
+        "createdTime": 1748523959,
+        "exerciseType": "",
+        "heartRate": 87,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 87,
+    "logDateTime": 1748523959,
+    "logFrom": "",
+    "maxRate": 87,
+    "minRate": 87,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 86,
+    "exerciseType": "",
+    "group": 1748523928,
+    "jsonData": [
+      {
+        "createdTime": 1748523928,
+        "exerciseType": "",
+        "heartRate": 86,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 86,
+    "logDateTime": 1748523928,
+    "logFrom": "",
+    "maxRate": 86,
+    "minRate": 86,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 92,
+    "exerciseType": "",
+    "group": 1748523901,
+    "jsonData": [
+      {
+        "createdTime": 1748523901,
+        "exerciseType": "",
+        "heartRate": 92,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 92,
+    "logDateTime": 1748523901,
+    "logFrom": "",
+    "maxRate": 92,
+    "minRate": 92,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 86,
+    "exerciseType": "",
+    "group": 1748523899,
+    "jsonData": [
+      {
+        "createdTime": 1748523899,
+        "exerciseType": "",
+        "heartRate": 86,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 86,
+    "logDateTime": 1748523899,
+    "logFrom": "",
+    "maxRate": 86,
+    "minRate": 86,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 91,
+    "exerciseType": "",
+    "group": 1748523839,
+    "jsonData": [
+      {
+        "createdTime": 1748523839,
+        "exerciseType": "",
+        "heartRate": 91,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 91,
+    "logDateTime": 1748523839,
+    "logFrom": "",
+    "maxRate": 91,
+    "minRate": 91,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 90,
+    "exerciseType": "",
+    "group": 1748523779,
+    "jsonData": [
+      {
+        "createdTime": 1748523779,
+        "exerciseType": "",
+        "heartRate": 90,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 90,
+    "logDateTime": 1748523779,
+    "logFrom": "",
+    "maxRate": 90,
+    "minRate": 90,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 87,
+    "exerciseType": "",
+    "group": 1748523719,
+    "jsonData": [
+      {
+        "createdTime": 1748523719,
+        "exerciseType": "",
+        "heartRate": 87,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 87,
+    "logDateTime": 1748523719,
+    "logFrom": "",
+    "maxRate": 87,
+    "minRate": 87,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 85,
+    "exerciseType": "",
+    "group": 1748523659,
+    "jsonData": [
+      {
+        "createdTime": 1748523659,
+        "exerciseType": "",
+        "heartRate": 85,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 85,
+    "logDateTime": 1748523659,
+    "logFrom": "",
+    "maxRate": 85,
+    "minRate": 85,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 87,
+    "exerciseType": "",
+    "group": 1748523601,
+    "jsonData": [
+      {
+        "createdTime": 1748523601,
+        "exerciseType": "",
+        "heartRate": 87,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 87,
+    "logDateTime": 1748523601,
+    "logFrom": "",
+    "maxRate": 87,
+    "minRate": 87,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 80,
+    "exerciseType": "",
+    "group": 1748523599,
+    "jsonData": [
+      {
+        "createdTime": 1748523599,
+        "exerciseType": "",
+        "heartRate": 80,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 80,
+    "logDateTime": 1748523599,
+    "logFrom": "",
+    "maxRate": 80,
+    "minRate": 80,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 90,
+    "exerciseType": "",
+    "group": 1748523539,
+    "jsonData": [
+      {
+        "createdTime": 1748523539,
+        "exerciseType": "",
+        "heartRate": 90,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 90,
+    "logDateTime": 1748523539,
+    "logFrom": "",
+    "maxRate": 90,
+    "minRate": 90,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 89,
+    "exerciseType": "",
+    "group": 1748523479,
+    "jsonData": [
+      {
+        "createdTime": 1748523479,
+        "exerciseType": "",
+        "heartRate": 89,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 89,
+    "logDateTime": 1748523479,
+    "logFrom": "",
+    "maxRate": 89,
+    "minRate": 89,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 92,
+    "exerciseType": "",
+    "group": 1748523419,
+    "jsonData": [
+      {
+        "createdTime": 1748523419,
+        "exerciseType": "",
+        "heartRate": 92,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 92,
+    "logDateTime": 1748523419,
+    "logFrom": "",
+    "maxRate": 92,
+    "minRate": 92,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 79,
+    "exerciseType": "",
+    "group": 1748523359,
+    "jsonData": [
+      {
+        "createdTime": 1748523359,
+        "exerciseType": "",
+        "heartRate": 79,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 79,
+    "logDateTime": 1748523359,
+    "logFrom": "",
+    "maxRate": 79,
+    "minRate": 79,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 79,
+    "exerciseType": "",
+    "group": 1748523301,
+    "jsonData": [
+      {
+        "createdTime": 1748523301,
+        "exerciseType": "",
+        "heartRate": 79,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 79,
+    "logDateTime": 1748523301,
+    "logFrom": "",
+    "maxRate": 79,
+    "minRate": 79,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 79,
+    "exerciseType": "",
+    "group": 1748523299,
+    "jsonData": [
+      {
+        "createdTime": 1748523299,
+        "exerciseType": "",
+        "heartRate": 79,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 79,
+    "logDateTime": 1748523299,
+    "logFrom": "",
+    "maxRate": 79,
+    "minRate": 79,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 86,
+    "exerciseType": "",
+    "group": 1748523239,
+    "jsonData": [
+      {
+        "createdTime": 1748523239,
+        "exerciseType": "",
+        "heartRate": 86,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 86,
+    "logDateTime": 1748523239,
+    "logFrom": "",
+    "maxRate": 86,
+    "minRate": 86,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 95,
+    "exerciseType": "",
+    "group": 1748523179,
+    "jsonData": [
+      {
+        "createdTime": 1748523179,
+        "exerciseType": "",
+        "heartRate": 95,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 95,
+    "logDateTime": 1748523179,
+    "logFrom": "",
+    "maxRate": 95,
+    "minRate": 95,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 95,
+    "exerciseType": "",
+    "group": 1748523119,
+    "jsonData": [
+      {
+        "createdTime": 1748523119,
+        "exerciseType": "",
+        "heartRate": 95,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 95,
+    "logDateTime": 1748523119,
+    "logFrom": "",
+    "maxRate": 95,
+    "minRate": 95,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 98,
+    "exerciseType": "",
+    "group": 1748523059,
+    "jsonData": [
+      {
+        "createdTime": 1748523059,
+        "exerciseType": "",
+        "heartRate": 98,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 98,
+    "logDateTime": 1748523059,
+    "logFrom": "",
+    "maxRate": 98,
+    "minRate": 98,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 94,
+    "exerciseType": "",
+    "group": 1748523001,
+    "jsonData": [
+      {
+        "createdTime": 1748523001,
+        "exerciseType": "",
+        "heartRate": 94,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 94,
+    "logDateTime": 1748523001,
+    "logFrom": "",
+    "maxRate": 94,
+    "minRate": 94,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 97,
+    "exerciseType": "",
+    "group": 1748522999,
+    "jsonData": [
+      {
+        "createdTime": 1748522999,
+        "exerciseType": "",
+        "heartRate": 97,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 97,
+    "logDateTime": 1748522999,
+    "logFrom": "",
+    "maxRate": 97,
+    "minRate": 97,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 97,
+    "exerciseType": "",
+    "group": 1748522939,
+    "jsonData": [
+      {
+        "createdTime": 1748522939,
+        "exerciseType": "",
+        "heartRate": 97,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 97,
+    "logDateTime": 1748522939,
+    "logFrom": "",
+    "maxRate": 97,
+    "minRate": 97,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 97,
+    "exerciseType": "",
+    "group": 1748522879,
+    "jsonData": [
+      {
+        "createdTime": 1748522879,
+        "exerciseType": "",
+        "heartRate": 97,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 97,
+    "logDateTime": 1748522879,
+    "logFrom": "",
+    "maxRate": 97,
+    "minRate": 97,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 98,
+    "exerciseType": "",
+    "group": 1748522819,
+    "jsonData": [
+      {
+        "createdTime": 1748522819,
+        "exerciseType": "",
+        "heartRate": 98,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 98,
+    "logDateTime": 1748522819,
+    "logFrom": "",
+    "maxRate": 98,
+    "minRate": 98,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 132,
+    "exerciseType": "",
+    "group": 1748522759,
+    "jsonData": [
+      {
+        "createdTime": 1748522759,
+        "exerciseType": "",
+        "heartRate": 132,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 132,
+    "logDateTime": 1748522759,
+    "logFrom": "",
+    "maxRate": 132,
+    "minRate": 132,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 148,
+    "exerciseType": "",
+    "group": 1748522701,
+    "jsonData": [
+      {
+        "createdTime": 1748522701,
+        "exerciseType": "",
+        "heartRate": 148,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 148,
+    "logDateTime": 1748522701,
+    "logFrom": "",
+    "maxRate": 148,
+    "minRate": 148,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 119,
+    "exerciseType": "",
+    "group": 1748522699,
+    "jsonData": [
+      {
+        "createdTime": 1748522699,
+        "exerciseType": "",
+        "heartRate": 119,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 119,
+    "logDateTime": 1748522699,
+    "logFrom": "",
+    "maxRate": 119,
+    "minRate": 119,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 104,
+    "exerciseType": "",
+    "group": 1748522639,
+    "jsonData": [
+      {
+        "createdTime": 1748522639,
+        "exerciseType": "",
+        "heartRate": 104,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 104,
+    "logDateTime": 1748522639,
+    "logFrom": "",
+    "maxRate": 104,
+    "minRate": 104,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 104,
+    "exerciseType": "",
+    "group": 1748522579,
+    "jsonData": [
+      {
+        "createdTime": 1748522579,
+        "exerciseType": "",
+        "heartRate": 104,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 104,
+    "logDateTime": 1748522579,
+    "logFrom": "",
+    "maxRate": 104,
+    "minRate": 104,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 102,
+    "exerciseType": "",
+    "group": 1748522519,
+    "jsonData": [
+      {
+        "createdTime": 1748522519,
+        "exerciseType": "",
+        "heartRate": 102,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 102,
+    "logDateTime": 1748522519,
+    "logFrom": "",
+    "maxRate": 102,
+    "minRate": 102,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 90,
+    "exerciseType": "",
+    "group": 1748522459,
+    "jsonData": [
+      {
+        "createdTime": 1748522459,
+        "exerciseType": "",
+        "heartRate": 90,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 90,
+    "logDateTime": 1748522459,
+    "logFrom": "",
+    "maxRate": 90,
+    "minRate": 90,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 87,
+    "exerciseType": "",
+    "group": 1748522401,
+    "jsonData": [
+      {
+        "createdTime": 1748522401,
+        "exerciseType": "",
+        "heartRate": 87,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 87,
+    "logDateTime": 1748522401,
+    "logFrom": "",
+    "maxRate": 87,
+    "minRate": 87,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 75,
+    "exerciseType": "",
+    "group": 1748522399,
+    "jsonData": [
+      {
+        "createdTime": 1748522399,
+        "exerciseType": "",
+        "heartRate": 75,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 75,
+    "logDateTime": 1748522399,
+    "logFrom": "",
+    "maxRate": 75,
+    "minRate": 75,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 104,
+    "exerciseType": "",
+    "group": 1748522048,
+    "jsonData": [
+      {
+        "createdTime": 1748522048,
+        "exerciseType": "",
+        "heartRate": 104,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 104,
+    "logDateTime": 1748522048,
+    "logFrom": "",
+    "maxRate": 104,
+    "minRate": 104,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 104,
+    "exerciseType": "",
+    "group": 1748522039,
+    "jsonData": [
+      {
+        "createdTime": 1748522039,
+        "exerciseType": "",
+        "heartRate": 104,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 104,
+    "logDateTime": 1748522039,
+    "logFrom": "",
+    "maxRate": 104,
+    "minRate": 104,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 111,
+    "exerciseType": "",
+    "group": 1748521859,
+    "jsonData": [
+      {
+        "createdTime": 1748521859,
+        "exerciseType": "",
+        "heartRate": 111,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 111,
+    "logDateTime": 1748521859,
+    "logFrom": "",
+    "maxRate": 111,
+    "minRate": 111,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 111,
+    "exerciseType": "",
+    "group": 1748521799,
+    "jsonData": [
+      {
+        "createdTime": 1748521799,
+        "exerciseType": "",
+        "heartRate": 111,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 111,
+    "logDateTime": 1748521799,
+    "logFrom": "",
+    "maxRate": 111,
+    "minRate": 111,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 111,
+    "exerciseType": "",
+    "group": 1748521739,
+    "jsonData": [
+      {
+        "createdTime": 1748521739,
+        "exerciseType": "",
+        "heartRate": 111,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 111,
+    "logDateTime": 1748521739,
+    "logFrom": "",
+    "maxRate": 111,
+    "minRate": 111,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 118,
+    "exerciseType": "",
+    "group": 1748521679,
+    "jsonData": [
+      {
+        "createdTime": 1748521679,
+        "exerciseType": "",
+        "heartRate": 118,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 118,
+    "logDateTime": 1748521679,
+    "logFrom": "",
+    "maxRate": 118,
+    "minRate": 118,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 141,
+    "exerciseType": "",
+    "group": 1748521619,
+    "jsonData": [
+      {
+        "createdTime": 1748521619,
+        "exerciseType": "",
+        "heartRate": 141,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 141,
+    "logDateTime": 1748521619,
+    "logFrom": "",
+    "maxRate": 141,
+    "minRate": 141,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 63,
+    "exerciseType": "",
+    "group": 1748521559,
+    "jsonData": [
+      {
+        "createdTime": 1748521559,
+        "exerciseType": "",
+        "heartRate": 63,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 63,
+    "logDateTime": 1748521559,
+    "logFrom": "",
+    "maxRate": 63,
+    "minRate": 63,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 63,
+    "exerciseType": "",
+    "group": 1748521499,
+    "jsonData": [
+      {
+        "createdTime": 1748521499,
+        "exerciseType": "",
+        "heartRate": 63,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 63,
+    "logDateTime": 1748521499,
+    "logFrom": "",
+    "maxRate": 63,
+    "minRate": 63,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 63,
+    "exerciseType": "",
+    "group": 1748521439,
+    "jsonData": [
+      {
+        "createdTime": 1748521439,
+        "exerciseType": "",
+        "heartRate": 63,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 63,
+    "logDateTime": 1748521439,
+    "logFrom": "",
+    "maxRate": 63,
+    "minRate": 63,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 63,
+    "exerciseType": "",
+    "group": 1748521379,
+    "jsonData": [
+      {
+        "createdTime": 1748521379,
+        "exerciseType": "",
+        "heartRate": 63,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 63,
+    "logDateTime": 1748521379,
+    "logFrom": "",
+    "maxRate": 63,
+    "minRate": 63,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 109,
+    "exerciseType": "",
+    "group": 1748521259,
+    "jsonData": [
+      {
+        "createdTime": 1748521259,
+        "exerciseType": "",
+        "heartRate": 109,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 109,
+    "logDateTime": 1748521259,
+    "logFrom": "",
+    "maxRate": 109,
+    "minRate": 109,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 92,
+    "exerciseType": "",
+    "group": 1748521199,
+    "jsonData": [
+      {
+        "createdTime": 1748521199,
+        "exerciseType": "",
+        "heartRate": 92,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 92,
+    "logDateTime": 1748521199,
+    "logFrom": "",
+    "maxRate": 92,
+    "minRate": 92,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 85,
+    "exerciseType": "",
+    "group": 1748521139,
+    "jsonData": [
+      {
+        "createdTime": 1748521139,
+        "exerciseType": "",
+        "heartRate": 85,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 85,
+    "logDateTime": 1748521139,
+    "logFrom": "",
+    "maxRate": 85,
+    "minRate": 85,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 103,
+    "exerciseType": "",
+    "group": 1748520959,
+    "jsonData": [
+      {
+        "createdTime": 1748520959,
+        "exerciseType": "",
+        "heartRate": 103,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 103,
+    "logDateTime": 1748520959,
+    "logFrom": "",
+    "maxRate": 103,
+    "minRate": 103,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 102,
+    "exerciseType": "",
+    "group": 1748520899,
+    "jsonData": [
+      {
+        "createdTime": 1748520899,
+        "exerciseType": "",
+        "heartRate": 102,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 102,
+    "logDateTime": 1748520899,
+    "logFrom": "",
+    "maxRate": 102,
+    "minRate": 102,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 76,
+    "exerciseType": "",
+    "group": 1748520659,
+    "jsonData": [
+      {
+        "createdTime": 1748520659,
+        "exerciseType": "",
+        "heartRate": 76,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 76,
+    "logDateTime": 1748520659,
+    "logFrom": "",
+    "maxRate": 76,
+    "minRate": 76,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 76,
+    "exerciseType": "",
+    "group": 1748520599,
+    "jsonData": [
+      {
+        "createdTime": 1748520599,
+        "exerciseType": "",
+        "heartRate": 76,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 76,
+    "logDateTime": 1748520599,
+    "logFrom": "",
+    "maxRate": 76,
+    "minRate": 76,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 76,
+    "exerciseType": "",
+    "group": 1748520539,
+    "jsonData": [
+      {
+        "createdTime": 1748520539,
+        "exerciseType": "",
+        "heartRate": 76,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 76,
+    "logDateTime": 1748520539,
+    "logFrom": "",
+    "maxRate": 76,
+    "minRate": 76,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 75,
+    "exerciseType": "",
+    "group": 1748520479,
+    "jsonData": [
+      {
+        "createdTime": 1748520479,
+        "exerciseType": "",
+        "heartRate": 75,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 75,
+    "logDateTime": 1748520479,
+    "logFrom": "",
+    "maxRate": 75,
+    "minRate": 75,
+    "sessionId": 0
+  },
+  {
+    "averageSessionHeartRate": 72,
+    "exerciseType": "",
+    "group": 1748520419,
+    "jsonData": [
+      {
+        "createdTime": 1748520419,
+        "exerciseType": "",
+        "heartRate": 72,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1748457000,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 72,
+    "logDateTime": 1748520419,
+    "logFrom": "",
+    "maxRate": 72,
+    "minRate": 72,
+    "sessionId": 0
+  }
+]

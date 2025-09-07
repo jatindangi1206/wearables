@@ -1,0 +1,25 @@
+[
+  {
+    "averageSessionHeartRate": 59,
+    "exerciseType": "",
+    "group": 1734444922,
+    "jsonData": [
+      {
+        "createdTime": 1734444922,
+        "exerciseType": "",
+        "heartRate": 59,
+        "heartRateAlternate": 0,
+        "isSkipable": 0,
+        "logDate": 1734373800,
+        "logFrom": "",
+        "timeData": ""
+      }
+    ],
+    "lastRate": 59,
+    "logDateTime": 1734444922,
+    "logFrom": "",
+    "maxRate": 59,
+    "minRate": 59,
+    "sessionId": 0
+  }
+]

@@ -39,10 +39,15 @@ class DataDiscovery:
     def __init__(self, input_dir: str):
         self.input_dir = Path(input_dir)
         self.logger = logging.getLogger(self.__class__.__name__)
+        
+        # Add paths to meals and lungs data directories
+        self.meals_dir = self.input_dir / 'meals_data'
+        self.lungs_dir = self.input_dir / 'lungs_data'
     
     def discover_participants(self) -> Dict[str, Dict[str, List[Path]]]:
         """
         Scan input directory for participant folders and their data files.
+        Also checks the physio_data directory directly for files.
         
         Returns
         -------
@@ -54,7 +59,28 @@ class DataDiscovery:
         if not self.input_dir.exists():
             raise FileNotFoundError(f"Input directory not found: {self.input_dir}")
         
-        # Look for participant folders (both participant-* and Participant_*)
+        # First, check for direct physio_data folder
+        physio_dir = self.input_dir / 'physio_data'
+        if physio_dir.exists() and physio_dir.is_dir():
+            self.logger.info(f"Found physio_data directory: {physio_dir}")
+            
+            # Create a default participant for files in physio_data
+            participant_id = 'participant-default'
+            participant_files = {}
+            
+            # Check for expected file patterns in physio_data directory
+            for metric_type, pattern in self.EXPECTED_PATTERNS.items():
+                files = list(physio_dir.glob(pattern))
+                if files:
+                    participant_files[metric_type] = files
+                    self.logger.info(f"Found {len(files)} {metric_type} files in physio_data directory")
+            
+            if participant_files:  # Add if we found any files
+                participants[participant_id] = participant_files
+                total_files = sum(len(files) for files in participant_files.values())
+                self.logger.info(f"Added default participant with {total_files} data files from physio_data")
+        
+        # Then, look for participant folders (both participant-* and Participant_*)
         for participant_folder in self.input_dir.glob('*articipant*'):
             if not participant_folder.is_dir():
                 continue
@@ -417,6 +443,8 @@ class DataLoader(BaseProcessor):
         self.discovery = DataDiscovery(input_dir)
         self.file_loader = FileLoader()
         self.standardizer = DataStandardizer()
+        self.meals_data = None
+        self.lungs_data = None
     
     def process(self, data=None) -> HealthDataCollection:
         """
@@ -430,6 +458,14 @@ class DataLoader(BaseProcessor):
         # Phase 1: Discover participant files
         self.logger.info("Phase 1: Discovering participant data files")
         participants = self.discovery.discover_participants()
+        
+        # Load meals data
+        self.logger.info("Loading meals data")
+        self.meals_data = self._load_meals_data()
+        
+        # Load lungs data
+        self.logger.info("Loading lungs data")
+        self.lungs_data = self._load_lungs_data()
         
         if not participants:
             self.logger.warning("No participants found!")
@@ -472,15 +508,36 @@ class DataLoader(BaseProcessor):
         participants = self.discovery.discover_participants()
         summary_df = self.discovery.get_participant_summary(participants)
         
+        # Add meals and lungs data summary
+        meals_info = {}
+        if self.meals_data is not None and not self.meals_data.empty:
+            meals_info = {
+                'record_count': len(self.meals_data),
+                'unique_dishes': len(self.meals_data['dish'].unique()) if 'dish' in self.meals_data.columns else 0,
+                'date_range': {
+                    'start': self.meals_data['date'].min().strftime('%Y-%m-%d') if 'date' in self.meals_data.columns and not self.meals_data.empty else 'Unknown',
+                    'end': self.meals_data['date'].max().strftime('%Y-%m-%d') if 'date' in self.meals_data.columns and not self.meals_data.empty else 'Unknown'
+                }
+            }
+        
+        lungs_info = {}
+        if self.lungs_data is not None and not self.lungs_data.empty:
+            lungs_info = {
+                'record_count': len(self.lungs_data),
+                'metrics': list(self.lungs_data.columns[3:]) if len(self.lungs_data.columns) > 3 else []
+            }
+        
         return {
             'total_participants': len(participants),
-            'participants_by_file_count': summary_df['total_files'].value_counts().to_dict(),
+            'participants_by_file_count': summary_df['total_files'].value_counts().to_dict() if not summary_df.empty else {},
             'metric_availability': {
-                metric: summary_df[f'has_{metric}'].sum() 
+                metric: summary_df[f'has_{metric}'].sum() if not summary_df.empty else 0
                 for metric in DataDiscovery.EXPECTED_PATTERNS.keys()
             },
             'discovery_summary': summary_df.to_dict('records') if not summary_df.empty else [],
-            'date_range': self._get_date_range(participants)
+            'date_range': self._get_date_range(participants),
+            'meals_data': meals_info,
+            'lungs_data': lungs_info
         }
     
     def _get_date_range(self, participants: Dict) -> Dict:
@@ -507,9 +564,55 @@ class DataLoader(BaseProcessor):
             }
         else:
             return {'start': 'Unknown', 'end': 'Unknown', 'span_days': 0}
+            
+    def _load_meals_data(self) -> pd.DataFrame:
+        """Load meals data from CSV file."""
+        try:
+            meals_path = self.discovery.meals_dir / "Combined Meals Data.csv"
+            if not meals_path.exists():
+                self.logger.warning("Meals data file not found")
+                return pd.DataFrame()
+                
+            self.logger.info(f"Loading meals data from: {meals_path}")
+            meals_df = self.file_loader.load_csv(meals_path)
+            
+            if not meals_df.empty:
+                # Convert time column to datetime (timestamp in milliseconds)
+                if 'time' in meals_df.columns:
+                    try:
+                        meals_df['date'] = pd.to_datetime(meals_df['time'], unit='ms')
+                        meals_df['date'] = meals_df['date'].dt.date
+                    except Exception as e:
+                        self.logger.error(f"Error converting meal times to dates: {str(e)}")
+                
+                self.logger.info(f"Meals data loaded successfully with {len(meals_df)} records")
+            return meals_df
+            
+        except Exception as e:
+            self.logger.error(f"Error loading meals data: {str(e)}")
+            return pd.DataFrame()
+    
+    def _load_lungs_data(self) -> pd.DataFrame:
+        """Load lungs data from CSV file."""
+        try:
+            lungs_path = self.discovery.lungs_dir / "spirometry.csv"
+            if not lungs_path.exists():
+                self.logger.warning("Lungs data file not found")
+                return pd.DataFrame()
+                
+            self.logger.info(f"Loading lungs data from: {lungs_path}")
+            lungs_df = self.file_loader.load_csv(lungs_path)
+            
+            if not lungs_df.empty:
+                self.logger.info(f"Lungs data loaded successfully with {len(lungs_df)} records")
+            return lungs_df
+            
+        except Exception as e:
+            self.logger.error(f"Error loading lungs data: {str(e)}")
+            return pd.DataFrame()
 
 
-def load_goqii_data(input_dir: str) -> Tuple[HealthDataCollection, Dict]:
+def load_goqii_data(input_dir: str) -> Tuple[HealthDataCollection, Dict, pd.DataFrame, pd.DataFrame]:
     """
     Convenience function to load GOQII health data.
     
@@ -520,8 +623,8 @@ def load_goqii_data(input_dir: str) -> Tuple[HealthDataCollection, Dict]:
     
     Returns
     -------
-    Tuple[HealthDataCollection, Dict]
-        (data_collection, loading_summary)
+    Tuple[HealthDataCollection, Dict, pd.DataFrame, pd.DataFrame]
+        (data_collection, loading_summary, meals_data, lungs_data)
     """
     loader = DataLoader(input_dir)
     
@@ -531,7 +634,8 @@ def load_goqii_data(input_dir: str) -> Tuple[HealthDataCollection, Dict]:
     # Get summary
     summary = loader.get_loading_summary()
     
-    return collection, summary
+    # Return with additional data
+    return collection, summary, loader.meals_data, loader.lungs_data
 
 
 if __name__ == "__main__":

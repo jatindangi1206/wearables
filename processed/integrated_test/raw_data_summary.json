@@ -1,0 +1,54 @@
+{
+  "total_participants": 1,
+  "participants_by_file_count": {
+    "25": 1
+  },
+  "metric_availability": {
+    "bp": "1",
+    "sleep": "1",
+    "steps": "1",
+    "hr": "1",
+    "spo2": "1",
+    "temp": "1"
+  },
+  "discovery_summary": [
+    {
+      "participant_id": "participant-default",
+      "has_bp": true,
+      "bp_count": 7,
+      "has_sleep": true,
+      "sleep_count": 4,
+      "has_steps": true,
+      "steps_count": 4,
+      "has_hr": true,
+      "hr_count": 4,
+      "has_spo2": true,
+      "spo2_count": 1,
+      "has_temp": true,
+      "temp_count": 5,
+      "total_files": 25
+    }
+  ],
+  "date_range": {
+    "start": "2024-12-17",
+    "end": "2025-05-29",
+    "span_days": 163
+  },
+  "meals_data": {
+    "record_count": 104,
+    "unique_dishes": 80,
+    "date_range": {
+      "start": "2024-10-22",
+      "end": "2025-07-13"
+    }
+  },
+  "lungs_data": {
+    "record_count": 2,
+    "metrics": [
+      "FEV1",
+      "FEV1/FVC",
+      "Unnamed: 5",
+      "Unnamed: 6"
+    ]
+  }
+}

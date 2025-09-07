@@ -1,3 +1,0 @@
-l_activityId,activityId,ID1,ID2,createdTime,logDate,logDateTime,logEndTime,steps,distance,calories,activityType,description,status,descriptionCount
-1,0,0,0,2024-12-17,2024-12-17,2024-12-17 19:39:00,2024-12-17 19:49,14,0,38,1,14~0~0~0~0~0~0~0~0~0,new,10
-2,0,1,0,2024-12-17,2024-12-13,2024-12-13 17:17:00,2024-12-13 17:27,425,25,1032,1,20~52~71~100~103~66~13~0~0~0,new,10

@@ -1,0 +1,115 @@
+{
+  "overall_stats": {
+    "total_records": 6986,
+    "total_participants": 1,
+    "total_metrics": 5,
+    "quality_distribution": {
+      "good": 5745,
+      "outlier": 181,
+      "invalid": 927,
+      "duplicate": 133
+    },
+    "good_data_percentage": 82.23590037217292
+  },
+  "participant_stats": {
+    "participant-default": {
+      "total_records": 6986,
+      "quality_distribution": {
+        "good": 5745,
+        "outlier": 181,
+        "invalid": 927,
+        "duplicate": 133
+      },
+      "good_data_percentage": 82.23590037217292,
+      "metrics_available": 5
+    }
+  },
+  "metric_stats": {
+    "temp": {
+      "total_records": 2159,
+      "quality_distribution": {
+        "good": 1208,
+        "outlier": 93,
+        "invalid": 858
+      },
+      "good_data_percentage": 55.951829550717925,
+      "participants_with_data": 1
+    },
+    "hr": {
+      "total_records": 3459,
+      "quality_distribution": {
+        "good": 3393,
+        "outlier": 66
+      },
+      "good_data_percentage": 98.09193408499567,
+      "participants_with_data": 1
+    },
+    "bp": {
+      "total_records": 19,
+      "quality_distribution": {
+        "good": 11,
+        "duplicate": 8
+      },
+      "good_data_percentage": 57.89473684210527,
+      "participants_with_data": 1
+    },
+    "sleep": {
+      "total_records": 198,
+      "quality_distribution": {
+        "invalid": 69,
+        "good": 5,
+        "duplicate": 124
+      },
+      "good_data_percentage": 2.525252525252525,
+      "participants_with_data": 1
+    },
+    "steps": {
+      "total_records": 1151,
+      "quality_distribution": {
+        "good": 1128,
+        "duplicate": 1,
+        "outlier": 22
+      },
+      "good_data_percentage": 98.00173761946134,
+      "participants_with_data": 1
+    }
+  },
+  "temporal_stats": {
+    "date_range": {
+      "start": "1970-01-01",
+      "end": "1970-01-01",
+      "days": 1
+    },
+    "daily_stats": {
+      "1970-01-01": {
+        "total": 6986,
+        "good": 5745
+      }
+    }
+  },
+  "quality_flags_distribution": {
+    "temp": {
+      "good": 1208,
+      "outlier": 93,
+      "invalid": 858
+    },
+    "hr": {
+      "good": 3393,
+      "outlier": 66
+    },
+    "bp": {
+      "good": 11,
+      "duplicate": 8
+    },
+    "sleep": {
+      "invalid": 69,
+      "good": 5,
+      "duplicate": 124
+    },
+    "steps": {
+      "good": 1128,
+      "duplicate": 1,
+      "outlier": 22
+    }
+  }
+}

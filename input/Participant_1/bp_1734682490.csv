@@ -1,5 +1,0 @@
-l_activityid,activityId,ID1,ID2,logDate,createdTime,systolic,diastolic,heartRate,heartRateData,logType,status,isDeleted
-8,0,0,0,2024-12-20,2024-12-20 12:41:08,121,74,93,93,band,new,N
-9,0,1,0,2024-12-19,2024-12-19 00:20:00,117,70,91,91,band,new,N
-10,0,2,0,2024-12-18,2024-12-18 08:11:45,128,74,89,89,band,new,N
-11,0,3,0,2024-12-17,2024-12-17 21:55:29,127,80,91,91,band,new,N

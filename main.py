@@ -20,13 +20,14 @@ from datetime import datetime
 from typing import Dict, Optional
 
 # Import all modules
-from src.core import HealthDataCollection
-from src.data_loader import load_goqii_data
-from src.data_cleaner import clean_goqii_data
-from src.technical_analysis import generate_technical_analysis
-from src.correlation_engine import generate_correlation_analysis
-from src.participant_insights import generate_participant_insights
-from src.modern_dashboard_complete import generate_modern_dashboards
+from wearables.src.core import HealthDataCollection
+from wearables.src.data_loader import load_goqii_data
+from wearables.src.data_cleaner import clean_goqii_data
+from wearables.src.technical_analysis import generate_technical_analysis
+from wearables.src.correlation_engine import generate_correlation_analysis, analyze_deviations
+from wearables.src.participant_insights import generate_participant_insights
+from wearables.src.modern_dashboard_complete import generate_modern_dashboards
+from wearables.src.integrated_report_helpers import generate_integrated_report
 
 
 def setup_logging(output_dir: Path) -> logging.Logger:
@@ -129,10 +130,12 @@ def run_eda_pipeline(
         logger.info("\n📂 STEP 1: Data Loading and Discovery")
         logger.info("-" * 50)
         
-        raw_data, loading_report = load_goqii_data(input_dir)
+        raw_data, loading_report, meals_data, lungs_data = load_goqii_data(input_dir)
         
         logger.info(f"✅ Discovered data for {len(raw_data.get_participants())} participants")
-        logger.info(f"📊 Total records loaded: {len(raw_data.records):,}")
+        logger.info(f"📊 Total physio records loaded: {len(raw_data.records):,}")
+        logger.info(f"🍲 Meals data records: {len(meals_data) if meals_data is not None else 0}")
+        logger.info(f"🫁 Lungs data records: {len(lungs_data) if lungs_data is not None else 0}")
         logger.info(f"📁 Files processed: {loading_report.get('files_processed', 0)}")
         logger.info(f"🗓️  Date range: {loading_report.get('date_range', {}).get('start', 'N/A')} to {loading_report.get('date_range', {}).get('end', 'N/A')}")
         
@@ -276,9 +279,32 @@ def run_eda_pipeline(
         logger.info(f"👥 Participant dashboards created: {len(dashboards['participants'])}")
         
         # =============================================================================
-        # STEP 7: FINAL RESULTS COMPILATION
+        # STEP 7: INTEGRATED REPORT GENERATION
         # =============================================================================
-        logger.info("\n📋 STEP 7: Results Compilation")
+        logger.info("\n📊 STEP 7: Integrated Report Generation")
+        logger.info("-" * 50)
+        
+        # Generate deviations analysis
+        logger.info("Generating deviations analysis...")
+        deviations_analysis = analyze_deviations(cleaned_data, meals_data)
+        
+        # Generate integrated report with all data
+        logger.info("Generating integrated HTML report...")
+        integrated_report_path = generate_integrated_report(
+            cleaned_data,
+            meals_data,
+            lungs_data,
+            technical_results,
+            correlation_results,
+            output_dir=output_dir
+        )
+        
+        logger.info(f"Integrated report generated: {integrated_report_path}")
+        
+        # =============================================================================
+        # STEP 8: FINAL RESULTS COMPILATION
+        # =============================================================================
+        logger.info("\n📋 STEP 8: Results Compilation")
         logger.info("-" * 50)
         
         # Add dashboard info to results
@@ -286,6 +312,7 @@ def run_eda_pipeline(
             'researcher_dashboard': str(dashboard_dir / 'researcher-dashboard.html'),
             'participant_dashboards': len(dashboards['participants']),
             'dashboard_directory': str(dashboard_dir),
+            'integrated_report': str(integrated_report_path)
         }
         
         # Save complete results
@@ -314,7 +341,8 @@ def run_eda_pipeline(
         logger.info(f"   ├── 📊 dashboards/")
         logger.info(f"   │   ├── 🔬 researcher-dashboard.html")
         logger.info(f"   │   └── 👥 participant-dashboards/")
-        logger.info(f"   ├── 👤 participant_insights/")
+        logger.info(f"   ├── � integrated_report.html")
+        logger.info(f"   ├── �👤 participant_insights/")
         logger.info(f"   ├── 📋 analysis_results.json")
         logger.info(f"   └── 📝 logs/")
         
@@ -354,7 +382,8 @@ def main():
         print("\n🎉 SUCCESS! GOQII Health Data EDA Protocol completed successfully.")
         print(f"\n📂 Check your results in: {output_directory}")
         print(f"📊 Researcher Dashboard: {output_directory}/dashboards/researcher-dashboard.html")
-        print(f"👥 Participant Dashboards: {output_directory}/dashboards/participant-dashboards/")
+        print(f"� Integrated Report: {output_directory}/integrated_report.html")
+        print(f"�👥 Participant Dashboards: {output_directory}/dashboards/participant-dashboards/")
         
     except KeyboardInterrupt:
         print("\n⚠️  Pipeline interrupted by user")

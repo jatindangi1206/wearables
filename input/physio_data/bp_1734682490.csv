@@ -1,0 +1,5 @@
+l_activityid,activityId,ID1,ID2,logDate,createdTime,systolic,diastolic,heartRate,heartRateData,logType,status,isDeleted
+8,0,0,0,1734633000,1734678668,121,74,93,93,band,new,N
+9,0,1,0,1734546600,1734547800,117,70,91,91,band,new,N
+10,0,2,0,1734460200,1734489705,128,74,89,89,band,new,N
+11,0,3,0,1734373800,1734452729,127,80,91,91,band,new,N

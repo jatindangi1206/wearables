@@ -1,0 +1,2 @@
+l_activityid,activityId,ID1,ID2,logDate,createdTime,systolic,diastolic,heartRate,heartRateData,logType,status,isDeleted
+2,0,0,0,1734373800,1734445176,124,79,0,0,calibration,new,N

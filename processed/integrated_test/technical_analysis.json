@@ -1,0 +1,469 @@
+{
+  "report_metadata": {
+    "generated_at": "2025-09-07T16:37:34.377164",
+    "total_records": 6986,
+    "total_participants": 1,
+    "metrics_analyzed": [
+      "temp",
+      "hr",
+      "bp",
+      "sleep",
+      "steps"
+    ]
+  },
+  "missingness_analysis": {
+    "participant-default": {
+      "date_range": {
+        "start": "1970-01-01",
+        "end": "1970-01-01",
+        "total_days": 1
+      },
+      "metrics": {
+        "bp": {
+          "missingness_ratio": 0,
+          "compliance_score": 100,
+          "expected_records": 2,
+          "actual_records": 19,
+          "good_records": 11,
+          "daily_compliance": {
+            "daily_details": [
+              {
+                "date": "1970-01-01",
+                "expected": 2,
+                "actual": 19,
+                "good": 11,
+                "compliance_percentage": 100
+              }
+            ],
+            "mean_compliance": 100.0,
+            "median_compliance": 100.0,
+            "min_compliance": "100",
+            "max_compliance": "100",
+            "std_compliance": 0.0
+          }
+        },
+        "sleep": {
+          "missingness_ratio": 0,
+          "compliance_score": 100,
+          "expected_records": 1,
+          "actual_records": 198,
+          "good_records": 5,
+          "daily_compliance": {
+            "daily_details": [
+              {
+                "date": "1970-01-01",
+                "expected": 1,
+                "actual": 198,
+                "good": 5,
+                "compliance_percentage": 100
+              }
+            ],
+            "mean_compliance": 100.0,
+            "median_compliance": 100.0,
+            "min_compliance": "100",
+            "max_compliance": "100",
+            "std_compliance": 0.0
+          }
+        },
+        "steps": {
+          "missingness_ratio": 0,
+          "compliance_score": 100,
+          "expected_records": 1,
+          "actual_records": 1151,
+          "good_records": 1128,
+          "daily_compliance": {
+            "daily_details": [
+              {
+                "date": "1970-01-01",
+                "expected": 1,
+                "actual": 1151,
+                "good": 1128,
+                "compliance_percentage": 100
+              }
+            ],
+            "mean_compliance": 100.0,
+            "median_compliance": 100.0,
+            "min_compliance": "100",
+            "max_compliance": "100",
+            "std_compliance": 0.0
+          }
+        },
+        "hr": {
+          "missingness_ratio": 0,
+          "compliance_score": 100,
+          "expected_records": 24,
+          "actual_records": 3459,
+          "good_records": 3393,
+          "daily_compliance": {
+            "daily_details": [
+              {
+                "date": "1970-01-01",
+                "expected": 24,
+                "actual": 3459,
+                "good": 3393,
+                "compliance_percentage": 100
+              }
+            ],
+            "mean_compliance": 100.0,
+            "median_compliance": 100.0,
+            "min_compliance": "100",
+            "max_compliance": "100",
+            "std_compliance": 0.0
+          }
+        },
+        "spo2": {
+          "missingness_ratio": 1.0,
+          "compliance_score": 0.0,
+          "expected_records": 8,
+          "actual_records": 0,
+          "good_records": 0
+        },
+        "temp": {
+          "missingness_ratio": 0,
+          "compliance_score": 100,
+          "expected_records": 12,
+          "actual_records": 2159,
+          "good_records": 1208,
+          "daily_compliance": {
+            "daily_details": [
+              {
+                "date": "1970-01-01",
+                "expected": 12,
+                "actual": 2159,
+                "good": 1208,
+                "compliance_percentage": 100
+              }
+            ],
+            "mean_compliance": 100.0,
+            "median_compliance": 100.0,
+            "min_compliance": "100",
+            "max_compliance": "100",
+            "std_compliance": 0.0
+          }
+        }
+      },
+      "overall_compliance": {
+        "score": 83.3,
+        "grade": "B",
+        "metric_scores": {
+          "bp": 100,
+          "sleep": 100,
+          "steps": 100,
+          "hr": 100,
+          "spo2": 0.0,
+          "temp": 100
+        }
+      }
+    },
+    "cohort_summary": {
+      "overall_compliance_distribution": {
+        "mean": 83.3,
+        "median": 83.3,
+        "std": 0.0,
+        "quartiles": {
+          "q25": 83.3,
+          "q75": 83.3
+        }
+      },
+      "metric_compliance_distribution": {
+        "bp": {
+          "mean": 100.0,
+          "median": 100.0,
+          "std": 0.0,
+          "quartiles": {
+            "q25": 100.0,
+            "q75": 100.0
+          }
+        },
+        "sleep": {
+          "mean": 100.0,
+          "median": 100.0,
+          "std": 0.0,
+          "quartiles": {
+            "q25": 100.0,
+            "q75": 100.0
+          }
+        },
+        "steps": {
+          "mean": 100.0,
+          "median": 100.0,
+          "std": 0.0,
+          "quartiles": {
+            "q25": 100.0,
+            "q75": 100.0
+          }
+        },
+        "hr": {
+          "mean": 100.0,
+          "median": 100.0,
+          "std": 0.0,
+          "quartiles": {
+            "q25": 100.0,
+            "q75": 100.0
+          }
+        },
+        "spo2": {
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "quartiles": {
+            "q25": 0.0,
+            "q75": 0.0
+          }
+        },
+        "temp": {
+          "mean": 100.0,
+          "median": 100.0,
+          "std": 0.0,
+          "quartiles": {
+            "q25": 100.0,
+            "q75": 100.0
+          }
+        }
+      },
+      "total_participants": 1
+    }
+  },
+  "noise_analysis": {
+    "temp": {
+      "total_records": 2159,
+      "good_records": 1208,
+      "outlier_records": 93,
+      "noise_ratio": 0.04307549791570171,
+      "good_data_stats": {
+        "mean": 97.19,
+        "std": 0.58,
+        "coefficient_of_variation": 0.006,
+        "range": 2.5
+      },
+      "outlier_stats": {
+        "mean": 95.52,
+        "std": 1.69,
+        "range": 9.0
+      },
+      "outlier_temporal_pattern": {
+        "clustering_detected": true,
+        "clustering_ratio": 1.0,
+        "mean_gap_hours": 0.0,
+        "median_gap_hours": 0.0
+      }
+    },
+    "hr": {
+      "total_records": 3459,
+      "good_records": 3393,
+      "outlier_records": 66,
+      "noise_ratio": 0.019080659150043366,
+      "good_data_stats": {
+        "mean": 76.06,
+        "std": 13.52,
+        "coefficient_of_variation": 0.178,
+        "range": 67.0
+      },
+      "outlier_stats": {
+        "mean": 120.97,
+        "std": 8.9,
+        "range": 53.0
+      },
+      "outlier_temporal_pattern": {
+        "clustering_detected": true,
+        "clustering_ratio": 1.0,
+        "mean_gap_hours": 0.0,
+        "median_gap_hours": 0.0
+      }
+    },
+    "bp": {
+      "total_records": 19,
+      "good_records": 11,
+      "outlier_records": 0,
+      "noise_ratio": 0.0,
+      "good_data_stats": {
+        "mean": 122.91,
+        "std": 4.7,
+        "coefficient_of_variation": 0.038,
+        "range": 15.0
+      }
+    },
+    "sleep": {
+      "total_records": 198,
+      "good_records": 5,
+      "outlier_records": 0,
+      "noise_ratio": 0.0,
+      "good_data_stats": {
+        "mean": 2.0,
+        "std": 2.45,
+        "coefficient_of_variation": 1.225,
+        "range": 5.0
+      }
+    },
+    "steps": {
+      "total_records": 1151,
+      "good_records": 1128,
+      "outlier_records": 22,
+      "noise_ratio": 0.019113814074717638,
+      "good_data_stats": {
+        "mean": 157.42,
+        "std": 162.74,
+        "coefficient_of_variation": 1.034,
+        "range": 696.0
+      },
+      "outlier_stats": {
+        "mean": 793.45,
+        "std": 66.5,
+        "range": 279.0
+      },
+      "outlier_temporal_pattern": {
+        "clustering_detected": true,
+        "clustering_ratio": 1.0,
+        "mean_gap_hours": 0.0,
+        "median_gap_hours": 0.0
+      }
+    }
+  },
+  "cohort_analysis": {
+    "summary_statistics": {
+      "temp": {
+        "count": 1208,
+        "mean": 97.19,
+        "median": 97.2,
+        "std": 0.58,
+        "min": 95.9,
+        "max": 98.4,
+        "iqr": 0.7,
+        "percentiles": {
+          "p25": 96.8,
+          "p50": 97.2,
+          "p75": 97.5,
+          "p90": 97.9,
+          "p95": 98.1
+        }
+      },
+      "hr": {
+        "count": 3393,
+        "mean": 76.06,
+        "median": 73.0,
+        "std": 13.52,
+        "min": 46.0,
+        "max": 113.0,
+        "iqr": 18.0,
+        "percentiles": {
+          "p25": 67.0,
+          "p50": 73.0,
+          "p75": 85.0,
+          "p90": 95.0,
+          "p95": 102.0
+        },
+        "secondary_value": {
+          "mean": 76.06,
+          "median": 73.0,
+          "std": 13.52
+        }
+      },
+      "bp": {
+        "count": 11,
+        "mean": 122.91,
+        "median": 124.0,
+        "std": 4.7,
+        "min": 114.0,
+        "max": 129.0,
+        "iqr": 7.5,
+        "percentiles": {
+          "p25": 120.0,
+          "p50": 124.0,
+          "p75": 127.5,
+          "p90": 128.0,
+          "p95": 128.5
+        },
+        "secondary_value": {
+          "mean": 74.64,
+          "median": 74.0,
+          "std": 3.91
+        }
+      },
+      "sleep": {
+        "count": 5,
+        "mean": 2.0,
+        "median": 0.0,
+        "std": 2.45,
+        "min": 0.0,
+        "max": 5.0,
+        "iqr": 5.0,
+        "percentiles": {
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 5.0,
+          "p90": 5.0,
+          "p95": 5.0
+        }
+      },
+      "steps": {
+        "count": 1128,
+        "mean": 157.42,
+        "median": 89.0,
+        "std": 162.74,
+        "min": 4.0,
+        "max": 700.0,
+        "iqr": 207.0,
+        "percentiles": {
+          "p25": 34.0,
+          "p50": 89.0,
+          "p75": 241.0,
+          "p90": 417.6,
+          "p95": 514.3
+        },
+        "secondary_value": {
+          "mean": 9.42,
+          "median": 5.0,
+          "std": 10.28
+        }
+      }
+    },
+    "cross_metric_correlations": {},
+    "temporal_trends": {
+      "temp": {
+        "weekly_patterns": {
+          "Thursday": 97.18932119205297
+        },
+        "monthly_patterns": {
+          "January": 97.18932119205297
+        }
+      },
+      "hr": {
+        "weekly_patterns": {
+          "Thursday": 76.061597406425
+        },
+        "monthly_patterns": {
+          "January": 76.061597406425
+        }
+      },
+      "bp": {
+        "weekly_patterns": {
+          "Thursday": 122.9090909090909
+        },
+        "monthly_patterns": {
+          "January": 122.9090909090909
+        }
+      },
+      "sleep": {
+        "weekly_patterns": {
+          "Thursday": 2.0
+        },
+        "monthly_patterns": {
+          "January": 2.0
+        }
+      },
+      "steps": {
+        "weekly_patterns": {
+          "Thursday": 157.41843971631207
+        },
+        "monthly_patterns": {
+          "January": 157.41843971631207
+        }
+      }
+    },
+    "cohort_insights": [
+      "Cohort includes 1 participants with 5 different health metrics.",
+      "Overall data quality: 82.2% of records passed quality checks.",
+      "Sleep: Cohort averages 2.0 hours per night, below recommended 7-9 hours."
+    ]
+  }
+}

@@ -6,17 +6,19 @@ Provides comprehensive correlation analysis between all health metrics:
 - Daily comparisons (lag-1 effects)
 - 14-day rolling window analysis
 - Anomaly detection and recovery patterns
+- Deviation analysis for meal correlations
 """
 
 import pandas as pd
 import numpy as np
 from typing import Dict, List, Tuple, Optional, Any
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 import json
 from pathlib import Path
 from scipy.stats import pearsonr, spearmanr
 from sklearn.preprocessing import StandardScaler
 import warnings
+import logging
 
 from .core import HealthDataRecord, HealthDataCollection, BaseProcessor
 
@@ -48,6 +50,160 @@ class CorrelationEngine(BaseProcessor):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.min_days = kwargs.get('min_days', 7)  # Minimum days for correlation
+        
+    def analyze_deviations(self, cleaned_data, processed_meals=None):
+        """
+        Analyze deviations in physiological metrics and correlate with meals data if available.
+        
+        Args:
+            cleaned_data: Cleaned physiological data
+            processed_meals: Processed meals data (optional)
+            
+        Returns:
+            Dictionary with deviation analysis results
+        """
+        self.logger.info("Analyzing deviations in physiological metrics")
+        
+        # Initialize results
+        deviations = {
+            'metrics': {},
+            'significant_changes': [],
+            'meal_correlations': []
+        }
+        
+        try:
+            # If no data is available, return empty analysis
+            if cleaned_data is None:
+                self.logger.warning("No good quality records for deviation analysis")
+                return deviations
+                
+            # Check if it's a DataFrame or a HealthDataCollection
+            if hasattr(cleaned_data, 'empty') and cleaned_data.empty:
+                self.logger.warning("Empty DataFrame provided for deviation analysis")
+                return deviations
+                
+            if hasattr(cleaned_data, 'records') and len(cleaned_data.records) == 0:
+                self.logger.warning("Empty HealthDataCollection provided for deviation analysis")
+                return deviations
+                
+            # Extract daily averages for key metrics
+            daily_metrics = {}
+            key_metrics = ['steps', 'sleep_duration', 'resting_hr', 'systolic', 'diastolic', 'spo2', 'temperature']
+            
+            # Handle DataFrame vs HealthDataCollection
+            if hasattr(cleaned_data, 'columns'):
+                # It's a DataFrame
+                for metric in key_metrics:
+                    if metric in cleaned_data.columns:
+                        daily_metrics[metric] = cleaned_data.groupby('date')[metric].mean().reset_index()
+            elif hasattr(cleaned_data, 'records'):
+                # It's a HealthDataCollection - convert to DataFrame first
+                try:
+                    # Convert to a DataFrame for analysis
+                    records_data = []
+                    for record in cleaned_data.records:
+                        # Extract date from timestamp
+                        date_value = record.datetime.date() if hasattr(record.datetime, 'date') else record.datetime.to_pydatetime().date()
+                        
+                        # Map metric types to values
+                        metric_map = {
+                            'steps': ('steps', record.value_1 if record.metric_type == 'steps' else None),
+                            'sleep': ('sleep_duration', record.value_1 if record.metric_type == 'sleep' else None),
+                            'hr': ('resting_hr', record.value_1 if record.metric_type == 'hr' else None),
+                            'bp': ('systolic', record.value_1 if record.metric_type == 'bp' else None, 
+                                   'diastolic', record.value_2 if record.metric_type == 'bp' else None),
+                            'temp': ('temperature', record.value_1 if record.metric_type == 'temp' else None),
+                            'spo2': ('spo2', record.value_1 if record.metric_type == 'spo2' else None)
+                        }
+                        
+                        if record.metric_type in metric_map:
+                            if record.metric_type == 'bp':
+                                records_data.append({
+                                    'date': date_value,
+                                    'systolic': record.value_1,
+                                    'diastolic': record.value_2
+                                })
+                            else:
+                                metric_name, value = metric_map[record.metric_type]
+                                if value is not None:
+                                    records_data.append({
+                                        'date': date_value,
+                                        metric_name: value
+                                    })
+                    
+                    if records_data:
+                        df = pd.DataFrame(records_data)
+                        for metric in key_metrics:
+                            if metric in df.columns:
+                                daily_metrics[metric] = df.groupby('date')[metric].mean().reset_index()
+                except Exception as e:
+                    self.logger.error(f"Error converting HealthDataCollection to DataFrame: {str(e)}")
+                    # Return empty analysis
+                    return deviations
+            
+            # Calculate deviations for each metric
+            for metric_name, metric_data in daily_metrics.items():
+                if len(metric_data) < 3:  # Need at least 3 days for meaningful analysis
+                    continue
+                    
+                values = metric_data[metric_name].values
+                mean_val = np.mean(values)
+                std_val = np.std(values)
+                
+                # Only include metrics with sufficient data
+                if not np.isnan(mean_val) and not np.isnan(std_val) and std_val > 0:
+                    deviations['metrics'][metric_name] = {
+                        'mean': float(mean_val),
+                        'std': float(std_val),
+                        'min': float(np.min(values)),
+                        'max': float(np.max(values)),
+                        'days': len(values)
+                    }
+                    
+                    # Find significant deviations (> 1.5 standard deviations)
+                    for i, row in metric_data.iterrows():
+                        z_score = (row[metric_name] - mean_val) / std_val if std_val > 0 else 0
+                        
+                        if abs(z_score) > 1.5:
+                            deviation = {
+                                'date': str(row['date']),
+                                'metric': metric_name,
+                                'value': float(row[metric_name]),
+                                'z_score': float(z_score),
+                                'direction': 'above' if z_score > 0 else 'below'
+                            }
+                            deviations['significant_changes'].append(deviation)
+            
+            # Correlate with meals if available
+            if processed_meals is not None and not processed_meals.empty:
+                # Group deviations by date
+                deviation_dates = set([d['date'] for d in deviations['significant_changes']])
+                
+                # Check for meals on deviation dates
+                for date_str in deviation_dates:
+                    try:
+                        date_obj = datetime.strptime(date_str, '%Y-%m-%d').date()
+                        day_meals = processed_meals[processed_meals['date'] == date_obj]
+                        
+                        if not day_meals.empty:
+                            # Find deviations on this date
+                            day_deviations = [d for d in deviations['significant_changes'] if d['date'] == date_str]
+                            
+                            for meal_idx, meal_row in day_meals.iterrows():
+                                meal_correlation = {
+                                    'date': date_str,
+                                    'meal': meal_row['dish'] if 'dish' in meal_row else 'Unknown',
+                                    'meal_time': str(meal_row['time']) if 'time' in meal_row else 'Unknown',
+                                    'deviating_metrics': [d['metric'] for d in day_deviations]
+                                }
+                                deviations['meal_correlations'].append(meal_correlation)
+                    except Exception as e:
+                        self.logger.warning(f"Error processing meals for date {date_str}: {str(e)}")
+        
+        except Exception as e:
+            self.logger.error(f"Error in deviation analysis: {str(e)}")
+            
+        return deviations
         self.rolling_window = kwargs.get('rolling_window', 14)  # 14-day rolling window
     
     def process(self, data: HealthDataCollection) -> Dict:
@@ -612,6 +768,134 @@ def generate_correlation_analysis(data: HealthDataCollection) -> Dict:
         Correlation analysis results for all participants
     """
     return analyze_participant_correlations(data)
+
+
+def analyze_deviations(data_collection, meals_data=None, thresholds=None):
+    """
+    Analyze significant deviations in physio metrics and correlate with meals.
+    
+    Parameters
+    ----------
+    data_collection : HealthDataCollection
+        Clean health data collection
+    meals_data : pd.DataFrame, optional
+        Meals data
+    thresholds : dict, optional
+        Thresholds for significant deviations
+        
+    Returns
+    -------
+    list
+        List of deviations with associated meals
+    """
+    from wearables.src.correlation_engine import CorrelationEngine
+    import logging
+    
+    logger = logging.getLogger('deviation_analysis')
+    engine = CorrelationEngine()
+    
+    if thresholds is None:
+        thresholds = {
+            'bp_systolic': {'low': 90, 'high': 140},
+            'bp_diastolic': {'low': 60, 'high': 90},
+            'hr': {'low': 60, 'high': 100},
+            'temp': {'low': 36.1, 'high': 37.5},
+            'spo2': {'low': 95, 'high': 100},
+            'sleep': {'low': 6, 'high': 9},
+            'steps': {'low': 5000, 'high': 15000}
+        }
+    
+    try:
+        # Filter good quality data
+        good_records = [r for r in data_collection.records if r.quality_flag == 'good']
+        
+        if not good_records:
+            logger.warning("No good quality records for deviation analysis")
+            return []
+        
+        # Create daily aggregated DataFrame
+        daily_df = engine._create_daily_dataframe(good_records)
+        
+        if daily_df.empty or len(daily_df) < 7:  # Need at least a week of data
+            logger.warning(f"Insufficient data for deviation analysis: {len(daily_df)} days")
+            return []
+        
+        # Calculate baselines (averages)
+        baselines = daily_df.mean()
+        
+        # Process meals data if provided
+        meals_by_date = {}
+        if meals_data is not None and 'time' in meals_data.columns and 'dish' in meals_data.columns:
+            try:
+                # Convert time to datetime
+                meals_data = meals_data.copy()
+                meals_data['date'] = pd.to_datetime(meals_data['time'], unit='ms').dt.date
+                
+                # Group by date
+                for date, group in meals_data.groupby('date'):
+                    meals_by_date[date] = group['dish'].tolist()
+            except Exception as e:
+                logger.error(f"Error processing meals data: {str(e)}")
+        
+        # Find deviations
+        deviations = []
+        
+        for date_idx in daily_df.index:
+            date_str = date_idx.strftime('%Y-%m-%d')
+            date_obj = date_idx.date()
+            daily_deviations = []
+            
+            # Check each metric for deviations
+            for metric in daily_df.columns:
+                if metric not in baselines or pd.isna(daily_df.loc[date_idx, metric]):
+                    continue
+                
+                value = daily_df.loc[date_idx, metric]
+                baseline = baselines[metric]
+                
+                # Calculate deviation percentage
+                deviation_pct = ((value - baseline) / baseline) * 100 if baseline != 0 else 0
+                
+                # Check if value is outside thresholds
+                threshold_deviation = False
+                metric_key = None
+                for key in thresholds.keys():
+                    if key in metric.lower():
+                        metric_key = key
+                        break
+                        
+                if metric_key and metric_key in thresholds:
+                    if value < thresholds[metric_key]['low']:
+                        threshold_deviation = True
+                    elif value > thresholds[metric_key]['high']:
+                        threshold_deviation = True
+                
+                # Add significant deviations (>10% or outside thresholds)
+                if abs(deviation_pct) > 10 or threshold_deviation:
+                    daily_deviations.append({
+                        'metric': metric,
+                        'value': value,
+                        'baseline': baseline,
+                        'deviation_pct': deviation_pct,
+                        'outside_threshold': threshold_deviation
+                    })
+            
+            # If we have deviations, add with meals data
+            if daily_deviations:
+                meals_list = meals_by_date.get(date_obj, [])
+                
+                deviations.append({
+                    'date': date_str,
+                    'deviations': daily_deviations,
+                    'meals': meals_list
+                })
+        
+        logger.info(f"Deviation analysis complete. Found {len(deviations)} days with significant deviations")
+        return deviations
+        
+    except Exception as e:
+        logger.error(f"Error in deviation analysis: {str(e)}")
+        return []
 
 
 if __name__ == "__main__":

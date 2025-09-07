@@ -1,0 +1,244 @@
+{
+  "participant_id": "participant-default",
+  "generated_at": "2025-09-07T16:37:34.438999",
+  "data_period": {},
+  "health_baselines": {
+    "temp": {
+      "count": 1208,
+      "mean": 97.2,
+      "median": 97.2,
+      "std": 0.58,
+      "normal_range": {
+        "lower": 96.3,
+        "upper": 97.9
+      },
+      "percentiles": {
+        "p25": 96.8,
+        "p75": 97.5
+      },
+      "interpretation": "Normal body temperature",
+      "temporal_patterns": {
+        "hourly_patterns": {
+          "peak_hour": 0,
+          "peak_value": null,
+          "low_hour": 0,
+          "low_value": null
+        },
+        "weekly_patterns": {
+          "Thursday": 97.18932119205297
+        }
+      }
+    },
+    "hr": {
+      "count": 3393,
+      "mean": 76.1,
+      "median": 73.0,
+      "std": 13.52,
+      "normal_range": {
+        "lower": 61.0,
+        "upper": 95.0
+      },
+      "percentiles": {
+        "p25": 67.0,
+        "p75": 85.0
+      },
+      "interpretation": "Normal resting heart rate",
+      "secondary": {
+        "count": 3393,
+        "mean": 76.1,
+        "median": 73.0,
+        "std": 13.52,
+        "normal_range": {
+          "lower": 61.0,
+          "upper": 95.0
+        },
+        "percentiles": {
+          "p25": 67.0,
+          "p75": 85.0
+        },
+        "interpretation": "Within measured range"
+      },
+      "temporal_patterns": {
+        "hourly_patterns": {
+          "peak_hour": 0,
+          "peak_value": null,
+          "low_hour": 0,
+          "low_value": null
+        },
+        "weekly_patterns": {
+          "Thursday": 76.061597406425
+        }
+      }
+    },
+    "bp": {
+      "count": 11,
+      "mean": 122.9,
+      "median": 124.0,
+      "std": 4.7,
+      "normal_range": {
+        "lower": 117.0,
+        "upper": 128.0
+      },
+      "percentiles": {
+        "p25": 120.0,
+        "p75": 127.5
+      },
+      "interpretation": "Elevated blood pressure",
+      "secondary": {
+        "count": 11,
+        "mean": 74.6,
+        "median": 74.0,
+        "std": 3.91,
+        "normal_range": {
+          "lower": 70.0,
+          "upper": 79.0
+        },
+        "percentiles": {
+          "p25": 72.5,
+          "p75": 78.5
+        },
+        "interpretation": "Within measured range"
+      },
+      "temporal_patterns": {
+        "hourly_patterns": {
+          "peak_hour": 0,
+          "peak_value": null,
+          "low_hour": 0,
+          "low_value": null
+        },
+        "weekly_patterns": {
+          "Thursday": 122.9090909090909
+        }
+      }
+    },
+    "sleep": {
+      "count": 5,
+      "mean": 2.0,
+      "median": 0.0,
+      "std": 2.45,
+      "normal_range": {
+        "lower": 0.0,
+        "upper": 5.0
+      },
+      "percentiles": {
+        "p25": 0.0,
+        "p75": 5.0
+      },
+      "interpretation": "Below recommended sleep duration",
+      "temporal_patterns": {
+        "hourly_patterns": {
+          "peak_hour": 0,
+          "peak_value": null,
+          "low_hour": 0,
+          "low_value": null
+        },
+        "weekly_patterns": {
+          "Thursday": 2.0
+        }
+      }
+    },
+    "steps": {
+      "count": 1128,
+      "mean": 157.4,
+      "median": 89.0,
+      "std": 162.74,
+      "normal_range": {
+        "lower": 16.0,
+        "upper": 417.6
+      },
+      "percentiles": {
+        "p25": 34.0,
+        "p75": 241.0
+      },
+      "interpretation": "Sedentary lifestyle",
+      "secondary": {
+        "count": 1128,
+        "mean": 9.4,
+        "median": 5.0,
+        "std": 10.28,
+        "normal_range": {
+          "lower": 1.0,
+          "upper": 25.3
+        },
+        "percentiles": {
+          "p25": 2.0,
+          "p75": 15.0
+        },
+        "interpretation": "Within measured range"
+      },
+      "temporal_patterns": {
+        "hourly_patterns": {
+          "peak_hour": 0,
+          "peak_value": null,
+          "low_hour": 0,
+          "low_value": null
+        },
+        "weekly_patterns": {
+          "Thursday": 157.41843971631207
+        }
+      }
+    }
+  },
+  "correlations": {
+    "daily": {},
+    "lag_effects": {},
+    "rolling_trends": {}
+  },
+  "anomalies": {},
+  "personalized_insights": {
+    "health_summary": {
+      "monitoring_period": {},
+      "metrics_tracked": [
+        "temp",
+        "hr",
+        "bp",
+        "sleep",
+        "steps"
+      ],
+      "data_quality_score": 91,
+      "health_metrics": [
+        "Average temperature: 97.2\u00b0F",
+        "Average heart rate: 76.1 bpm",
+        "Average blood pressure: 122.9/74.6 mmHg",
+        "Average sleep: 2.0 hours per night",
+        "Average daily steps: 157"
+      ]
+    },
+    "key_findings": [
+      "You're getting 2.0 hours of sleep per night, below the recommended 7-9 hours",
+      "Your daily step count averages 157 steps, below the recommended 10,000 steps"
+    ],
+    "behavioral_insights": [],
+    "recommendations": [
+      {
+        "category": "Sleep Quality",
+        "priority": "High",
+        "recommendation": "Increase sleep duration from current 2.0 hours",
+        "action_items": [
+          "Set a consistent bedtime 30 minutes earlier",
+          "Create a relaxing bedtime routine",
+          "Avoid screens 1 hour before bed",
+          "Keep bedroom cool and dark"
+        ],
+        "target": "Achieve 7-9 hours of sleep nightly"
+      },
+      {
+        "category": "Physical Activity",
+        "priority": "Medium",
+        "recommendation": "Increase daily activity from current 157 steps",
+        "action_items": [
+          "Set a goal of 500 additional steps per week",
+          "Take stairs instead of elevators",
+          "Park further away or get off transit one stop early",
+          "Take 5-minute walking breaks every hour"
+        ],
+        "target": "Reach 10,000 steps daily"
+      }
+    ],
+    "progress_tracking": {
+      "stability_trends": {},
+      "improvement_areas": [],
+      "concerning_trends": []
+    }
+  }
+}

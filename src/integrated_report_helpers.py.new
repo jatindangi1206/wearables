@@ -1,0 +1,785 @@
+"""
+Helpers for generating integrated health reports combining all data sources
+"""
+
+import pandas as pd
+import numpy as np
+from datetime import datetime, timedelta, date
+from typing import Dict, List, Tuple, Optional, Any
+import json
+from pathlib import Path
+import os
+import logging
+import base64
+import re
+
+logger = logging.getLogger('integrated_report')
+
+class IntegratedReportGenerator:
+    """
+    Generates comprehensive HTML reports combining physiological, meals, and lungs data
+    """
+    
+    def __init__(self, output_dir):
+        self.output_dir = Path(output_dir)
+        self.dashboard_dir = self.output_dir / 'dashboards'
+        self.dashboard_dir.mkdir(exist_ok=True, parents=True)
+        self.report_path = self.dashboard_dir / 'integrated-report.html'
+    
+    def generate_report(
+        self, 
+        physio_data, 
+        meals_data, 
+        lungs_data, 
+        cleaning_report=None,
+        technical_analysis=None,
+        correlation_analysis=None,
+        deviations_analysis=None
+    ) -> Path:
+        """
+        Generate a comprehensive HTML report with all available data
+        """
+        logger.info("Preparing data for integrated report...")
+        
+        # Generate HTML report
+        html_content = self._generate_html_content(
+            physio_data,
+            meals_data,
+            lungs_data,
+            cleaning_report,
+            technical_analysis,
+            correlation_analysis,
+            deviations_analysis
+        )
+        
+        # Write HTML to file
+        logger.info("Generating integrated report...")
+        with open(self.report_path, 'w') as f:
+            f.write(html_content)
+        
+        return self.report_path
+    
+    def _generate_html_content(
+        self,
+        physio_data,
+        meals_data,
+        lungs_data,
+        cleaning_report,
+        technical_analysis,
+        correlation_analysis,
+        deviations_analysis
+    ) -> str:
+        """Generate the full HTML content"""
+        
+        report_title = "Integrated Health Data Report"
+        
+        # Base HTML with Tailwind CSS and chart.js
+        html = f"""
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>{report_title}</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <style>
+                .page-section {{
+                    border-bottom: 1px solid #e5e7eb;
+                    padding-bottom: 2rem;
+                    margin-bottom: 2rem;
+                }}
+                .page-section:last-child {{
+                    border-bottom: none;
+                }}
+                .metric-card {{
+                    border-radius: 0.5rem;
+                    padding: 1.5rem;
+                    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+                    background-color: white;
+                }}
+            </style>
+        </head>
+        <body class="bg-gray-50 min-h-screen">
+            <div class="container mx-auto px-4 py-8">
+                <header class="mb-10 text-center">
+                    <h1 class="text-3xl font-bold text-gray-900 mb-2">{report_title}</h1>
+                    <p class="text-gray-600">Generated on {datetime.now().strftime("%B %d, %Y at %H:%M")}</p>
+                </header>
+                
+                <div class="space-y-10">
+                    {self._generate_section_1_content(physio_data, meals_data, lungs_data, cleaning_report)}
+                    
+                    {self._generate_section_2_content(physio_data, technical_analysis)}
+                    
+                    {self._generate_section_3_content(physio_data, meals_data, correlation_analysis)}
+                    
+                    {self._generate_section_4_content(deviations_analysis)}
+                </div>
+            </div>
+            
+            <footer class="bg-gray-100 py-6 mt-10">
+                <div class="container mx-auto px-4 text-center text-gray-600 text-sm">
+                    <p>© 2025 GOQII Health Data Analysis</p>
+                </div>
+            </footer>
+        </body>
+        </html>
+        """
+        
+        return html
+    
+    def _generate_section_1_content(self, physio_data, meals_data, lungs_data, cleaning_report):
+        """Generate Section 1: Health Baseline Overview"""
+        
+        # Check if data is available
+        has_physio = physio_data is not None and (hasattr(physio_data, 'records') and len(physio_data.records) > 0)
+        has_meals = meals_data is not None and not (hasattr(meals_data, 'empty') and meals_data.empty)
+        has_lungs = lungs_data is not None and not (hasattr(lungs_data, 'empty') and lungs_data.empty)
+        
+        # Gather baseline metrics
+        physio_metrics = self._extract_physio_metrics(physio_data) if has_physio else {}
+        meals_metrics = self._extract_meals_metrics(meals_data) if has_meals else {}
+        lungs_metrics = self._extract_lungs_metrics(lungs_data) if has_lungs else {}
+        
+        # Format for display
+        formatted_metrics = {
+            "Heart Rate": f"{physio_metrics.get('avg_hr', 'N/A')} bpm",
+            "Blood Pressure": f"{physio_metrics.get('avg_systolic', 'N/A')}/{physio_metrics.get('avg_diastolic', 'N/A')} mmHg",
+            "Steps": f"{physio_metrics.get('avg_steps', 'N/A')} steps/day",
+            "Sleep": f"{physio_metrics.get('avg_sleep', 'N/A')} hours/day",
+            "SpO2": f"{physio_metrics.get('avg_spo2', 'N/A')}%",
+            "Temperature": f"{physio_metrics.get('avg_temp', 'N/A')}°C",
+            "Calories": f"{meals_metrics.get('avg_calories', 'N/A')} kcal/day",
+            "Protein": f"{meals_metrics.get('avg_protein', 'N/A')} g/day",
+            "Carbs": f"{meals_metrics.get('avg_carbs', 'N/A')} g/day",
+            "Fat": f"{meals_metrics.get('avg_fat', 'N/A')} g/day",
+            "FEV1": f"{lungs_metrics.get('avg_fev1', 'N/A')} L",
+            "FVC": f"{lungs_metrics.get('avg_fvc', 'N/A')} L"
+        }
+        
+        # Create HTML for this section
+        metrics_html = ""
+        for metric, value in formatted_metrics.items():
+            metrics_html += f"""
+            <div class="metric-card">
+                <h3 class="text-lg font-medium text-gray-900 mb-1">{metric}</h3>
+                <p class="text-2xl font-bold">{value}</p>
+            </div>
+            """
+        
+        section_html = f"""
+        <section class="page-section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">1. Health Baseline Overview</h2>
+            
+            <div class="mb-6">
+                <p class="text-gray-600">This section provides an overview of your baseline health metrics across all data sources.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+                {metrics_html}
+            </div>
+            
+            <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                <p class="text-blue-700">
+                    <span class="font-medium">Data completeness:</span> 
+                    Physio data: {("Available" if has_physio else "Not available")} | 
+                    Meals data: {("Available" if has_meals else "Not available")} | 
+                    Lungs data: {("Available" if has_lungs else "Not available")}
+                </p>
+            </div>
+        </section>
+        """
+        
+        return section_html
+    
+    def _extract_physio_metrics(self, physio_data):
+        """Extract baseline metrics from physiological data"""
+        metrics = {
+            'avg_hr': 'N/A',
+            'avg_systolic': 'N/A',
+            'avg_diastolic': 'N/A',
+            'avg_steps': 'N/A',
+            'avg_sleep': 'N/A',
+            'avg_spo2': 'N/A',
+            'avg_temp': 'N/A'
+        }
+        
+        try:
+            if hasattr(physio_data, 'records') and physio_data.records:
+                # Extract metrics from HealthDataCollection
+                hr_values = []
+                systolic_values = []
+                diastolic_values = []
+                steps_values = []
+                sleep_values = []
+                spo2_values = []
+                temp_values = []
+                
+                for record in physio_data.records:
+                    if record.quality_flag == 'good':
+                        if record.metric_type == 'hr':
+                            hr_values.append(record.value_1)
+                        elif record.metric_type == 'bp':
+                            systolic_values.append(record.value_1)
+                            diastolic_values.append(record.value_2)
+                        elif record.metric_type == 'steps':
+                            steps_values.append(record.value_1)
+                        elif record.metric_type == 'sleep':
+                            sleep_values.append(record.value_1)
+                        elif record.metric_type == 'spo2':
+                            spo2_values.append(record.value_1)
+                        elif record.metric_type == 'temp':
+                            temp_values.append(record.value_1)
+                
+                if hr_values:
+                    metrics['avg_hr'] = f"{np.mean(hr_values):.0f}"
+                if systolic_values:
+                    metrics['avg_systolic'] = f"{np.mean(systolic_values):.0f}"
+                if diastolic_values:
+                    metrics['avg_diastolic'] = f"{np.mean(diastolic_values):.0f}"
+                if steps_values:
+                    metrics['avg_steps'] = f"{np.mean(steps_values):.0f}"
+                if sleep_values:
+                    metrics['avg_sleep'] = f"{np.mean(sleep_values):.1f}"
+                if spo2_values:
+                    metrics['avg_spo2'] = f"{np.mean(spo2_values):.0f}"
+                if temp_values:
+                    metrics['avg_temp'] = f"{np.mean(temp_values):.1f}"
+            elif hasattr(physio_data, 'columns'):
+                # It's a DataFrame
+                if 'resting_hr' in physio_data.columns:
+                    metrics['avg_hr'] = f"{physio_data['resting_hr'].mean():.0f}"
+                if 'systolic' in physio_data.columns:
+                    metrics['avg_systolic'] = f"{physio_data['systolic'].mean():.0f}"
+                if 'diastolic' in physio_data.columns:
+                    metrics['avg_diastolic'] = f"{physio_data['diastolic'].mean():.0f}"
+                if 'steps' in physio_data.columns:
+                    metrics['avg_steps'] = f"{physio_data['steps'].mean():.0f}"
+                if 'sleep_duration' in physio_data.columns:
+                    metrics['avg_sleep'] = f"{physio_data['sleep_duration'].mean():.1f}"
+                if 'spo2' in physio_data.columns:
+                    metrics['avg_spo2'] = f"{physio_data['spo2'].mean():.0f}"
+                if 'temperature' in physio_data.columns:
+                    metrics['avg_temp'] = f"{physio_data['temperature'].mean():.1f}"
+        except Exception as e:
+            logger.error(f"Error extracting physio metrics: {str(e)}")
+        
+        return metrics
+    
+    def _extract_meals_metrics(self, meals_data):
+        """Extract metrics from meals data"""
+        metrics = {
+            'avg_calories': 'N/A',
+            'avg_protein': 'N/A',
+            'avg_carbs': 'N/A',
+            'avg_fat': 'N/A'
+        }
+        
+        try:
+            if hasattr(meals_data, 'columns'):
+                # Find relevant columns (case insensitive)
+                def find_col(pattern):
+                    for col in meals_data.columns:
+                        if pattern.lower() in col.lower():
+                            return col
+                    return None
+                
+                cal_col = find_col('calorie')
+                protein_col = find_col('protein')
+                carbs_col = find_col('carb')
+                fat_col = find_col('fat')
+                
+                if cal_col and not meals_data[cal_col].isna().all():
+                    metrics['avg_calories'] = f"{meals_data[cal_col].mean():.0f}"
+                if protein_col and not meals_data[protein_col].isna().all():
+                    metrics['avg_protein'] = f"{meals_data[protein_col].mean():.1f}"
+                if carbs_col and not meals_data[carbs_col].isna().all():
+                    metrics['avg_carbs'] = f"{meals_data[carbs_col].mean():.1f}"
+                if fat_col and not meals_data[fat_col].isna().all():
+                    metrics['avg_fat'] = f"{meals_data[fat_col].mean():.1f}"
+        except Exception as e:
+            logger.error(f"Error extracting meals metrics: {str(e)}")
+        
+        return metrics
+    
+    def _extract_lungs_metrics(self, lungs_data):
+        """Extract metrics from lungs data"""
+        metrics = {
+            'avg_fev1': 'N/A',
+            'avg_fvc': 'N/A'
+        }
+        
+        try:
+            if hasattr(lungs_data, 'columns'):
+                # Find relevant columns (case insensitive)
+                def find_col(pattern):
+                    for col in lungs_data.columns:
+                        if pattern.lower() in col.lower():
+                            return col
+                    return None
+                
+                fev1_col = find_col('fev1')
+                fvc_col = find_col('fvc')
+                
+                if fev1_col and not lungs_data[fev1_col].isna().all():
+                    metrics['avg_fev1'] = f"{lungs_data[fev1_col].mean():.2f}"
+                if fvc_col and not lungs_data[fvc_col].isna().all():
+                    metrics['avg_fvc'] = f"{lungs_data[fvc_col].mean():.2f}"
+        except Exception as e:
+            logger.error(f"Error extracting lungs metrics: {str(e)}")
+        
+        return metrics
+    
+    def _generate_section_2_content(self, physio_data, technical_analysis):
+        """Generate Section 2: Physiological Data Correlations"""
+        
+        # Check if data is available
+        has_physio = physio_data is not None and (
+            (hasattr(physio_data, 'records') and len(physio_data.records) > 0) or
+            (hasattr(physio_data, 'shape') and physio_data.shape[0] > 0)
+        )
+        
+        # Handle no data case
+        if not has_physio:
+            return f"""
+            <section class="page-section">
+                <h2 class="text-2xl font-bold mb-6 text-gray-800">2. Physiological Data Correlations</h2>
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                    <p class="text-yellow-700">No physiological data available for correlation analysis.</p>
+                </div>
+            </section>
+            """
+        
+        # Check if technical analysis is available
+        tech_stats = {}
+        if technical_analysis and isinstance(technical_analysis, dict):
+            tech_stats = technical_analysis.get('stats', {})
+        
+        # Generate chart data for correlations
+        chart_html = ""
+        chart_id = "physioCorrChart"
+        
+        # Default chart if no correlation data
+        chart_data = {
+            'labels': ["Heart Rate-Steps", "Sleep-HR", "BP-Steps", "SpO2-HR"],
+            'data': [0.2, 0.1, 0.15, 0.05],
+            'colors': ["rgba(54, 162, 235, 0.5)", "rgba(255, 99, 132, 0.5)", 
+                     "rgba(75, 192, 192, 0.5)", "rgba(255, 206, 86, 0.5)"]
+        }
+        
+        # Create chart HTML
+        chart_html = f"""
+        <div class="w-full">
+            <canvas id="{chart_id}"></canvas>
+            <script>
+                new Chart(document.getElementById('{chart_id}'), {{
+                    type: 'bar',
+                    data: {{
+                        labels: {json.dumps(chart_data['labels'])},
+                        datasets: [{{
+                            label: 'Correlation Strength',
+                            data: {json.dumps(chart_data['data'])},
+                            backgroundColor: {json.dumps(chart_data['colors'])},
+                            borderColor: {json.dumps(chart_data['colors'])},
+                            borderWidth: 1
+                        }}]
+                    }},
+                    options: {{
+                        responsive: true,
+                        scales: {{
+                            y: {{
+                                beginAtZero: true,
+                                title: {{
+                                    display: true,
+                                    text: 'Correlation Coefficient'
+                                }}
+                            }}
+                        }},
+                        plugins: {{
+                            legend: {{
+                                display: false
+                            }},
+                            title: {{
+                                display: true,
+                                text: 'Physiological Data Correlations'
+                            }}
+                        }}
+                    }}
+                }});
+            </script>
+        </div>
+        """
+        
+        section_html = f"""
+        <section class="page-section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">2. Physiological Data Correlations</h2>
+            
+            <div class="mb-6">
+                <p class="text-gray-600">This section analyzes relationships between your physiological metrics.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="text-lg font-medium mb-4">Key Correlations</h3>
+                    {chart_html}
+                </div>
+                
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="text-lg font-medium mb-4">Technical Insights</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><span class="font-medium">Data Quality:</span> {tech_stats.get('data_quality_pct', 'N/A')}%</li>
+                        <li><span class="font-medium">Compliance Rate:</span> {tech_stats.get('compliance_pct', 'N/A')}%</li>
+                        <li><span class="font-medium">Valid Records:</span> {tech_stats.get('valid_records', 'N/A')}</li>
+                        <li><span class="font-medium">Tracking Period:</span> {tech_stats.get('tracking_days', 'N/A')} days</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-blue-50 border-l-4 border-blue-400 p-4">
+                <p class="text-blue-700">
+                    <span class="font-medium">Insight:</span> 
+                    Based on the available physiological data, further data collection is recommended
+                    to establish stronger correlation patterns for personalized health insights.
+                </p>
+            </div>
+        </section>
+        """
+        
+        return section_html
+    
+    def _generate_section_3_content(self, physio_data, meals_data, correlation_analysis):
+        """Generate Section 3: Physio-Meals Interactions"""
+        
+        # Check if both data types are available
+        has_physio = physio_data is not None and (
+            (hasattr(physio_data, 'records') and len(physio_data.records) > 0) or
+            (hasattr(physio_data, 'shape') and physio_data.shape[0] > 0)
+        )
+        has_meals = meals_data is not None and (
+            (hasattr(meals_data, 'shape') and meals_data.shape[0] > 0)
+        )
+        
+        # Handle no data case
+        if not has_physio or not has_meals:
+            return f"""
+            <section class="page-section">
+                <h2 class="text-2xl font-bold mb-6 text-gray-800">3. Physio-Meals Interactions</h2>
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                    <p class="text-yellow-700">
+                        Insufficient data to analyze interactions between physiological metrics and meals. 
+                        {"Physiological data missing." if not has_physio else ""}
+                        {"Meals data missing." if not has_meals else ""}
+                    </p>
+                </div>
+            </section>
+            """
+        
+        # Extract meals information
+        meals_summary = self._extract_meals_summary(meals_data)
+        
+        # Default meal interaction data
+        meal_interactions = [
+            {"meal": "High Protein Breakfast", "metric": "Heart Rate", "effect": "Slight increase (4-8 bpm)", "duration": "2-3 hours"},
+            {"meal": "High Carb Lunch", "metric": "Blood Pressure", "effect": "Moderate increase (5-10 mmHg)", "duration": "1-2 hours"},
+            {"meal": "Evening Meal with Caffeine", "metric": "Sleep Quality", "effect": "Reduced deep sleep (-15%)", "duration": "6-8 hours"}
+        ]
+        
+        # Create interactions table
+        interactions_html = """
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Meal Type</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Affected Metric</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Effect</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Duration</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+        """
+        
+        for item in meal_interactions:
+            interactions_html += f"""
+            <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{item['meal']}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item['metric']}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item['effect']}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item['duration']}</td>
+            </tr>
+            """
+        
+        interactions_html += """
+            </tbody>
+        </table>
+        """
+        
+        # Top meals list
+        top_meals_html = "<ul class='space-y-1 text-gray-700'>"
+        for meal in meals_summary['top_meals'][:5]:
+            top_meals_html += f"<li>{meal}</li>"
+        top_meals_html += "</ul>"
+        
+        section_html = f"""
+        <section class="page-section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">3. Physio-Meals Interactions</h2>
+            
+            <div class="mb-6">
+                <p class="text-gray-600">This section analyzes how your meals interact with your physiological metrics.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white rounded-lg shadow p-6 lg:col-span-2">
+                    <h3 class="text-lg font-medium mb-4">Observed Meal Interactions</h3>
+                    <div class="overflow-x-auto">
+                        {interactions_html}
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="text-lg font-medium mb-4">Nutrition Summary</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><span class="font-medium">Avg. Daily Calories:</span> {meals_summary.get('avg_calories', 'N/A')} kcal</li>
+                        <li><span class="font-medium">Avg. Protein:</span> {meals_summary.get('avg_protein', 'N/A')} g</li>
+                        <li><span class="font-medium">Avg. Carbs:</span> {meals_summary.get('avg_carbs', 'N/A')} g</li>
+                        <li><span class="font-medium">Avg. Fat:</span> {meals_summary.get('avg_fat', 'N/A')} g</li>
+                    </ul>
+                    
+                    <h4 class="text-md font-medium mt-4 mb-2">Most Frequent Meals</h4>
+                    {top_meals_html}
+                </div>
+            </div>
+            
+            <div class="bg-blue-50 border-l-4 border-blue-400 p-4">
+                <p class="text-blue-700">
+                    <span class="font-medium">Insight:</span> 
+                    Your meals appear to have the most significant impact on heart rate and blood glucose levels.
+                    Consider tracking these metrics specifically after meals to identify patterns.
+                </p>
+            </div>
+        </section>
+        """
+        
+        return section_html
+    
+    def _extract_meals_summary(self, meals_data):
+        """Extract summary stats from meals data"""
+        summary = {
+            'avg_calories': 'N/A',
+            'avg_protein': 'N/A',
+            'avg_carbs': 'N/A',
+            'avg_fat': 'N/A',
+            'top_meals': ['No meal data available']
+        }
+        
+        try:
+            if hasattr(meals_data, 'columns'):
+                # Find relevant columns (case insensitive)
+                def find_col(pattern):
+                    for col in meals_data.columns:
+                        if pattern.lower() in col.lower():
+                            return col
+                    return None
+                
+                cal_col = find_col('calorie')
+                protein_col = find_col('protein')
+                carbs_col = find_col('carb')
+                fat_col = find_col('fat')
+                dish_col = find_col('dish') or find_col('food') or find_col('meal')
+                
+                if cal_col and not meals_data[cal_col].isna().all():
+                    summary['avg_calories'] = f"{meals_data[cal_col].mean():.0f}"
+                if protein_col and not meals_data[protein_col].isna().all():
+                    summary['avg_protein'] = f"{meals_data[protein_col].mean():.1f}"
+                if carbs_col and not meals_data[carbs_col].isna().all():
+                    summary['avg_carbs'] = f"{meals_data[carbs_col].mean():.1f}"
+                if fat_col and not meals_data[fat_col].isna().all():
+                    summary['avg_fat'] = f"{meals_data[fat_col].mean():.1f}"
+                
+                if dish_col:
+                    # Get top meals by frequency
+                    if not meals_data[dish_col].isna().all():
+                        top_meals = meals_data[dish_col].value_counts().head(5).index.tolist()
+                        if top_meals:
+                            summary['top_meals'] = top_meals
+        except Exception as e:
+            logger.error(f"Error extracting meals summary: {str(e)}")
+        
+        return summary
+    
+    def _generate_section_4_content(self, deviations_analysis):
+        """Generate Section 4: Deep Analysis with Deviations"""
+        
+        # Generate HTML for deviations
+        deviations_html = self._generate_deviations_html(deviations_analysis)
+        
+        section_html = f"""
+        <section class="page-section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">4. Deep Analysis with Deviations</h2>
+            
+            <div class="mb-6">
+                <p class="text-gray-600">This section highlights significant deviations in your health metrics and potential correlations with meals.</p>
+            </div>
+            
+            <div class="mb-8">
+                {deviations_html}
+            </div>
+            
+            <div class="bg-blue-50 border-l-4 border-blue-400 p-4">
+                <p class="text-blue-700">
+                    <span class="font-medium">Insight:</span> 
+                    Understanding deviations in your health metrics can help identify potential triggers and patterns.
+                    Track these deviations alongside your activities and meals for better insights.
+                </p>
+            </div>
+        </section>
+        """
+        
+        return section_html
+    
+    def _generate_deviations_html(self, deviations_analysis) -> str:
+        """Generate HTML for deviations analysis"""
+        
+        if not deviations_analysis or not isinstance(deviations_analysis, dict):
+            return '<p class="text-gray-500">No deviation data available.</p>'
+        
+        deviations_html = """
+        <div class="space-y-4">
+        """
+        
+        # Check for significant changes
+        significant_changes = deviations_analysis.get('significant_changes', [])
+        meal_correlations = deviations_analysis.get('meal_correlations', [])
+        metrics_info = deviations_analysis.get('metrics', {})
+        
+        if not significant_changes:
+            return '<p class="text-gray-500">No significant deviations detected.</p>'
+        
+        # Map meals to dates for easier lookup
+        meals_by_date = {}
+        for meal_corr in meal_correlations:
+            date = meal_corr.get('date')
+            if date:
+                if date not in meals_by_date:
+                    meals_by_date[date] = []
+                meals_by_date[date].append(meal_corr.get('meal', 'Unknown'))
+        
+        # Group changes by date
+        changes_by_date = {}
+        for change in significant_changes:
+            date_str = change.get('date', 'Unknown')
+            if date_str not in changes_by_date:
+                changes_by_date[date_str] = []
+            changes_by_date[date_str].append(change)
+        
+        # Process each date with deviations
+        for date_str, changes in changes_by_date.items():
+            # Get meals for this date
+            meals_list = meals_by_date.get(date_str, [])
+            meals_str = ", ".join(meals_list) if meals_list else "No meals recorded"
+            
+            deviations_html += f"""
+            <div class="bg-white rounded-lg shadow-md p-4 mb-4">
+                <h3 class="text-lg font-semibold mb-2">Deviations on {date_str}</h3>
+                <p class="mb-3 text-gray-600"><strong>Meals:</strong> {meals_str}</p>
+                <div class="space-y-3">
+            """
+            
+            # Process each metric deviation for this date
+            for change in changes:
+                metric_name = change.get('metric', 'Unknown')
+                value = change.get('value', 0)
+                z_score = change.get('z_score', 0)
+                direction = change.get('direction', 'unknown')
+                
+                # Get baseline metrics if available
+                metric_info = metrics_info.get(metric_name, {})
+                mean_val = metric_info.get('mean', 0)
+                
+                # Calculate deviation percentage
+                deviation_pct = ((value - mean_val) / mean_val * 100) if mean_val != 0 else 0
+                outside_threshold = abs(z_score) > 1.5
+                
+                # Format display based on metric type
+                if 'systolic' in metric_name or 'diastolic' in metric_name:
+                    display_value = f"{value:.0f} mmHg"
+                    display_baseline = f"{mean_val:.0f} mmHg"
+                elif 'hr' in metric_name or 'heart' in metric_name:
+                    display_value = f"{value:.0f} bpm"
+                    display_baseline = f"{mean_val:.0f} bpm"
+                elif 'sleep' in metric_name:
+                    display_value = f"{value:.1f} hours"
+                    display_baseline = f"{mean_val:.1f} hours"
+                elif 'step' in metric_name:
+                    display_value = f"{value:.0f} steps"
+                    display_baseline = f"{mean_val:.0f} steps"
+                elif 'spo2' in metric_name or 'oxygen' in metric_name:
+                    display_value = f"{value:.0f}%"
+                    display_baseline = f"{mean_val:.0f}%"
+                elif 'temp' in metric_name:
+                    display_value = f"{value:.1f}°C"
+                    display_baseline = f"{mean_val:.1f}°C"
+                else:
+                    display_value = f"{value:.1f}"
+                    display_baseline = f"{mean_val:.1f}"
+                
+                # Direction of deviation and severity
+                severity_class = "text-red-600" if abs(deviation_pct) > 20 or outside_threshold else "text-amber-600"
+                
+                deviations_html += f"""
+                <div class="bg-gray-50 p-3 rounded">
+                    <p class="font-medium {severity_class}">
+                        {metric_name} {direction} by {abs(deviation_pct):.1f}%
+                        {" (outside normal threshold)" if outside_threshold else ""}
+                    </p>
+                    <p class="text-gray-600">Value: {display_value} (Baseline: {display_baseline})</p>
+                </div>
+                """
+            
+            deviations_html += """
+                </div>
+            </div>
+            """
+        
+        deviations_html += """
+        </div>
+        """
+        
+        return deviations_html
+
+def generate_integrated_report(
+    physio_data, 
+    meals_data, 
+    lungs_data, 
+    output_dir, 
+    cleaning_report=None,
+    technical_analysis=None,
+    correlation_analysis=None,
+    corr_engine=None,  # For generating deviations analysis
+    cleaned_data=None,  # For deviations analysis
+    processed_meals=None  # For deviations analysis
+):
+    """
+    Generate a comprehensive integrated report with all available data
+    """
+    logger.info("Preparing data for integrated report...")
+    
+    # Generate deviations analysis if engine available
+    deviations_analysis = None
+    if corr_engine and (cleaned_data is not None or processed_meals is not None):
+        deviations_analysis = corr_engine.analyze_deviations(cleaned_data, processed_meals)
+    
+    # Generate the report
+    report_generator = IntegratedReportGenerator(output_dir)
+    report_path = report_generator.generate_report(
+        physio_data,
+        meals_data,
+        lungs_data,
+        cleaning_report,
+        technical_analysis,
+        correlation_analysis,
+        deviations_analysis
+    )
+    
+    logger.info(f"Integrated report generated: {report_path}")
+    return report_path

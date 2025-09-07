@@ -1,0 +1,58 @@
+2025-09-07 15:21:30,089 - goqii_eda - INFO - ================================================================================
+2025-09-07 15:21:30,090 - goqii_eda - INFO - GOQII HEALTH DATA EDA PROTOCOL - DUAL OUTPUT ANALYSIS
+2025-09-07 15:21:30,090 - goqii_eda - INFO - ================================================================================
+2025-09-07 15:21:30,090 - goqii_eda - INFO - Input Directory: wearables/input
+2025-09-07 15:21:30,090 - goqii_eda - INFO - Output Directory: wearables/processed/integrated_test
+2025-09-07 15:21:30,090 - goqii_eda - INFO - Pipeline Started: 2025-09-07 15:21:30
+2025-09-07 15:21:30,090 - goqii_eda - INFO - 
+📂 STEP 1: Data Loading and Discovery
+2025-09-07 15:21:30,090 - goqii_eda - INFO - --------------------------------------------------
+2025-09-07 15:21:30,102 - goqii_eda - INFO - ✅ Discovered data for 0 participants
+2025-09-07 15:21:30,102 - goqii_eda - INFO - 📊 Total physio records loaded: 0
+2025-09-07 15:21:30,102 - goqii_eda - INFO - 🍲 Meals data records: 104
+2025-09-07 15:21:30,102 - goqii_eda - INFO - 🫁 Lungs data records: 2
+2025-09-07 15:21:30,102 - goqii_eda - INFO - 📁 Files processed: 0
+2025-09-07 15:21:30,102 - goqii_eda - INFO - 🗓️  Date range: Unknown to Unknown
+2025-09-07 15:21:30,103 - goqii_eda - INFO - 
+🧹 STEP 2: Data Cleaning and Quality Control
+2025-09-07 15:21:30,103 - goqii_eda - INFO - --------------------------------------------------
+2025-09-07 15:21:30,103 - goqii_eda - INFO - ✅ Data cleaning completed
+2025-09-07 15:21:30,103 - goqii_eda - INFO - 📊 Clean records: 0 (0.0%)
+2025-09-07 15:21:30,103 - goqii_eda - INFO - ⚠️  Flagged records: 0
+2025-09-07 15:21:30,103 - goqii_eda - INFO - 
+🔬 STEP 3: Technical Analysis for Researchers
+2025-09-07 15:21:30,103 - goqii_eda - INFO - --------------------------------------------------
+2025-09-07 15:21:30,103 - goqii_eda - INFO - ✅ Technical analysis completed
+2025-09-07 15:21:30,103 - goqii_eda - INFO - 📊 Data Completeness by Metric:
+2025-09-07 15:21:30,103 - goqii_eda - INFO -    cohort_summary: 100.0% complete
+2025-09-07 15:21:30,103 - goqii_eda - INFO - 📈 Cohort average data quality: 0.0%
+2025-09-07 15:21:30,103 - goqii_eda - INFO - 📈 Cohort average compliance: 0.0%
+2025-09-07 15:21:30,103 - goqii_eda - INFO - 
+🔗 STEP 4: Correlation Analysis
+2025-09-07 15:21:30,103 - goqii_eda - INFO - --------------------------------------------------
+2025-09-07 15:21:30,103 - goqii_eda - INFO - ✅ Correlation analysis completed
+2025-09-07 15:21:30,104 - goqii_eda - INFO - 📊 Total correlations analyzed: 0
+2025-09-07 15:21:30,104 - goqii_eda - INFO - 📈 Significant correlations found: 0 (0.0%)
+2025-09-07 15:21:30,104 - goqii_eda - INFO - 
+👤 STEP 5: Participant Insights Generation
+2025-09-07 15:21:30,104 - goqii_eda - INFO - --------------------------------------------------
+2025-09-07 15:21:30,104 - goqii_eda - INFO - ✅ Participant insights generated
+2025-09-07 15:21:30,104 - goqii_eda - INFO - 👥 Participants analyzed: 0
+2025-09-07 15:21:30,104 - goqii_eda - INFO - 
+📊 STEP 6: HTML Dashboard Generation
+2025-09-07 15:21:30,104 - goqii_eda - INFO - --------------------------------------------------
+2025-09-07 15:21:30,104 - goqii_eda - INFO - ✅ Dashboard generation completed
+2025-09-07 15:21:30,104 - goqii_eda - INFO - 📈 Researcher dashboard created: wearables/processed/integrated_test/dashboards/researcher-dashboard.html
+2025-09-07 15:21:30,104 - goqii_eda - INFO - 👥 Participant dashboards created: 0
+2025-09-07 15:21:30,105 - goqii_eda - INFO - 
+📊 STEP 7: Integrated Report Generation
+2025-09-07 15:21:30,105 - goqii_eda - INFO - --------------------------------------------------
+2025-09-07 15:21:30,105 - goqii_eda - INFO - Generating deviations analysis...
+2025-09-07 15:21:30,105 - goqii_eda - ERROR - ❌ Pipeline failed with error: No module named 'src'
+2025-09-07 15:21:30,105 - goqii_eda - ERROR - Full error traceback:
+Traceback (most recent call last):
+  File "/Users/jatindangi/Desktop/wearables/wearables/main.py", line 289, in run_eda_pipeline
+    deviations_analysis = analyze_deviations(cleaned_data, meals_data)
+  File "/Users/jatindangi/Desktop/wearables/wearables/src/correlation_engine.py", line 791, in analyze_deviations
+    from src.correlation_engine import CorrelationEngine
+ModuleNotFoundError: No module named 'src'

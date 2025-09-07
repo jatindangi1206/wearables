@@ -1,0 +1,86 @@
+2025-09-07 16:37:33,959 - goqii_eda - INFO - ================================================================================
+2025-09-07 16:37:33,959 - goqii_eda - INFO - GOQII HEALTH DATA EDA PROTOCOL - DUAL OUTPUT ANALYSIS
+2025-09-07 16:37:33,959 - goqii_eda - INFO - ================================================================================
+2025-09-07 16:37:33,959 - goqii_eda - INFO - Input Directory: /Users/jatindangi/Desktop/wearables/wearables/input
+2025-09-07 16:37:33,959 - goqii_eda - INFO - Output Directory: /Users/jatindangi/Desktop/wearables/wearables/processed/integrated_test
+2025-09-07 16:37:33,959 - goqii_eda - INFO - Pipeline Started: 2025-09-07 16:37:33
+2025-09-07 16:37:33,959 - goqii_eda - INFO - 
+📂 STEP 1: Data Loading and Discovery
+2025-09-07 16:37:33,959 - goqii_eda - INFO - --------------------------------------------------
+2025-09-07 16:37:34,345 - goqii_eda - INFO - ✅ Discovered data for 1 participants
+2025-09-07 16:37:34,345 - goqii_eda - INFO - 📊 Total physio records loaded: 6,986
+2025-09-07 16:37:34,345 - goqii_eda - INFO - 🍲 Meals data records: 104
+2025-09-07 16:37:34,345 - goqii_eda - INFO - 🫁 Lungs data records: 2
+2025-09-07 16:37:34,345 - goqii_eda - INFO - 📁 Files processed: 0
+2025-09-07 16:37:34,345 - goqii_eda - INFO - 🗓️  Date range: 2024-12-17 to 2025-05-29
+2025-09-07 16:37:34,345 - goqii_eda - INFO - 
+🧹 STEP 2: Data Cleaning and Quality Control
+2025-09-07 16:37:34,345 - goqii_eda - INFO - --------------------------------------------------
+2025-09-07 16:37:34,376 - goqii_eda - INFO - ✅ Data cleaning completed
+2025-09-07 16:37:34,376 - goqii_eda - INFO - 📊 Clean records: 5,745 (82.2%)
+2025-09-07 16:37:34,376 - goqii_eda - INFO - ⚠️  Flagged records: 1,241
+2025-09-07 16:37:34,377 - goqii_eda - INFO - 
+🔬 STEP 3: Technical Analysis for Researchers
+2025-09-07 16:37:34,377 - goqii_eda - INFO - --------------------------------------------------
+2025-09-07 16:37:34,415 - goqii_eda - INFO - ✅ Technical analysis completed
+2025-09-07 16:37:34,415 - goqii_eda - INFO - 📊 Data Completeness by Metric:
+2025-09-07 16:37:34,415 - goqii_eda - INFO -    participant-default: 100.0% complete
+2025-09-07 16:37:34,415 - goqii_eda - INFO -    cohort_summary: 100.0% complete
+2025-09-07 16:37:34,415 - goqii_eda - INFO - 📈 Cohort average data quality: 0.0%
+2025-09-07 16:37:34,415 - goqii_eda - INFO - 📈 Cohort average compliance: 0.0%
+2025-09-07 16:37:34,416 - goqii_eda - INFO - 
+🔗 STEP 4: Correlation Analysis
+2025-09-07 16:37:34,416 - goqii_eda - INFO - --------------------------------------------------
+2025-09-07 16:37:34,420 - goqii_eda - INFO - ✅ Correlation analysis completed
+2025-09-07 16:37:34,421 - goqii_eda - INFO - 📊 Total correlations analyzed: 0
+2025-09-07 16:37:34,421 - goqii_eda - INFO - 📈 Significant correlations found: 0 (0.0%)
+2025-09-07 16:37:34,421 - goqii_eda - INFO - 
+👤 STEP 5: Participant Insights Generation
+2025-09-07 16:37:34,421 - goqii_eda - INFO - --------------------------------------------------
+2025-09-07 16:37:34,439 - goqii_eda - INFO - ✅ Participant insights generated
+2025-09-07 16:37:34,439 - goqii_eda - INFO - 👥 Participants analyzed: 1
+2025-09-07 16:37:34,439 - goqii_eda - INFO -    participant-default: 2 findings, 2 recommendations
+2025-09-07 16:37:34,439 - goqii_eda - INFO - 
+📊 STEP 6: HTML Dashboard Generation
+2025-09-07 16:37:34,439 - goqii_eda - INFO - --------------------------------------------------
+2025-09-07 16:37:34,440 - goqii_eda - INFO - ✅ Dashboard generation completed
+2025-09-07 16:37:34,440 - goqii_eda - INFO - 📈 Researcher dashboard created: /Users/jatindangi/Desktop/wearables/wearables/processed/integrated_test/dashboards/researcher-dashboard.html
+2025-09-07 16:37:34,440 - goqii_eda - INFO - 👥 Participant dashboards created: 1
+2025-09-07 16:37:34,440 - goqii_eda - INFO - 
+📊 STEP 7: Integrated Report Generation
+2025-09-07 16:37:34,440 - goqii_eda - INFO - --------------------------------------------------
+2025-09-07 16:37:34,440 - goqii_eda - INFO - Generating deviations analysis...
+2025-09-07 16:37:34,443 - goqii_eda - INFO - Generating integrated HTML report...
+2025-09-07 16:37:34,461 - goqii_eda - INFO - Integrated report generated: /Users/jatindangi/Desktop/wearables/wearables/processed/integrated_test/dashboards/integrated-report.html
+2025-09-07 16:37:34,461 - goqii_eda - INFO - 
+📋 STEP 8: Results Compilation
+2025-09-07 16:37:34,461 - goqii_eda - INFO - --------------------------------------------------
+2025-09-07 16:37:34,462 - goqii_eda - INFO - Analysis results saved to: /Users/jatindangi/Desktop/wearables/wearables/processed/integrated_test/analysis_results.json
+2025-09-07 16:37:34,462 - goqii_eda - INFO - 
+================================================================================
+2025-09-07 16:37:34,462 - goqii_eda - INFO - 🎉 PIPELINE COMPLETED SUCCESSFULLY
+2025-09-07 16:37:34,462 - goqii_eda - INFO - ================================================================================
+2025-09-07 16:37:34,462 - goqii_eda - INFO - 📊 RESEARCHER INSIGHTS:
+2025-09-07 16:37:34,463 - goqii_eda - INFO -    • Analyzed 1 participants
+2025-09-07 16:37:34,463 - goqii_eda - INFO -    • Processed 6,986 total records
+2025-09-07 16:37:34,463 - goqii_eda - INFO -    • Achieved 82.2% data quality
+2025-09-07 16:37:34,463 - goqii_eda - INFO -    • Found 0 significant correlations
+2025-09-07 16:37:34,463 - goqii_eda - INFO -    • Research dashboard: /Users/jatindangi/Desktop/wearables/wearables/processed/integrated_test/dashboards/researcher-dashboard.html
+2025-09-07 16:37:34,463 - goqii_eda - INFO - 
+👥 PARTICIPANT INSIGHTS:
+2025-09-07 16:37:34,463 - goqii_eda - INFO -    • Generated personalized insights for 1 participants
+2025-09-07 16:37:34,463 - goqii_eda - INFO -    • Individual reports saved to: /Users/jatindangi/Desktop/wearables/wearables/processed/integrated_test/participant_insights
+2025-09-07 16:37:34,463 - goqii_eda - INFO -    • Interactive dashboards saved to: /Users/jatindangi/Desktop/wearables/wearables/processed/integrated_test/dashboards/participant-dashboards
+2025-09-07 16:37:34,463 - goqii_eda - INFO - 
+📁 OUTPUT STRUCTURE:
+2025-09-07 16:37:34,463 - goqii_eda - INFO -    📂 /Users/jatindangi/Desktop/wearables/wearables/processed/integrated_test/
+2025-09-07 16:37:34,463 - goqii_eda - INFO -    ├── 📊 dashboards/
+2025-09-07 16:37:34,463 - goqii_eda - INFO -    │   ├── 🔬 researcher-dashboard.html
+2025-09-07 16:37:34,463 - goqii_eda - INFO -    │   └── 👥 participant-dashboards/
+2025-09-07 16:37:34,463 - goqii_eda - INFO -    ├── � integrated_report.html
+2025-09-07 16:37:34,463 - goqii_eda - INFO -    ├── �👤 participant_insights/
+2025-09-07 16:37:34,463 - goqii_eda - INFO -    ├── 📋 analysis_results.json
+2025-09-07 16:37:34,463 - goqii_eda - INFO -    └── 📝 logs/
+2025-09-07 16:37:34,463 - goqii_eda - INFO - 
+⏱️  Pipeline completed in: 2025-09-07 16:37:34
+2025-09-07 16:37:34,463 - goqii_eda - INFO - ================================================================================

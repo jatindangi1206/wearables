@@ -1,0 +1,17 @@
+2025-09-07 14:39:40,117 - goqii_eda - INFO - ================================================================================
+2025-09-07 14:39:40,117 - goqii_eda - INFO - GOQII HEALTH DATA EDA PROTOCOL - DUAL OUTPUT ANALYSIS
+2025-09-07 14:39:40,117 - goqii_eda - INFO - ================================================================================
+2025-09-07 14:39:40,117 - goqii_eda - INFO - Input Directory: ./input
+2025-09-07 14:39:40,117 - goqii_eda - INFO - Output Directory: ./processed
+2025-09-07 14:39:40,117 - goqii_eda - INFO - Pipeline Started: 2025-09-07 14:39:40
+2025-09-07 14:39:40,117 - goqii_eda - INFO - 
+📂 STEP 1: Data Loading and Discovery
+2025-09-07 14:39:40,117 - goqii_eda - INFO - --------------------------------------------------
+2025-09-07 14:39:40,118 - goqii_eda - ERROR - ❌ Pipeline failed with error: name 'GOQIIDataLoader' is not defined
+2025-09-07 14:39:40,118 - goqii_eda - ERROR - Full error traceback:
+Traceback (most recent call last):
+  File "/Users/jatindangi/Desktop/wearables/wearables/main.py", line 132, in run_eda_pipeline
+    raw_data, loading_report = load_goqii_data(input_dir)
+  File "/Users/jatindangi/Desktop/wearables/wearables/src/data_loader.py", line 530, in load_goqii_data
+    loader = GOQIIDataLoader(input_dir)
+NameError: name 'GOQIIDataLoader' is not defined
